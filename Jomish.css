@@ -64,3 +64,8 @@ a
 {
     color:inherit;
 }
+
+img 
+{
+    width:250px; height:350px; float:left;
+}
