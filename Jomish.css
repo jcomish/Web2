@@ -65,4 +65,7 @@ a
     color:inherit;
 }
 
-
+img 
+{
+    width:250px; height:280px; float:left
+}
