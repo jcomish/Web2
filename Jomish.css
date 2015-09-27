@@ -32,7 +32,7 @@ h2
     margin-left:450px;color:#000066;
     font-family: Arial, Helvetica, sans-serif;
     font-size:26px;
-    margin-left:-150px;
+    margin-left:-300px;
     color:Orange;
 }
 
@@ -48,6 +48,7 @@ h4
 {
     font-size:20px; margin-left:100px; display:inline;
     color:inherit; margin-left:20%;
+    color:Orange;
 }
 
 .center 
