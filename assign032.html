@@ -8,13 +8,23 @@
 
   <header>
     </br>
-    <h4><a href="index.html">Home</a></h4>
-    <h4><a href="assign032.html">Projects</a></h4>
-    <h4><a href="assignments.html">Assignments</a></h4>
+    <h4><a href="index.html">Home</a> onmouseover="bigImg(this)" onmouseout="normalImg(this)"</h4>
+    <h4><a href="assign032.html">Projects</a> onmouseover="bigImg(this)" onmouseout="normalImg(this)"</h4>
+    <h4><a href="assignments.html">Assignments</a> onmouseover="bigImg(this)" onmouseout="normalImg(this)"</h4>
     </br>
     </br>
   </header>
 
+<script>
+function bigImg(x) {
+    x.style.font = "30px";
+}
+
+function normalImg(x) {
+    x.style.font = "20px";
+}
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="smiley.gif" alt="Smiley" width="32" height="32">
+</script>
 </br>
   <body>
     <div>
