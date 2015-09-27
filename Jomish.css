@@ -68,6 +68,8 @@ header
 
 a
 {
+    onMouseOver="this.style.color='White'";
+    onMouseOut="this.style.color='Orange'";
     color:inherit;
 }
 
