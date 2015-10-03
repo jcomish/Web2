@@ -21,7 +21,7 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
     echo "test";
-	$_fp = fopen("results.txt", "r");
+	/*$_fp = fopen("results.txt", "r");
 	fscanf($_fp, "%d\n", $count);
 	$numbers = explode(" ", trim(fgets($_fp)));
 	foreach ($numbers as &$number)
@@ -99,7 +99,7 @@
 
 	foreach ($numbers as $number) {
 	    fputs($_fp, $number);
-	}
+	}*/
     ?>
 
 
