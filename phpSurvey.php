@@ -28,6 +28,7 @@
 	foreach ($numbers as &$number)
 	{
 	    $number = intval($number);
+	    echo $number;
 	}
 	sort($numbers);
 
