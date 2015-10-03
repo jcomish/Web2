@@ -22,15 +22,11 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-$_fp = fopen('results.txt', 'w');
-fputs($_fp, "0 0 0 0 0 0 0 0 0 0 0 0 0 0");
-fclose($_fp);
+    $file = fopen("contacts.csv","r");
+	print_r(fgetcsv($file));
+	fclose($file);
 
-	$myfile = fopen("results.txt", "r") or die("Unable to open file!");
-	echo fgets($myfile);
-	fclose($myfile);
-
-	$_fp = fopen("results.txt", "r");
+	$_fp = fopen("results.csv", "r");
 	fscanf($_fp, "%d\n", $count);
 	$numbers = explode(" ", trim(fgets($_fp)));
 	foreach ($numbers as &$number)
