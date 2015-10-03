@@ -26,9 +26,9 @@
 	$data = fscanf($_fp, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s");
 	foreach ($data as &$number)
 	{
-		echo $number
+		echo $number;
 	}
-
+	//test
 
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
