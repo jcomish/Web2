@@ -19,6 +19,13 @@ p
     color:White;
 }
 
+p2
+{
+    font-family: "Times New Roman", Times, serif;
+    word-wrap:break-word;
+    color:White;
+}
+
 h1 
 {
     text-align: center;
