@@ -28,6 +28,7 @@
 	foreach ($numbers as &$number)
 	{
 		echo $number;
+		echo "<br/>";
 	    $number = intval($number);
 	}
 
@@ -99,7 +100,7 @@
 	$_fp = fopen('results.txt', 'w');
 
 	foreach ($numbers as $number) {
-		echo "<p2>"$number"</p2>";
+		echo $number;
 	    fputs($_fp, $number);
 	}
     ?>
