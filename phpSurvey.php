@@ -29,11 +29,6 @@
 
 	$_fp = fopen("results.txt", "r");
 	$data = fread($_fp);
-	foreach ($data as &$number)
-	{
-		echo $number;
-	}
-	//test
 	close($_fp);
 
 	$numbers = explode(" ", $data);
