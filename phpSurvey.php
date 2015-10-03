@@ -29,11 +29,10 @@
 	{
 	    $number = intval($number);
 	}
-/*
+
     //Question 1
     if ($Q1 == "Burritos")
     {
-    	echo "Burritios!"
     	++$numbers[0];
     }
     elseif($Q1 == "Bagels")
@@ -96,11 +95,11 @@
     }
 
 
-	/*$_fp = fopen('results.txt', 'w');
+	$_fp = fopen('results.txt', 'w');
 
 	foreach ($numbers as $number) {
 	    fputs($_fp, $number);
-	}*/
+	}
     ?>
 
 
