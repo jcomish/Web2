@@ -50,6 +50,13 @@ h4
     color:Orange;
 }
 
+h5
+{
+    font-size:20px;
+    color:inherit;
+    color:Orange;
+}
+
 .center 
 {
     margin-left: auto;
