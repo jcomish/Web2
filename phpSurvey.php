@@ -28,7 +28,7 @@
 	
 
 	$_fp = fopen("results.txt", "r");
-	$data = fgets($_fp);
+	$data = fread($_fp);
 	foreach ($data as &$number)
 	{
 		echo $number;
