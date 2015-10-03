@@ -27,6 +27,7 @@
 	$numbers = explode(" ", trim(fgets($_fp)));
 	foreach ($numbers as &$number)
 	{
+		echo $number;
 	    $number = intval($number);
 	}
 
@@ -98,7 +99,7 @@
 	$_fp = fopen('results.txt', 'w');
 
 	foreach ($numbers as $number) {
-		echo $number;
+		echo "<p2>"$number"</p2>";
 	    fputs($_fp, $number);
 	}
     ?>
