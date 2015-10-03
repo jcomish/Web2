@@ -21,7 +21,9 @@
     $Q2 = $_POST["color"];
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
-    echo "test";
+
+$_fp = fopen('results.txt', 'w');
+fputs($_fp, "0 0 0 0 0 0 0 0 0 0 0 0 0 0");
 	$_fp = fopen("results.txt", "r");
 	fscanf($_fp, "%d\n", $count);
 	$numbers = explode(" ", trim(fgets($_fp)));
