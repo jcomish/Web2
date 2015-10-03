@@ -4,7 +4,10 @@
 Name: <?php echo $_POST["name"]; ?><br/>
 Email Address: <?php echo $_POST["email"]; ?><br/>
 Major: <?php echo $_POST["major"]; ?><br/>
-Place Visited: <?php if ($_POST["item1"] == 'on') echo North America?> 
+Place Visited: <?php if ($_POST["item1"] == 'on') 
+					{
+						echo "North America, ";
+					}?> 
 			   <?php echo $_POST["item2"]; ?> 
 			   <?php echo $_POST["item3"]; ?> 
 			   <?php echo $_POST["item4"]; ?> 
