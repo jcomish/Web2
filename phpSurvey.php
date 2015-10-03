@@ -24,6 +24,12 @@
 
 $_fp = fopen('results.txt', 'w');
 fputs($_fp, "0 0 0 0 0 0 0 0 0 0 0 0 0 0");
+fclose($_fp);
+
+	$myfile = fopen("results.txt", "r") or die("Unable to open file!");
+	echo fgets($myfile);
+	fclose($myfile);
+
 	$_fp = fopen("results.txt", "r");
 	fscanf($_fp, "%d\n", $count);
 	$numbers = explode(" ", trim(fgets($_fp)));
