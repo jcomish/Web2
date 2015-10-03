@@ -15,60 +15,28 @@
     </br>
   </header>
 
-  <form name=cInfo onsubmit="return validateFields()" onreset="clearErrors()">
-        <table>
-          <thead>
-            <tr><th>Merchandice</th></tr>
-          </thead>
-          <tr>
-            <td><input type="checkbox" id="item1" value="2.00" onclick="UpdateCost()"/>Cheeseburger ($2.00)</td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" id="item2" value="1.50" onclick="UpdateCost()">Pizza ($1.50)</td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" id="item3" value="1.50" onclick="UpdateCost()"/>Fried Chicken ($1.25)</td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" id="item4" value="0.50" onclick="UpdateCost()"/>Ice Cream ($0.50)</td>
-          </tr>
-        </table>
-
-        <p>Total: <br/>
-          <input type="text" id="total" value="0.00" readonly="true" size=5> <span id="total"></span></p>
-        </div>
-
-
-
-
+  <form name=info>
     <div class="center">
         <p>First Name: <br/>
-          <input type="text" name="fName" id="fName"></p>
+          <input type="text" name="Name" id="Name"></p>
 
         <p>Last Name: <br/>
-          <input type="text" name="lName" id="lName"></p>
-
-        <p>Address: <br/>
-          <textarea name="address" id="address" style="height:50px;"></textarea> </p>
-
-          <p>Phone: <br/>
-          <input type="text" name="phone" id="phone" onblur="validatePhone()"> </p>
-
+          <input type="text" name="email" id="email"></p>
           
-          <input type="radio" name="card" value="Visa">Visa<br/>
-          <input type="radio" name="card" value="Mastercard">Mastercard<br/>
-          <input type="radio" name="card" value="American Express">American Express
+          <input type="radio" name="major" value="Computer Science">Computer Science<br/>
+          <input type="radio" name="major" value="Web Development and Design">Web Development and Design<br/>
+          <input type="radio" name="major" value="Computer Information Technology">Computer Information Technology<br/>
+          <input type="radio" name="major" value="Computer Engineering">Computer Engineering<br/>
           
+          <input type="checkbox" id="item1"/>North America
+          <input type="checkbox" id="item2"/>South America
+          <input type="checkbox" id="item3"/>Europe
+          <input type="checkbox" id="item4"/>Asia
+          <input type="checkbox" id="item5"/>Austrailia
+          <input type="checkbox" id="item6"/>Africa
+          <input type="checkbox" id="item7"/>Antarctica
 
-          <p>Credit Card #: <br/>
-          <input type="text" name="cardNum" id="cardNum" onblur="validateCard()"> </p>
-
-          <p>Expiration Date: <br/>
-          <input type="text" name="expiration" id="expiration" onblur="validateExp()"> </p>
-
+          <input type="textarea" id="Comments">
           <input type="submit" id="submit" value="Submit" />
           <input type="reset" value="Reset" />
       </form>
