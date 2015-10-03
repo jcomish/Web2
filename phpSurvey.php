@@ -22,9 +22,10 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-    	foreach ($numbers as $number) {
-	    fputs($_fp, "1");
-	}
+    $_fp = fopen("results.txt", "w");
+	fputs($_fp, "1 1 1 1 1 1 1 1 1 1 1 1 1 1");
+	close($_fp);
+	
 
 	$_fp = fopen("results.txt", "r");
 	$data = fgets($_fp);
