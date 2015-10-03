@@ -23,7 +23,7 @@
     $Q4 = $_POST["cake"];
 
     $_fp = fopen("results.txt", "w");
-	fputs($_fp, "1 1 1 1 1 1 1 1 1 1 1 1 1 1");
+	fwrite($_fp, "1 1 1 1 1 1 1 1 1 1 1 1 1 1");
 	close($_fp);
 	
 
@@ -34,6 +34,7 @@
 		echo $number;
 	}
 	//test
+	close($_fp);
 
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
