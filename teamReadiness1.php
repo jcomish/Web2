@@ -8,37 +8,37 @@ Place Visited: <br/>
 <?php 
 	if ($_POST["item1"] == 'on') 
 	{
-		echo "North America\n";
+		echo "North America<br/>";
 	}
 
 	if ($_POST["item2"] == 'on')
 	{
-		echo "South America\n";
+		echo "South America<br/>";
 	}
 
 	if ($_POST["item3"] == 'on')
 	{
-		echo "Europe\n";
+		echo "Europe<br/>";
 	}
 
 	if ($_POST["item4"] == 'on')
 	{
-		echo "Asia\n";
+		echo "Asia<br/>";
 	}
 
 	if ($_POST["item5"] == 'on')
 	{
-		echo "Austrailia\n";
+		echo "Austrailia<br/>";
 	}
 
 	if ($_POST["item6"] == 'on')
 	{
-		echo "Africa\n";
+		echo "Africa<br/>";
 	}
 
 	if ($_POST["item7"] == 'on')
 	{
-		echo "Antarctica\n";
+		echo "Antarctica<br/>";
 	}
 
 ?><br/>
