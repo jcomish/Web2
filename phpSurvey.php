@@ -24,7 +24,7 @@
 
 	$_fp = fopen("results.txt", "r");
 	$data = fscanf($_fp, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s");
-
+	echo $data;
 
 
 
