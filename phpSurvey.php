@@ -13,15 +13,16 @@
     </br>
     </br>
   </header>
-
   <body>
+  	<br/>
+  	<br/>
     <?php
     $Q1 = $_POST["food"];
     $Q2 = $_POST["color"];
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
     echo "test";
-	/*$_fp = fopen("results.txt", "r");
+	$_fp = fopen("results.txt", "r");
 	fscanf($_fp, "%d\n", $count);
 	$numbers = explode(" ", trim(fgets($_fp)));
 	foreach ($numbers as &$number)
@@ -95,7 +96,7 @@
     }
 
 
-	$_fp = fopen('results.txt', 'w');
+	/*$_fp = fopen('results.txt', 'w');
 
 	foreach ($numbers as $number) {
 	    fputs($_fp, $number);
