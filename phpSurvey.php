@@ -22,19 +22,14 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-    $file = fopen("contacts.csv","r");
-	print_r(fgetcsv($file));
-	fclose($file);
-
-	$_fp = fopen("results.csv", "r");
-	fscanf($_fp, "%d\n", $count);
-	$numbers = explode(" ", trim(fgets($_fp)));
+	$_fp = fopen("results.txt", "r");
+	$data = fscanf($_fp, "%s");
+	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
 	{
-		echo $number;
-		echo "<br/>";
 	    $number = intval($number);
 	}
+	sort($numbers);
 
     //Question 1
     if ($Q1 == "Burritos")
