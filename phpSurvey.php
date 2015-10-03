@@ -23,11 +23,9 @@
     $Q4 = $_POST["cake"];
 
 	$_fp = fopen("results.txt", "r");
-	$data = fscanf($_fp, "%s");
+	$data = fscanf($_fp, "%s %s %s %s %s %s %s %s %s %s %s %s %s %s");
 
-	foreach ($data as $number) {
-		echo $number;
-	}
+
 
 
 	$numbers = explode(" ", $data);
