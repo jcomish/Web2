@@ -24,6 +24,8 @@
 
 	$_fp = fopen("results.txt", "r");
 	$data = fscanf($_fp, "%s");
+	echo $data;
+	
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
 	{
