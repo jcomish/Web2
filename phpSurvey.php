@@ -98,6 +98,7 @@
 	$_fp = fopen('results.txt', 'w');
 
 	foreach ($numbers as $number) {
+		echo $number;
 	    fputs($_fp, $number);
 	}
     ?>
