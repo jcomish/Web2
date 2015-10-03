@@ -86,7 +86,7 @@
     }
 
     ?>
-Name: <?php echo $_POST["name"]; ?><br/>
+
 	<!--if ($_POST["item1"] == 'on') -->
 
 
