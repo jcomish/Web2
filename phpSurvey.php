@@ -29,7 +29,7 @@
 	{
 	    $number = intval($number);
 	}
-
+/*
     //Question 1
     if ($Q1 == "Burritos")
     {
