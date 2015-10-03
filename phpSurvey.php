@@ -27,7 +27,7 @@
 	}
 
 	$_fp = fopen("results.txt", "r");
-	$data = fscanf($_fp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s");
+	$data = fscanf($_fp, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n");
 	foreach ($data as &$number)
 	{
 		echo $number;
