@@ -24,6 +24,11 @@
 
 	$env = getenv("OPENSHIFT_DATA_DIR");
 
+	$_fp = fopen($env . "results.txt", "w+");
+	{
+	    fwrite($_fp, "0 0 0 0 0 0 0 0 0 0 0 0 0 0");
+	}
+
 	$myfile = fopen($env . "results.txt", "r+") or die("Unable to open file!");
 	$data = fgets($myfile);
 	$numbers = explode(" ", $data);
