@@ -22,7 +22,13 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-	$myfile = fopen("results.txt", "r") or die("Unable to open file!");
+    if (file_exists($_ENV["OPENSHIFT_DATA_DIR"] .)
+    {
+    	echo "TEST";
+    }
+
+
+	$myfile = fopen("results.txt", "r+") or die("Unable to open file!");
 	$data = fgets($myfile);
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
@@ -95,16 +101,15 @@
     	++$numbers[13];
     }
 
-	$_fp = fopen("results.txt", "w+");
-
-	unlink("results.txt");
+	/*$_fp = fopen("results.txt", "w+");
 	foreach ($numbers as $number) {
 	    fputs($_fp, $number);
 	    echo $number;
 	}
-	fclose($_fp);
-    ?>
+	fclose($_fp);*/
 
+	print "<p2"
+    ?>
 
 </body>
 </html>
