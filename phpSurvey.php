@@ -22,12 +22,12 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-//$env =  getenv("OPENSHIFT_DATA_DIR");
-$_fp = fopen(getenv("OPENSHIFT_DATA_DIR") . "results.txt", "w+");
+echo getenv("OPENSHIFT_DATA_DIR");
+$_fp = fopen("results.txt", "w+");
 	    fwrite($_fp, "TEST!!!");
 	fclose($_fp);
 
-	$myfile = fopen(getenv("OPENSHIFT_DATA_DIR") . "results.txt", "r+") or die("Unable to open file!");
+	$myfile = fopen("results.txt", "r+") or die("Unable to open file!");
 	$data = fgets($myfile);
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
