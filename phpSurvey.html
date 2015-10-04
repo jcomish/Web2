@@ -15,6 +15,12 @@
     </br>
   </header>
 
+  <?php
+  if (isset($_SESSION["visited"]))
+  {
+  	header('Location: http://php-jcomish.rhcloud.com/phpSurvey.php');
+  }
+  ?>
   <form action="phpSurvey.php" method="post">
     <div>
         <br/>
