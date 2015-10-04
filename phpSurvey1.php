@@ -1,5 +1,9 @@
 <?php
 session_start();
+if ($_SESSION["visited"] == "true")
+    {
+      header('Location: http://php-jcomish.rhcloud.com/phpSurvey.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang = "en">
@@ -19,14 +23,6 @@ session_start();
   </header>
   <br/>
   <br/>
-  <br/>
-  <br/>
-  <?php
-    if ($_SESSION["visited"] == "true")
-    {
-    	header('Location: http://php-jcomish.rhcloud.com/phpSurvey.php');
-    }
-  ?>
   <form action="phpSurvey.php" method="post">
     <div>
         
