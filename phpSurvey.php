@@ -17,94 +17,110 @@
   	<br/>
   	<br/>
     <?php
-    $Q1 = $_POST["food"];
-    $Q2 = $_POST["color"];
-    $Q3 = $_POST["animal"];
-    $Q4 = $_POST["cake"];
+    if (isset($_POST["food"]) && isset($_POST["color"]) && isset($_POST["animal"]) && isset($_POST["cake"]))
+    {
+    	session_start();
+	    $Q1 = $_POST["food"];
+	    $Q2 = $_POST["color"];
+	    $Q3 = $_POST["animal"];
+	    $Q4 = $_POST["cake"];
 
-	$env = getenv("OPENSHIFT_DATA_DIR");
-	/*$_fp = fopen($env . "results.txt", "w+");
-	   fwrite($_fp, "1 1 1 1 1 1 1 1 1 1 1 1 1 1");*/
+		$env = getenv("OPENSHIFT_DATA_DIR");
 
-	$myfile = fopen($env . "results.txt", "r") or die("Unable to open file!");
-	$data = fgets($myfile);
+		$myfile = fopen($env . "results.txt", "r") or die("Unable to open file!");
+		$data = fgets($myfile);
 
-	$numbers = explode(" ", $data);
-	foreach ($data as &$number)
+		$numbers = explode(" ", $data);
+		foreach ($data as &$number)
+		{
+		    $number = intval($number);
+		}
+		fclose($myfile);
+
+	    //Question 1
+	    if ($Q1 == "Burritos")
+	    {
+	    	++$numbers[0];
+	    }
+	    elseif($Q1 == "Bagels")
+	    {
+	    	++$numbers[1];
+	    }
+	    elseif($Q1 == "Steak")
+	    {
+	    	++$numbers[2];
+	    }
+	    elseif($Q1 == "Pizza")
+	    {
+	    	++$numbers[3];
+	    }
+
+	    //Question 2
+	    if ($Q2 == "Red")
+	    {
+	    	++$numbers[4];
+	    }
+	    elseif($Q2 == "Blue")
+	    {
+	    	++$numbers[5];
+	    }
+	    elseif($Q2 == "Green")
+	    {
+	    	++$numbers[6];
+	    }
+	    elseif($Q2 == "Moave")
+	    {
+	    	++$numbers[7];
+	    }
+
+	    //Question 3
+	    if ($Q3 == "Bears")
+	    {
+	    	++$numbers[8];
+	    }
+	    elseif($Q3 == "Cats")
+	    {
+	    	++$numbers[9];
+	    }
+	    elseif($Q3 == "Bear Cats")
+	    {
+	    	++$numbers[10];
+	    }
+	    elseif($Q3 == "Snakes")
+	    {
+	    	++$numbers[11];
+	    }
+
+	    //Question 4
+	    if ($Q4 == "yes")
+	    {
+	    	++$numbers[12];
+	    }
+	    elseif($Q4 == "no")
+	    {
+	    	++$numbers[13];
+	    }
+
+		$_fp = fopen($env . "results.txt", "w");
+		foreach ($numbers as $number) {
+		    fwrite($_fp, $number . " ");
+		}
+		fclose($_fp);
+	}
+	else
 	{
-	    $number = intval($number);
+		$env = getenv("OPENSHIFT_DATA_DIR");
+
+		$myfile = fopen($env . "results.txt", "r") or die("Unable to open file!");
+		$data = fgets($myfile);
+
+		$numbers = explode(" ", $data);
+		foreach ($data as &$number)
+		{
+		    $number = intval($number);
+		}
+		fclose($myfile);
 	}
-	fclose($myfile);
-
-    //Question 1
-    if ($Q1 == "Burritos")
-    {
-    	++$numbers[0];
-    }
-    elseif($Q1 == "Bagels")
-    {
-    	++$numbers[1];
-    }
-    elseif($Q1 == "Steak")
-    {
-    	++$numbers[2];
-    }
-    elseif($Q1 == "Pizza")
-    {
-    	++$numbers[3];
-    }
-
-    //Question 2
-    if ($Q2 == "Red")
-    {
-    	++$numbers[4];
-    }
-    elseif($Q2 == "Blue")
-    {
-    	++$numbers[5];
-    }
-    elseif($Q2 == "Green")
-    {
-    	++$numbers[6];
-    }
-    elseif($Q2 == "Moave")
-    {
-    	++$numbers[7];
-    }
-
-    //Question 3
-    if ($Q3 == "Bears")
-    {
-    	++$numbers[8];
-    }
-    elseif($Q3 == "Cats")
-    {
-    	++$numbers[9];
-    }
-    elseif($Q3 == "Bear Cats")
-    {
-    	++$numbers[10];
-    }
-    elseif($Q3 == "Snakes")
-    {
-    	++$numbers[11];
-    }
-
-    //Question 4
-    if ($Q4 == "yes")
-    {
-    	++$numbers[12];
-    }
-    elseif($Q4 == "no")
-    {
-    	++$numbers[13];
-    }
-
-	$_fp = fopen($env . "results.txt", "w");
-	foreach ($numbers as $number) {
-	    fwrite($_fp, $number . " ");
-	}
-	fclose($_fp);
 
 	echo "<h5>Question 1 Results</h5><br/>";
 	echo "<p2>Burritos:  " . $numbers[0] . "</p2><br/>";
@@ -130,4 +146,5 @@
     ?>
 
 </body>
+<input type="button" value="See Results" onclick="phpSurvey.php" method="post"/>
 </html>
