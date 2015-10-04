@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	$_SESSION["visited"] = "true";
+?>
 <html lang = "en">
   <head>
     <title>Joshua Comish</title>
@@ -19,9 +23,6 @@
     <?php
     if (isset($_POST["food"]) && isset($_POST["color"]) && isset($_POST["animal"]) && isset($_POST["cake"]))
     {
-    	session_start();
-    	$_SESSION["visited"] = "true";
-    	
 	    $Q1 = $_POST["food"];
 	    $Q2 = $_POST["color"];
 	    $Q3 = $_POST["animal"];
