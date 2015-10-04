@@ -150,7 +150,6 @@
     echo "<h5><a href="phpSurvey.php" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Go Back</a></h5>";
 	}
 	?>
-}
 </body>
 
 </html>
