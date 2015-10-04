@@ -22,20 +22,20 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-
-$_fp = fopen("/OPENSHIFT_DATA_DIR/results.txt", "w+");
+echo getenv("OPENSHIFT_DATA_DIR")
+/*$_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
 	    fwrite($_fp, "TEST!!!");
 
 	fclose($_fp);
 
-	$myfile = fopen("/OPENSHIFT_DATA_DIR/results.txt", "r+") or die("Unable to open file!");
+	$myfile = fopen("results.txt", "r+") or die("Unable to open file!");
 	$data = fgets($myfile);
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
 	{
 	    $number = intval($number);
 	}
-	fclose($myfile);
+	fclose($myfile);*/
 
     //Question 1
     if ($Q1 == "Burritos")
@@ -127,7 +127,7 @@ $_fp = fopen("/OPENSHIFT_DATA_DIR/results.txt", "w+");
 	echo "<p2> " . $numbers[0] . "</p2><br/>";
 
 	echo "<p2>Question 1 Results</p2><br/>";
-	echo "<p2>Yes! " . $numbers[0] . "</p2><br/>";
+	echo "<p2>Yes!! " . $numbers[0] . "</p2><br/>";
 	echo "<p2>Burritos " . $numbers[0] . "</p2><br/>";
 	
     ?>
