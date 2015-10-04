@@ -22,10 +22,12 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-    if (file_exists($_ENV["OPENSHIFT_DATA_DIR"] .)
-    {
-    	echo "TEST";
-    }
+
+$_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
+	    fputs($_fp, "TEST!!!");
+
+	fclose($_fp);
+
 //test
 
 	$myfile = fopen("results.txt", "r+") or die("Unable to open file!");
