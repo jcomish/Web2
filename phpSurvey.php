@@ -23,9 +23,7 @@
     $Q4 = $_POST["cake"];
 
 $myfile = fopen("results.txt", "w") or die("Unable to open file!");
-$txt = "John Doe\n";
-fwrite($myfile, $txt);
-$txt = "Jane Doe\n";
+$txt = "0 0 0 0 0 0 0 0 0 0 0 0 0 0\n";
 fwrite($myfile, $txt);
 fclose($myfile);
 	
