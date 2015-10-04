@@ -14,7 +14,8 @@
     </br>
     </br>
   </header>
-
+  <br/>
+  <br/>
   <?php
   session_start();
   $_SESSION["visited"] = "true";
@@ -26,8 +27,7 @@
   ?>
   <form action="phpSurvey.php" method="post">
     <div>
-        <br/>
-        <br/>
+        
         <p2>Question 1: What is your favorite Food?</p2><br/>
           <input type="radio" name="food" value="Burritos"><p2>Burritos</p2><br/>
           <input type="radio" name="food" value="Bagels"><p2>Bagels</p2><br/>
