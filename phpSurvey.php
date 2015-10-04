@@ -22,15 +22,17 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-    $_fp = fopen("results.txt", "w");
-    $test = "1 1 1 1 1 1 1 1 1 1 1 1 1 1";
-	fwrite($_fp, $test);
-	close($_fp);
+$myfile = fopen("results.txt", "w") or die("Unable to open file!");
+$txt = "John Doe\n";
+fwrite($myfile, $txt);
+$txt = "Jane Doe\n";
+fwrite($myfile, $txt);
+fclose($myfile);
 	
 
-	$_fp = fopen("results.txt", "r");
-	echo fread($_fp);
-	close($_fp);
+$myfile = fopen("results.txt", "r") or die("Unable to open file!");
+echo fgets($myfile);
+fclose($myfile);
 
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
