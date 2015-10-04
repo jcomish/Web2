@@ -21,24 +21,23 @@
     $Q2 = $_POST["color"];
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
-/*
-$myfile = fopen("results.txt", "w") or die("Unable to open file!");
+
+$myfile = fopen("results.txt", "w+") or die("Unable to open file!");
 $txt = "0 0 0 0 0 0 0 0 0 0 0 0 0 0\n";
 fwrite($myfile, $txt);
 fclose($myfile);
-	*/
+	
 
 	$myfile = fopen("results.txt", "r") or die("Unable to open file!");
-	echo fgets($myfile);
-	fclose($myfile);
-/*
+	$data fgets($myfile);
+
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
 	{
 	    $number = intval($number);
 	    echo $number;
 	}
-	fclose($myfile);*/
+	fclose($myfile);
 
     //Question 1
     if ($Q1 == "Burritos")
