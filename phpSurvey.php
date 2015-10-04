@@ -23,6 +23,8 @@
     $Q4 = $_POST["cake"];
 
 	$env = getenv("OPENSHIFT_DATA_DIR");
+	$_fp = fopen($env . "results.txt", "w+");
+	   fwrite($_fp, "0 0 0 0 0 0 0 0 0 0 0 0 0 0");
 
 	$myfile = fopen($env . "results.txt", "r+") or die("Unable to open file!");
 	$data = fgets($myfile);
@@ -32,7 +34,9 @@
 	    $number = intval($number);
 	}
 	fclose($myfile);
-
+	foreach ($numbers as $number) {
+	    echo $number . ' ';
+	}
     //Question 1
     if ($Q1 == "Burritos")
     {
@@ -105,26 +109,25 @@
 
 	echo "<p2>Question 1 Results</p2><br/>";
 	echo "<p2>Burritos " . $numbers[0] . "</p2><br/>";
-	echo "<p2> " . $numbers[1] . "</p2><br/>";
-	echo "<p2> " . $numbers[2] . "</p2><br/>";
-	echo "<p2> Pizza" . $numbers[3] . "</p2><br/>";
+	echo "<p2>Bagels " . $numbers[1] . "</p2><br/>";
+	echo "<p2>Steak " . $numbers[2] . "</p2><br/>";
+	echo "<p2>Pizza " . $numbers[3] . "</p2><br/>";
 
-	echo "<p2>Question 1 Results</p2><br/>";
-	echo "<p2> " . $numbers[4] . "</p2><br/>";
-	echo "<p2> " . $numbers[5] . "</p2><br/>";
-	echo "<p2> " . $numbers[6] . "</p2><br/>";
-	echo "<p2> " . $numbers[7] . "</p2><br/>";
+	echo "<p2>Question 2 Results</p2><br/>";
+	echo "<p2>Red " . $numbers[4] . "</p2><br/>";
+	echo "<p2>Blue " . $numbers[5] . "</p2><br/>";
+	echo "<p2>Green " . $numbers[6] . "</p2><br/>";
+	echo "<p2>Moave " . $numbers[7] . "</p2><br/>";
 
-	echo "<p2>Question 1 Results</p2><br/>";
-	echo "<p2> " . $numbers[8] . "</p2><br/>";
-	echo "<p2> " . $numbers[9] . "</p2><br/>";
-	echo "<p2> " . $numbers[10] . "</p2><br/>";
-	echo "<p2> " . $numbers[11] . "</p2><br/>";
+	echo "<p2>Question 3 Results</p2><br/>";
+	echo "<p2>Bears " . $numbers[8] . "</p2><br/>";
+	echo "<p2>Cats " . $numbers[9] . "</p2><br/>";
+	echo "<p2>Bear Cats " . $numbers[10] . "</p2><br/>";
+	echo "<p2>Snakes " . $numbers[11] . "</p2><br/>";
 
-	echo "<p2>Question 1 Results</p2><br/>";
-	echo "<p2>Yes!! " . $numbers[12] . "</p2><br/>";
-	echo "<p2>Burritos " . $numbers[13] . "</p2><br/>";
-	//test
+	echo "<p2>Question 4 Results</p2><br/>";
+	echo "<p2>Yes! " . $numbers[12] . "</p2><br/>";
+	echo "<p2>No... " . $numbers[13] . "</p2><br/>";
     ?>
 
 </body>
