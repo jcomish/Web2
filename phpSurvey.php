@@ -99,7 +99,7 @@
 
 	$_fp = fopen("results.txt", "w+");
 	foreach ($numbers as $number) {
-	    fputs($_fp, $number);
+	    fwrite($_fp, $number);
 	    echo $number;
 	}
 	fclose($_fp);
