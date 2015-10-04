@@ -149,6 +149,13 @@
     {
     echo '<h5><a href="phpSurvey.html">Go Back</a></h5>';
 	}
+	else
+	{
+		session_unset(); 
+
+// destroy the session 
+session_destroy(); 
+	}
 	?>
 </body>
 
