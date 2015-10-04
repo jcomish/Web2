@@ -23,8 +23,8 @@
     $Q4 = $_POST["cake"];
 
 	$env = getenv("OPENSHIFT_DATA_DIR");
-	$_fp = fopen($env . "results.txt", "w+");
-	   fwrite($_fp, "1 1 1 1 1 1 1 1 1 1 1 1 1 1");
+	/*$_fp = fopen($env . "results.txt", "w+");
+	   fwrite($_fp, "1 1 1 1 1 1 1 1 1 1 1 1 1 1");*/
 
 	$myfile = fopen($env . "results.txt", "r") or die("Unable to open file!");
 	$data = fgets($myfile);
