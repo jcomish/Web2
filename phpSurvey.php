@@ -19,6 +19,7 @@
     <?php
     if (isset($_POST["food"]) && isset($_POST["color"]) && isset($_POST["animal"]) && isset($_POST["cake"]))
     {
+    	session_start();
     	$_SESSION["visited"] = "true";
     	
 	    $Q1 = $_POST["food"];

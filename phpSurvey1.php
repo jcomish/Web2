@@ -19,8 +19,6 @@
   <br/>
   <br/>
   <?php
-    session_start();
-    $_SESSION["visited"] = "false";
     if ($_SESSION["visited"] == "true")
     {
     	header('Location: http://php-jcomish.rhcloud.com/phpSurvey.php');
