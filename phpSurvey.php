@@ -95,12 +95,13 @@
     	++$numbers[13];
     }
 
-	$_fp = fopen("results.txt", "w");
+	$_fp = fopen("results.txt", "w+");
 
 	foreach ($numbers as $number) {
 	    fputs($_fp, $number);
 	    echo $number;
 	}
+	fclose($_fp);
     ?>
 
 
