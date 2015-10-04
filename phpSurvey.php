@@ -145,17 +145,11 @@
 	echo "<p2>Yes!:  " . $numbers[12] . "</p2><br/>";
 	echo "<p2>No...:  " . $numbers[13] . "</p2><br/><br/><br/>";
     
-    if ($_SESSION["visited"] == "true")
+    if ($_SESSION["visited"] != "true")
     {
     echo '<h5><a href="phpSurvey.html">Go Back</a></h5>';
 	}
-	else
-	{
-		session_unset(); 
 
-// destroy the session 
-session_destroy(); 
-	}
 	?>
 </body>
 
