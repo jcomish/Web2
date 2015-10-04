@@ -16,7 +16,9 @@
   </header>
 
   <?php
-  if (isset($_SESSION["visited"]))
+  session_start();
+  $_SESSION["visited"] = "true";
+  if ($_SESSION["visited"] == "true")
   {
   	echo "TEST!";
   	header('Location: http://php-jcomish.rhcloud.com/phpSurvey.php');
