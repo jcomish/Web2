@@ -97,7 +97,7 @@
     	++$numbers[13];
     }
 
-	$_fp = fopen("results.txt", "w+");
+	$_fp = fopen($env . "results.txt", "w+");
 	foreach ($numbers as $number) {
 	    fwrite($_fp, $number);
 	}
@@ -107,7 +107,7 @@
 	echo "<p2>Burritos " . $numbers[0] . "</p2><br/>";
 	echo "<p2> " . $numbers[1] . "</p2><br/>";
 	echo "<p2> " . $numbers[2] . "</p2><br/>";
-	echo "<p2> " . $numbers[3] . "</p2><br/>";
+	echo "<p2> Pizza" . $numbers[3] . "</p2><br/>";
 
 	echo "<p2>Question 1 Results</p2><br/>";
 	echo "<p2> " . $numbers[4] . "</p2><br/>";
