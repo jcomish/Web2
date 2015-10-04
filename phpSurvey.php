@@ -38,6 +38,7 @@ fclose($myfile);
 	    $number = intval($number);
 	    echo $number;
 	}
+	fclose($myfile);
 
     //Question 1
     if ($Q1 == "Burritos")
@@ -102,7 +103,11 @@ fclose($myfile);
     {
     	++$numbers[13];
     }
-
+    
+	foreach ($numbers as &$number)
+	{
+	    echo $number;
+	}
 
 	$_fp = fopen('results.txt', 'w');
 
