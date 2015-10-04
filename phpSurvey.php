@@ -20,6 +20,7 @@
     if (isset($_POST["food"]) && isset($_POST["color"]) && isset($_POST["animal"]) && isset($_POST["cake"]))
     {
     	session_start();
+    	$_SESSION["visited"] = "true";
 	    $Q1 = $_POST["food"];
 	    $Q2 = $_POST["color"];
 	    $Q3 = $_POST["animal"];
@@ -143,8 +144,13 @@
 	echo "<h5>Question 4 Results</h5>";
 	echo "<p2>Yes!:  " . $numbers[12] . "</p2><br/>";
 	echo "<p2>No...:  " . $numbers[13] . "</p2><br/><br/><br/>";
-    ?>
-
+    
+    if ($_SESSION["visited"] == "true")
+    {
+    echo <h5><a href="phpSurvey.php" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Go Back</a></h5>
+	}
+	?>
+}
 </body>
-<h5><a href="phpSurvey.php" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Go Back</a></h5>
+
 </html>
