@@ -23,7 +23,7 @@
     $Q4 = $_POST["cake"];
 
     $_fp = fopen("results.txt", "w");
-    $test = "1 1 1 1 1 1 1 1 1 1 1 1 1 1"
+    $test = "1 1 1 1 1 1 1 1 1 1 1 1 1 1";
 	fwrite($_fp, $test);
 	close($_fp);
 	
