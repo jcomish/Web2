@@ -27,8 +27,6 @@ $_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
 	    fwrite($_fp, "TEST!!!");
 
 	fclose($_fp);
-//test
-//test
 
 	$myfile = fopen("results.txt", "r+") or die("Unable to open file!");
 	$data = fgets($myfile);
@@ -103,14 +101,15 @@ $_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
     	++$numbers[13];
     }
 
-	/*$_fp = fopen("results.txt", "w+");
+	$_fp = fopen("results.txt", "w+");
 	foreach ($numbers as $number) {
 	    fputs($_fp, $number);
 	    echo $number;
 	}
-	fclose($_fp);*/
+	fclose($_fp);
 
-	print "<p2"
+	print "<p2>Question 1</p2><br/>";
+	
     ?>
 
 </body>
