@@ -108,7 +108,7 @@ $_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
 	}
 	fclose($_fp);
 
-	print "<p2>Question 1</p2><br/>";
+	echo "<p2>Question 1</p2><br/>";
 	
     ?>
 
