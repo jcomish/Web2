@@ -24,7 +24,7 @@
 
 
 $_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
-	    fputs($_fp, "TEST!!!");
+	    fwrite($_fp, "TEST!!!");
 
 	fclose($_fp);
 
