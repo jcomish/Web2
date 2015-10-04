@@ -22,7 +22,7 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-echo getenv("OPENSHIFT_DATA_DIR")
+echo getenv("OPENSHIFT_DATA_DIR");
 /*$_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
 	    fwrite($_fp, "TEST!!!");
 
