@@ -122,29 +122,29 @@
 		fclose($myfile);
 	}
 
-	echo "<h5>Question 1 Results</h5><br/>";
+	echo "<h5>Question 1 Results</h5>";
 	echo "<p2>Burritos:  " . $numbers[0] . "</p2><br/>";
 	echo "<p2>Bagels:  " . $numbers[1] . "</p2><br/>";
 	echo "<p2>Steak:  " . $numbers[2] . "</p2><br/>";
 	echo "<p2>Pizza:  " . $numbers[3] . "</p2><br/><br/><br/>";
 
-	echo "<h5>Question 2 Results</h5><br/>";
+	echo "<h5>Question 2 Results</h5>";
 	echo "<p2>Red:  " . $numbers[4] . "</p2><br/>";
 	echo "<p2>Blue:  " . $numbers[5] . "</p2><br/>";
 	echo "<p2>Green:  " . $numbers[6] . "</p2><br/>";
 	echo "<p2>Moave:  " . $numbers[7] . "</p2><br/><br/><br/>";
 
-	echo "<h5>Question 3 Results</h5><br/>";
+	echo "<h5>Question 3 Results</h5>";
 	echo "<p2>Bears:  " . $numbers[8] . "</p2><br/>";
 	echo "<p2>Cats:  " . $numbers[9] . "</p2><br/>";
 	echo "<p2>Bear Cats:  " . $numbers[10] . "</p2><br/>";
 	echo "<p2>Snakes:  " . $numbers[11] . "</p2><br/><br/><br/>";
 
-	echo "<h5>Question 4 Results</h5><br/>";
+	echo "<h5>Question 4 Results</h5>";
 	echo "<p2>Yes!:  " . $numbers[12] . "</p2><br/>";
 	echo "<p2>No...:  " . $numbers[13] . "</p2><br/><br/><br/>";
     ?>
 
 </body>
-<input type="button" value="See Results" onclick="phpSurvey.php" method="post"/>
+<h5><a href="phpSurvey.php" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Go Back</a></h5>
 </html>
