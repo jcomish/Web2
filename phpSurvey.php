@@ -27,7 +27,7 @@ $_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
 	    fwrite($_fp, "TEST!!!");
 
 	fclose($_fp);
-
+//test
 //test
 
 	$myfile = fopen("results.txt", "r+") or die("Unable to open file!");
