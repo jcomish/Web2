@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION["visited"]))
+{
+  $_SESSION["visited"] = "false";
+}
 if ($_SESSION["visited"] == "true")
     {
       header('Location: http://php-jcomish.rhcloud.com/phpSurvey.php');
