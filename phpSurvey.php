@@ -19,8 +19,8 @@
     <?php
     if (isset($_POST["food"]) && isset($_POST["color"]) && isset($_POST["animal"]) && isset($_POST["cake"]))
     {
-    	session_start();
     	$_SESSION["visited"] = "true";
+    	
 	    $Q1 = $_POST["food"];
 	    $Q2 = $_POST["color"];
 	    $Q3 = $_POST["animal"];
@@ -147,7 +147,7 @@
     
     if ($_SESSION["visited"] != "true")
     {
-    echo '<h5><a href="phpSurvey.html">Go Back</a></h5>';
+    echo '<h5><a href="phpSurvey1.php">Go Back</a></h5>';
 	}
 
 	?>
