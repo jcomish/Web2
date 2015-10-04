@@ -22,10 +22,10 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-$myfile = fopen("results.txt", "w+") or die("Unable to open file!");
+/*$myfile = fopen("results.txt", "w+") or die("Unable to open file!");
 $txt = "0 0 0 0 0 0 0 0 0 0 0 0 0 0\n";
 fwrite($myfile, $txt);
-fclose($myfile);
+fclose($myfile);*/
 	
 
 	$myfile = fopen("results.txt", "r") or die("Unable to open file!");
