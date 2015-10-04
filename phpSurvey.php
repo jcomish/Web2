@@ -23,12 +23,13 @@
     $Q4 = $_POST["cake"];
 
     $_fp = fopen("results.txt", "w");
-	fwrite($_fp, "1 1 1 1 1 1 1 1 1 1 1 1 1 1");
+    $test = "1 1 1 1 1 1 1 1 1 1 1 1 1 1"
+	fwrite($_fp, $test);
 	close($_fp);
 	
 
 	$_fp = fopen("results.txt", "r");
-	$data = fread($_fp);
+	echo fread($_fp);
 	close($_fp);
 
 	$numbers = explode(" ", $data);
