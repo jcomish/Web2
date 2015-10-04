@@ -22,13 +22,13 @@
     $Q3 = $_POST["animal"];
     $Q4 = $_POST["cake"];
 
-$myfile = fopen("/cs313/Web2/results.txt", "w") or die("Unable to open file!");
+$myfile = fopen("results.txt", "w") or die("Unable to open file!");
 $txt = "0 0 0 0 0 0 0 0 0 0 0 0 0 0\n";
 fwrite($myfile, $txt);
 fclose($myfile);
 	
 
-	$myfile = fopen("/cs313/Web2/results.txt", "r") or die("Unable to open file!");
+	$myfile = fopen("results.txt", "r") or die("Unable to open file!");
 	$data = fgets($myfile);
 	fclose($myfile);
 
@@ -109,7 +109,7 @@ fclose($myfile);
 	    echo $number;
 	}
 
-	$_fp = fopen("/cs313/Web2/results.txt", "w");
+	$_fp = fopen("results.txt", "w");
 
 	foreach ($numbers as $number) {
 	    fputs($_fp, $number);
