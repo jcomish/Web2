@@ -23,12 +23,12 @@
     $Q4 = $_POST["cake"];
 
 
-$_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
+$_fp = fopen("/OPENSHIFT_DATA_DIR/results.txt", "w+");
 	    fwrite($_fp, "TEST!!!");
 
 	fclose($_fp);
 
-	$myfile = fopen("results.txt", "r+") or die("Unable to open file!");
+	$myfile = fopen("/OPENSHIFT_DATA_DIR/results.txt", "r+") or die("Unable to open file!");
 	$data = fgets($myfile);
 	$numbers = explode(" ", $data);
 	foreach ($numbers as &$number)
@@ -108,7 +108,27 @@ $_fp = fopen($_ENV["OPENSHIFT_DATA_DIR"] . "results.txt", "w+");
 	}
 	fclose($_fp);
 
-	echo "<p2>Question 1</p2><br/>";
+	echo "<p2>Question 1 Results</p2><br/>";
+	echo "<p2>Burritos " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+
+	echo "<p2>Question 1 Results</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+
+	echo "<p2>Question 1 Results</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+	echo "<p2> " . $numbers[0] . "</p2><br/>";
+
+	echo "<p2>Question 1 Results</p2><br/>";
+	echo "<p2>Yes! " . $numbers[0] . "</p2><br/>";
+	echo "<p2>Burritos " . $numbers[0] . "</p2><br/>";
 	
     ?>
 
