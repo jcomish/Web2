@@ -16,14 +16,16 @@
   </header>
   <br/>
   <br/>
+  <br/>
+  <br/>
   <?php
-  session_start();
-  $_SESSION["visited"] = "true";
-  if ($_SESSION["visited"] == "true")
-  {
-  	echo "TEST!";
-  	header('Location: http://php-jcomish.rhcloud.com/phpSurvey.php');
-  }
+    session_start();
+    $_SESSION["visited"] = "true";
+    if ($_SESSION["visited"] == "true")
+    {
+    	echo '<h5><a href="phpSurvey.html">Go Back</a></h5>';
+    	header('Location: http://php-jcomish.rhcloud.com/phpSurvey.php');
+    }
   ?>
   <form action="phpSurvey.php" method="post">
     <div>
