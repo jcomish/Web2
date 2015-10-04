@@ -107,7 +107,7 @@
 	}
 	fclose($_fp);
 
-	/*echo "<p2>Question 1 Results</p2><br/>";
+	echo "<p2>Question 1 Results</p2><br/>";
 	echo "<p2>Burritos " . $numbers[0] . "</p2><br/>";
 	echo "<p2> " . $numbers[0] . "</p2><br/>";
 	echo "<p2> " . $numbers[0] . "</p2><br/>";
@@ -127,7 +127,7 @@
 
 	echo "<p2>Question 1 Results</p2><br/>";
 	echo "<p2>Yes!! " . $numbers[0] . "</p2><br/>";
-	echo "<p2>Burritos " . $numbers[0] . "</p2><br/>";*/
+	echo "<p2>Burritos " . $numbers[0] . "</p2><br/>";
 	
     ?>
 
