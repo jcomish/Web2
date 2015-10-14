@@ -19,11 +19,15 @@
   <body>
     <p>Scripture Resources!</p>
     <?php
+    error_reporting(E_ALL | E_STRICT);
+    ini_set('display_errors',1);
+    ini_set('html_errors', 1);
     try
     {
       $user = 'jcomish'
       $password = 'myphpsql'; 
       $db = new PDO('mysql:host=127.3.118.2;dbname=scriptures', $user, $password);
+      $sth->execute();
     }
     catch (PDOException $ex) 
     {
@@ -34,7 +38,7 @@
     $statement = $db->query('SELECT * FROM scriptures');
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
-       echo '<b>' . $row['book'] . '</b> <b>'  . $row['chapter'] . '</b>:<b>' . $row['verse'] . '</b> - <b>' . $row['content'] . '<br />';
+       echo '<b>' . $row['book'] . '</b> <b>'  . $row['chapter'] . '</b>:<b>' . $row['verse'] . '</b> - "<b>' . $row['content'] . '"<br />';
     }
 
 
