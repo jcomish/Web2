@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang = "en">
   <head>
     <title>Joshua Comish</title>
@@ -17,17 +18,17 @@
   </br>
   <body>
     <?php
-    try
-    {
+    //try
+    //{
       $user = 'admin1l6TpZ1'
       $password = 's6ydBVys-qPm'; 
       $db = new PDO('mysql:host=https://php-jcomish.rhcloud.com/phpmyadmin;dbname=php', $user, $password);
-    }
-    catch (PDOException $ex) 
-    {
-      echo 'Error!: ' . $ex->getMessage();
-      die(); 
-    }
+    //}
+    //catch (PDOException $ex) 
+    //{
+    //  echo 'Error!: ' . $ex->getMessage();
+    //  die(); 
+    //}
     ?>
   </body>
 </html>
