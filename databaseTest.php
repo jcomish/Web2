@@ -17,17 +17,17 @@
 
   </br>
   <body>
-    <p>Scripture Resources!</p>
+    <p>Scripture Resources</p>
     <?php
 
-define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
-define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+    define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+    define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
+    define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+    define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+    define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
     try
     {
-      $dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT;
+      $dsn = 'mysql:dbname=scriptures;host='.DB_HOST.';port='.DB_PORT;
       $dbh = new PDO($dsn, DB_USER, DB_PASS);
       //$user = 'jcomish'
       //$password = 'myphpsql'; 
