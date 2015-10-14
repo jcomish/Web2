@@ -17,7 +17,7 @@
 
   </br>
   <body>
-    <p>Scripture Resources</p>
+    <h5>Scripture Resources</h5>
     <?php
 
     define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
@@ -29,10 +29,6 @@
     {
       $dsn = 'mysql:dbname=scriptures;host='.DB_HOST.';port='.DB_PORT;
       $db = new PDO($dsn, DB_USER, DB_PASS);
-      //$user = 'jcomish'
-      //$password = 'myphpsql'; 
-      //$db = new PDO('mysql:host=127.3.118.2;dbname=scriptures', $user, $password);
-
     }
     catch (PDOException $ex) 
     {
@@ -44,7 +40,10 @@
     $statement = $db->query('SELECT * FROM scriptures');
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
-       echo '<b>' . $row['book'] . '</b> <b>'  . $row['chapter'] . '</b>:<b>' . $row['verse'] . '</b> - "<b>' . $row['content'] . '"<br />';
+       echo '<p2><b>' . $row['book'] . '</b> <b>';
+       echo $row['chapter'] . '</b>:<b>';
+       echo $row['verse'] . '</b> - "<b>';
+       echo $row['content'] . '"<br /></p2>';
     }
 
 
