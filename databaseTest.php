@@ -17,18 +17,19 @@
 
   </br>
   <body>
+    <p>Scripture Resources</p>
     <?php
-    //try
-    //{
-      $user = 'admin1l6TpZ1'
-      $password = 's6ydBVys-qPm'; 
+    try
+    {
+      $user = 'jcomish'
+      $password = 'myphpsql'; 
       $db = new PDO('mysql:host=https://php-jcomish.rhcloud.com/phpmyadmin;dbname=php', $user, $password);
-    //}
-    //catch (PDOException $ex) 
-    //{
-    //  echo 'Error!: ' . $ex->getMessage();
-    //  die(); 
-    //}
+    }
+    catch (PDOException $ex) 
+    {
+      echo 'Error!: ' . $ex->getMessage();
+      die(); 
+    }
     ?>
   </body>
 </html>
