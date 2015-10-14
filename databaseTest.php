@@ -43,7 +43,7 @@
        echo '<p2><b>' . $row['book'] . '</b> <b>';
        echo $row['chapter'] . '</b>:<b>';
        echo $row['verse'] . '</b> - "<b>';
-       echo $row['content'] . '"<br /></p2>';
+       echo $row['content'] . '"</br></br></p2>';
     }
 
 
