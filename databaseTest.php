@@ -23,7 +23,7 @@
     {
       $user = 'jcomish'
       $password = 'myphpsql'; 
-      $db = new PDO('mysql:host=https://php-jcomish.rhcloud.com/phpmyadmin;dbname=php', $user, $password);
+      $db = new PDO('mysql:host=127.3.118.2;dbname=scriptures', $user, $password);
     }
     catch (PDOException $ex) 
     {
