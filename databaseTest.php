@@ -28,7 +28,7 @@
     try
     {
       $dsn = 'mysql:dbname=scriptures;host='.DB_HOST.';port='.DB_PORT;
-      $dbh = new PDO($dsn, 'jcomish', 'myphpsql');
+      $db = new PDO($dsn, DB_USER, DB_PASS);
       //$user = 'jcomish'
       //$password = 'myphpsql'; 
       //$db = new PDO('mysql:host=127.3.118.2;dbname=scriptures', $user, $password);
