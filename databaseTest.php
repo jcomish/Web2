@@ -17,7 +17,7 @@
 
   </br>
   <body>
-    <p>Scripture Resources</p>
+    <p>Scripture Resources!</p>
     <?php
     try
     {
