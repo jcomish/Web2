@@ -40,6 +40,7 @@
       die(); 
     }
 
+    $statement = $db->query('USE scriptures');
     $statement = $db->query('SELECT * FROM scriptures');
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
