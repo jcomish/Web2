@@ -30,6 +30,14 @@
       echo 'Error!: ' . $ex->getMessage();
       die(); 
     }
+
+    $statement = $db->query('SELECT * FROM scriptures');
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+       echo '<b>' . $row['book'] . '</b> <b>'  . $row['chapter'] . '</b>:<b>' . $row['verse'] . '</b> - <b>' . $row['content'] . '<br />';
+    }
+
+
     ?>
   </body>
 </html>
