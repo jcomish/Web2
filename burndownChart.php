@@ -1,10 +1,26 @@
 
 <?php
-$con=mysql_connect("localhost","Username","Password") or die("Failed to connect with database!!!!");
-mysql_select_db("Database Name", $con); 
+ define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+      define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+      define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+      define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+      define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+      try
+      {
+        $dsn = 'mysql:dbname=scriptures;host='.DB_HOST.';port='.DB_PORT;
+        $db = new PDO($dsn, DB_USER, DB_PASS);
+      }
+      catch (PDOException $ex)
+      {
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+      }
+
+//$con=mysql_connect("localhost","Username","Password") or die("Failed to connect with database!!!!");
+//mysql_select_db("Database Name", $con); 
 // The Chart table contains two fields: weekly_task and percentage
 // This example will display a pie chart. If you need other charts such as a Bar chart, you will need to modify the code a little to make it work with bar chart and other charts
-$sth = mysql_query("SELECT * FROM chart");
+$sth = $db->query("SELECT * FROM project");
 
 /*
 ---------------------------
