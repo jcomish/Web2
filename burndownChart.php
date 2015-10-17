@@ -26,7 +26,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $rel[] = $row;
     }
 
-echo "<select name=\"pcid\">"; 
+echo "<select name=\"rel\">"; 
 echo "<option size =30 ></option>";
 foreach ($rel as $value) {
     echo "<option selected='selected' value='" . $value['name'] . "'>" . $value['name'] . "</option>";
@@ -95,7 +95,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         height: 500
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+      var chart = new google.charts.Line(document.getElementById('linechart_material1'));
 
       chart.draw(data, options);
     }
@@ -121,7 +121,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   </br>
 
 <!--this is the div that will hold the pie chart-->
-  <div id="linechart_material"></div>
+  <div id="linechart_material1"></div>
 </body>
 
 
