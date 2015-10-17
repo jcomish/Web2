@@ -34,35 +34,36 @@
   die();
  }
 
+ $rel;
+ $milestones;
+ $task;
 //Get the data
 $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM rel");
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+while (array_push($rel = $statement->fetch(PDO::FETCH_ASSOC)))
     { 
-       echo '<p2>' . $row['rel_id'];
-       echo $row['name'];
-       echo $row['due_date'] . '</br></br></p2>';
+
     }
 
 $statement = $db->query("SELECT * FROM milestone");
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+while (array_push($milestones, $statement->fetch(PDO::FETCH_ASSOC)))
     { 
-       echo '<p2>' . $row['milestone_id'];
-       echo $row['name'];
-       echo $row['due_date'];
-       echo $row['rel'];
-       echo $row['visibile'] . '</br></br></p2>';
+       echo '<p2>' . $milestones['milestone_id'];
+       echo $milestones['name'];
+       echo $milestones['due_date'];
+       echo $milestones['rel'];
+       echo $milestones['visibile'] . '</br></br></p2>';
     }
 
   $statement = $db->query("SELECT * FROM task");
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+while (array_push($task = $statement->fetch(PDO::FETCH_ASSOC)))
     { 
-       echo '<p2>' . $row['task_id'];
-       echo $row['name'];
-       echo $row['milestone'];
-       echo $row['date_completed'];
-       echo $row['time'];
-       echo $row['status'] . '</br></br></p2>';
+       echo '<p2>' . $task['task_id'];
+       echo $task['name'];
+       echo $task['milestone'];
+       echo $task['date_completed'];
+       echo $task['time'];
+       echo $task['status'] . '</br></br></p2>';
     }
 ?>
 </body>
