@@ -138,7 +138,6 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
       var chart = new google.charts.Line(document.getElementById('linechart_material2'));
       chart.draw(data, options);
-    //test
 }
 
   </script>
