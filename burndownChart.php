@@ -51,7 +51,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       $milestones[] = $row;
     }
-foreach ($rel as $value)
+foreach ($milestones as $value)
 {
   echo $value['name'] . '</br>';
 }
@@ -63,7 +63,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     }
 foreach ($rel as $value)
 {
-  echo $value['name'] . '</br>';
+  echo $task['name'] . '</br>';
 }
 ?>
 </body>
