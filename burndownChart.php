@@ -42,19 +42,20 @@ $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM rel");
 while (array_push($rel = $statement->fetch(PDO::FETCH_ASSOC)))
     { 
-
     }
+foreach ($rel, as $value)
+{
+  echo $value['name'];
+}
 
 $statement = $db->query("SELECT * FROM milestone");
 while (array_push($milestones, $statement->fetch(PDO::FETCH_ASSOC)))
     { 
-//test
     }
 
   $statement = $db->query("SELECT * FROM task");
 while (array_push($task = $statement->fetch(PDO::FETCH_ASSOC)))
     { 
-
     }
 ?>
 </body>
