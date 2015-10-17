@@ -161,6 +161,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   </br>
 
 <!--this is the div that will hold the pie chart-->
+<div id="linechart_material1"></div>
   <div id="linechart_material2"></div>
 </body>
 
