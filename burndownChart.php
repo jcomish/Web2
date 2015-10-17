@@ -115,6 +115,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   <?php
 echo "<select name='PcID'>";
 foreach ($rel as $value) {
+    echo $value['name'];
     echo "<option value='" . $value['name'] . "</option>";
 }
 echo "</select>";
