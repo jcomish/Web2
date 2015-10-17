@@ -44,20 +44,27 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       $rel[] = $row;
     }
+
+
+$statement = $db->query("SELECT * FROM milestone");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+      $milestones[] = $row;
+    }
 foreach ($rel as $value)
 {
   echo $value['name'] . '</br>';
 }
 
-$statement = $db->query("SELECT * FROM milestone");
-while (array_push($milestones, $statement->fetch(PDO::FETCH_ASSOC)))
-    { 
-    }
-
   $statement = $db->query("SELECT * FROM task");
-while (array_push($task = $statement->fetch(PDO::FETCH_ASSOC)))
+while ($row = $statement->fetch(PDO::FETCH_ASSOC)))
     { 
+      $task[] = $row;
     }
+foreach ($rel as $value)
+{
+  echo $value['name'] . '</br>';
+}
 ?>
 </body>
 
