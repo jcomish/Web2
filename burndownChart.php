@@ -61,9 +61,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       $task[] = $row;
     }
-foreach ($rel as $value)
+foreach ($task as $value)
 {
-  echo $task['name'] . '</br>';
+  echo $value['name'] . '</br>';
 }
 ?>
 </body>
