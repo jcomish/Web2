@@ -57,7 +57,7 @@ foreach ($rel as $value)
 }
 
   $statement = $db->query("SELECT * FROM task");
-while ($row = $statement->fetch(PDO::FETCH_ASSOC)))
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       $task[] = $row;
     }
