@@ -63,20 +63,20 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       data.addColumn('number', 'Progress');
 
       data.addRows([
-        [new Date('16 Oct, 2015'),  56, 55],
-        [new Date('17 Oct, 2015'),  52, 53],
-        [new Date('18 Oct, 2015'),  48, 51],
-        [new Date('19 Oct, 2015'),  44, 49],
-        [new Date('20 Oct, 2015'),  40, 42],
-        [new Date('21 Oct, 2015'),  36, 36],
-        [new Date('22 Oct, 2015'),  32, 31],
-        [new Date('23 Oct, 2015'),  28, 25],
-        [new Date('24 Oct, 2015'),  24, 20],
-        [new Date('25 Oct, 2015'), 20, 15],
-        [new Date('26 Oct, 2015'), 16,  11],
-        [new Date('27 Oct, 2015'), 12,  6],
-        [new Date('28 Oct, 2015', 8,  2],
-        [new Date('29 Oct, 2015'), 0,  0]
+        [new Date(2015, 10, 16),  56, 55],
+        [new Date(2015, 10, 17),  52, 53],
+        [new Date(2015, 10, 18),  48, 51],
+        [new Date(2015, 10, 19),  44, 49],
+        [new Date(2015, 10, 20),  40, 42],
+        [new Date(2015, 10, 21),  36, 36],
+        [new Date(2015, 10, 22),  32, 31],
+        [new Date(2015, 10, 23),  28, 25],
+        [new Date(2015, 10, 24),  24, 20],
+        [new Date(2015, 10, 25), 20, 15],
+        [new Date(2015, 10, 26), 16,  11],
+        [new Date(2015, 10, 27), 12,  6],
+        [new Date(2015, 10, 28), 8,  2],
+        [new Date(2015, 10, 29), 0,  0]
       ]);
 
       var options = {
