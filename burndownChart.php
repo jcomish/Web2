@@ -61,6 +61,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     google.load('visualization', '1', {packages: ['line', 'corechart']});
             // Set a callback to run when the Google Visualization API is loaded.
     google.setOnLoadCallback(init);
+
     function init () {
       drawChart1();
       drawChart2();
@@ -111,7 +112,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       data.addColumn('number', 'Progress');
 
       data.addRows([
-        [new Date(2015, 10, 16),  56, 55],
+        [new Date(2015, 10, 16),  100, 100],
         [new Date(2015, 10, 17),  52, 53],
         [new Date(2015, 10, 18),  48, 51],
         [new Date(2015, 10, 19),  44, 49],
@@ -129,7 +130,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
       var options = {
         chart: {
-          title: 'Rocket Boots',
+          title: 'Power Generator',
           subtitle: 'Time remaining in hours'
         },
         width: 900,
