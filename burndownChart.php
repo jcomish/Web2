@@ -20,7 +20,14 @@
 //mysql_select_db("Database Name", $con); 
 // The Chart table contains two fields: weekly_task and percentage
 // This example will display a pie chart. If you need other charts such as a Bar chart, you will need to modify the code a little to make it work with bar chart and other charts
-$sth = $db->query("SELECT * FROM project");
+$statement = $db->query("USE project");
+$statement = echo $sth->query("SELECT * FROM rel")
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+       echo '<p2><b>' . $row['rel_id'] . '</b> <b>';
+       echo $row['name'] . '</b>:<b>';
+       echo $row['due_date'] . '</b> </br></br></p2>';
+    }
 
 /*
 ---------------------------
@@ -44,21 +51,7 @@ $table['cols'] = array(
     array('label' => 'Percentage', 'type' => 'number')
 
 );
-
-$rows = array();
-while($r = mysql_fetch_assoc($sth)) {
-    $temp = array();
-    // the following line will be used to slice the Pie chart
-    $temp[] = array('v' => (string) $r['Weekly_task']); 
-
-    // Values of each slice
-    $temp[] = array('v' => (int) $r['percentage']); 
-    $rows[] = array('c' => $temp);
-}
-
-$table['rows'] = $rows;
-$jsonTable = json_encode($table);
-//echo $jsonTable;
+ 
 ?>
 
 <html>
