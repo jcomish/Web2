@@ -104,12 +104,12 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     }
 
   function drawChart2() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('date', 'Time (In Hours)');
-      data.addColumn('number', 'Due Date');
-      data.addColumn('number', 'Progress');
+      var data2 = new google.visualization.DataTable();
+      data2.addColumn('date', 'Time (In Hours)');
+      data2.addColumn('number', 'Due Date');
+      data2.addColumn('number', 'Progress');
 
-      data.addRows([
+      data2.addRows([
         [new Date(2015, 10, 16),  56, 55],
         [new Date(2015, 10, 17),  52, 53],
         [new Date(2015, 10, 18),  48, 51],
@@ -126,7 +126,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         [new Date(2015, 10, 29), 0,  0]
       ]);
 
-      var options = {
+      var options2 = {
         chart: {
           title: 'Rocket Boots',
           subtitle: 'Time remaining in hours'
@@ -135,10 +135,10 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         height: 500
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart_material2'));
-      chart.draw(data, options);
+      var chart2 = new google.charts.Line(document.getElementById('linechart_material2'));
+      chart2.draw(data2, options2);
     //test
-    
+
 
   </script>
 
