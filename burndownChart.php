@@ -64,11 +64,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 
     function init () {
-      //drawChart1();
-            drawChart2();
+      drawChart1();
+      drawChart2();
     }
 
-    /*function drawChart1() {
+    function drawChart1() {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Time (In Hours)');
       data.addColumn('number', 'Due Date');
@@ -103,7 +103,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       var chart = new google.charts.Line(document.getElementById('linechart_material'));
       chart.draw(data, options);
 
-    }*/
+    }
 
   function drawChart2() 
   {
@@ -165,8 +165,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 <!--this is the div that will hold the pie chart-->
 <div id="linechart_material2"></div>
-<p></p>
-
+<p></p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div id="linechart_material2"></div>
 </body>
 
 
