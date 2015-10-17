@@ -62,11 +62,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
             // Set a callback to run when the Google Visualization API is loaded.
     google.setOnLoadCallback(drawChart1);
     function init () {
-      drawChart1();
+      //drawChart1();
       drawChart2();
     }
 
-    function drawChart1() {
+    /*function drawChart1() {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Time (In Hours)');
       data.addColumn('number', 'Due Date');
@@ -101,7 +101,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       var chart = new google.charts.Line(document.getElementById('linechart_material'));
       chart.draw(data, options);
 
-    }
+    }*/
 
   function drawChart2() {
       var data2 = new google.visualization.DataTable();
@@ -162,7 +162,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   </br>
 
 <!--this is the div that will hold the pie chart-->
-<div id="linechart_material"></div>
+
 <p></p>
 <div id="linechart_material2"></div>
 </body>
