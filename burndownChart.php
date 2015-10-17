@@ -34,14 +34,15 @@
   die();
  }
 
- $rel;
- $milestones;
- $task;
+ $rel = array();
+ $milestones = array();
+ $task = array();
 //Get the data
 $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM rel");
-while (array_push($rel, $statement->fetch(PDO::FETCH_ASSOC)))
+while ($statement->fetch(PDO::FETCH_ASSOC))
     { 
+      $rel[] = $statement;
     }
 foreach ($rel as $value)
 {
