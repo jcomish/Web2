@@ -63,26 +63,26 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       data.addColumn('number', 'Progress');
 
       data.addRows([
-        [1,  56, 80.8],
-        [2,  52, 69.5],
-        [3,  48,   57],
-        [4,  44, 18.8],
-        [5,  40, 17.6],
-        [6,  36, 13.6],
-        [7,  32, 12.3],
-        [8,  28, 29.2],
-        [9,  24, 42.9],
-        [10, 20, 30.9],
-        [11, 16,  7.9],
-        [12, 12,  8.4],
-        [13, 8,  6.3],
-        [14, 0,  6.2]
+        [1,  56, 55,
+        [2,  52, 53],
+        [3,  48, 51],
+        [4,  44, 49],
+        [5,  40, 42],
+        [6,  36, 36],
+        [7,  32, 31],
+        [8,  28, 25],
+        [9,  24, 20],
+        [10, 20, 15],
+        [11, 16,  11],
+        [12, 12,  6],
+        [13, 8,  2],
+        [14, 0,  0]
       ]);
 
       var options = {
         chart: {
-          title: 'Box Office Earnings in First Two Weeks of Opening',
-          subtitle: 'in millions of dollars (USD)'
+          title: 'Rocket Boots',
+          subtitle: 'Time remaining in hours'
         },
         width: 900,
         height: 500
