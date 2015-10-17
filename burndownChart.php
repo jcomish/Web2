@@ -57,15 +57,15 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script type="text/javascript">
-
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {packages: ['line', 'corechart']});
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(init);
+      drawChart2();
 
     function init () {
       drawChart1();
-                // Load the Visualization API and the piechart package.
-    google.load('visualization', '1', {packages: ['line', 'corechart']});
-            // Set a callback to run when the Google Visualization API is loaded.
-    google.setOnLoadCallback(init);
-      drawChart2();
+
     }
 
     function drawChart1() {
@@ -164,9 +164,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   </br>
 
 <!--this is the div that will hold the pie chart-->
-<div id="linechart_material"></div>
-<p></p>
 <div id="linechart_material2"></div>
+<p></p>
+<div id="linechart_material"></div>
 </body>
 
 
