@@ -64,7 +64,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 
     function init () {
-      drawChart1();
+      //drawChart1();
       drawChart2();
     }
 
