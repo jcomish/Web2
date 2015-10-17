@@ -63,7 +63,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     google.setOnLoadCallback(init);
     function init () {
       drawChart1();
-      drawChart1();
+      drawChart2();
     }
 
     function drawChart1() {
