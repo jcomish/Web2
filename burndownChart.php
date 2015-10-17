@@ -124,9 +124,12 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         height: 500
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart_material1'));
-      var chart2 = new google.charts.Line(document.getElementById('linechart_material2'));
-
+      //var chart = new google.charts.Line(document.getElementById('linechart_material1'));
+      //var chart2 = new google.charts.Line(document.getElementById('linechart_material2'));
+      var chart1 = new google.visualization.LineChart(document.getElementById('chart_div1'));
+            chart3.draw(data1, options1);
+      var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
+            chart3.draw(data2, options2);
       chart.draw(data, options);
     }
   </script>
@@ -151,8 +154,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   </br>
 
 <!--this is the div that will hold the pie chart-->
-<div id="linechart_material1"></div>
-  <div id="linechart_material2"></div>
+<div id="chart_div1"></div>
+  <div id="chart_div2"></div>
 </body>
 
 
