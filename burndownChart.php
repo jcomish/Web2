@@ -26,12 +26,13 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $rel[] = $row;
     }
 
-echo "<select name='PcID'>";
+echo "<select name='release'>";
 foreach ($rel as $value) {
-    echo $value['name'];
+    //echo $value['name'];
     echo "<option value='" . $value['name'] . "</option>";
 }
 echo "</select>";
+
 $statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
