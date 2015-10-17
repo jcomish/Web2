@@ -13,6 +13,8 @@
     <h4><a href="assignments.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Assignments</a></h4>
     </br>
     </br>
+    </br>
+    </br>
   </header>
 
 <?php
@@ -37,9 +39,30 @@ $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM rel");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
-       echo '<p2><b>' . $row['rel_id'] . '</b> <b>';
-       echo $row['name'] . '</b>:<b>';
-       echo $row['due_date'] . '</b></br></br></p2>';
+       echo '<p2>' . $row['rel_id'];
+       echo $row['name'];
+       echo $row['due_date'] . '</br></br></p2>';
+    }
+
+$statement = $db->query("SELECT * FROM milestone");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+       echo '<p2>' . $row['milestone_id'];
+       echo $row['name'];
+       echo $row['due_date'];
+       echo $row['rel'];
+       echo $row['visibile'] . '</br></br></p2>';
+    }
+
+  $statement = $db->query("SELECT * FROM task");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+       echo '<p2>' . $row['task_id'];
+       echo $row['name'];
+       echo $row['milestone'];
+       echo $row['date_completed'];
+       echo $row['time'];
+       echo $row['status'] . '</br></br></p2>';
     }
 ?>
 
