@@ -26,6 +26,12 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $rel[] = $row;
     }
 
+echo "<select name='PcID'>";
+foreach ($rel as $value) {
+    echo $value['name'];
+    echo "<option value='" . $value['name'] . "</option>";
+}
+echo "</select>";
 $statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
@@ -112,14 +118,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 <body>
   </br>
   </br>
-  <?php
-echo "<select name='PcID'>";
-foreach ($rel as $value) {
-    echo $value['name'];
-    echo "<option value='" . $value['name'] . "</option>";
-}
-echo "</select>";
-?>
+
 <!--this is the div that will hold the pie chart-->
   <div id="linechart_material"></div>
 </body>
