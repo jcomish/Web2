@@ -60,10 +60,10 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
           // Load the Visualization API and the piechart package.
     google.load('visualization', '1', {packages: ['line', 'corechart']});
             // Set a callback to run when the Google Visualization API is loaded.
-    google.setOnLoadCallback(drawChart1);
+    google.setOnLoadCallback(drawChart2);
     function init () {
       //drawChart1();
-      drawChart2();
+      //drawChart2();
     }
 
     /*function drawChart1() {
