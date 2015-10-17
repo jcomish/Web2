@@ -45,7 +45,7 @@ while (array_push($rel = $statement->fetch(PDO::FETCH_ASSOC)))
     }
 foreach ($rel as $value)
 {
-  echo $value['name'];
+  echo $value['name'] . '</br>';
 }
 
 $statement = $db->query("SELECT * FROM milestone");
