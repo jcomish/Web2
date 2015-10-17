@@ -97,6 +97,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       var chart = new google.charts.Line(document.getElementById('linechart_material'));
       chart.draw(data, options);
 
+
+
+
       var data2 = new google.visualization.DataTable();
       data2.addColumn('date', 'Time (In Hours)');
       data2.addColumn('number', 'Due Date');
@@ -157,6 +160,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 <!--this is the div that will hold the pie chart-->
 <div id="linechart_material"></div>
+</br></br></br></br></br></br></br></br></br></br></br></br>
 <div id="linechart_material2"></div>
 </body>
 
