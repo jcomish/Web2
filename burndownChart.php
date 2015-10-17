@@ -58,23 +58,45 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script type="text/javascript">
     // Load the Visualization API and the piechart package.
-    google.load('visualization', '1.0', {packages: ['corechart']});
+    google.load('visualization', '1.0', {packages: ['line', 'corechart']});
     // Set a callback to run when the Google Visualization API is loaded.
-    google.setOnLoadCallback(init);
+    google.setOnLoadCallback(drawChart);
 
 
-    function init () {
+    /*function init () {
       drawChart1();
       drawChart2();
-    }
+    }*/
 
-    function drawChart1() {
+    function drawChart() {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Time (In Hours)');
       data.addColumn('number', 'Due Date');
       data.addColumn('number', 'Progress');
 
       data.addRows([
+        [new Date(2015, 10, 16),  56, 55],
+        [new Date(2015, 10, 17),  52, 53],
+        [new Date(2015, 10, 18),  48, 51],
+        [new Date(2015, 10, 19),  44, 49],
+        [new Date(2015, 10, 20),  40, 42],
+        [new Date(2015, 10, 21),  36, 36],
+        [new Date(2015, 10, 22),  32, 31],
+        [new Date(2015, 10, 23),  28, 25],
+        [new Date(2015, 10, 24),  24, 20],
+        [new Date(2015, 10, 25), 20, 15],
+        [new Date(2015, 10, 26), 16,  11],
+        [new Date(2015, 10, 27), 12,  6],
+        [new Date(2015, 10, 28), 8,  2],
+        [new Date(2015, 10, 29), 0,  0]
+      ]);
+
+      var data2 = new google.visualization.DataTable();
+      data2.addColumn('date', 'Time (In Hours)');
+      data2.addColumn('number', 'Due Date');
+      data2.addColumn('number', 'Progress');
+
+      data2.addRows([
         [new Date(2015, 10, 16),  56, 55],
         [new Date(2015, 10, 17),  52, 53],
         [new Date(2015, 10, 18),  48, 51],
@@ -100,12 +122,24 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         height: 500
       };
 
+      var options2 = {
+        chart: {
+          title: 'Rocket Boots',
+          subtitle: 'Time remaining in hours'
+        },
+        width: 900,
+        height: 500
+      };
+
       var chart = new google.charts.Line(document.getElementById('linechart_material'));
       chart.draw(data, options);
 
+      var chart2 = new google.charts.Line(document.getElementById('linechart_material2'));
+      chart2.draw(data2, options2);
+
     }
 
-  function drawChart2() 
+  /*function drawChart2() 
   {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Time (In Hours)');
@@ -140,7 +174,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
       var chart = new google.charts.PieChart(document.getElementById('linechart_material2'));
       chart.draw(data, options);
- } 
+ } */
 
   </script>
 
