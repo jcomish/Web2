@@ -65,6 +65,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
     function init () {
       drawChart1();
+      google.load('visualization', '1', {packages: ['line', 'corechart']});
       drawChart2();
     }
 
