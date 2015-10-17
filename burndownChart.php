@@ -33,14 +33,14 @@
       }
 
 //Get the data
-/*$statement = $db->query("USE project");
-$statement = echo $sth->query("SELECT * FROM rel")
+$statement = $db->query("USE project");
+$statement = $db->query("SELECT * FROM rel")
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
        echo '<p2><b>' . $row['rel_id'] . '</b> <b>';
        echo $row['name'] . '</b>:<b>';
        echo $row['due_date'] . '</b></br></br></p2>';
-    }*/
+    }
 ?>
 
 
