@@ -125,13 +125,13 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         height: 500
       };
 
-      //var chart = new google.charts.Line(document.getElementById('linechart_material1'));
+      var chart = new google.charts.Line(document.getElementById('chart_div1'));
       //var chart2 = new google.charts.Line(document.getElementById('linechart_material2'));
-      var chart1 = new google.visualization.LineChart(document.getElementById('chart_div1'));
-            chart1.draw(data1, options1);
+      //var chart1 = new google.visualization.LineChart(document.getElementById('chart_div1'));
+      //      chart1.draw(data1, options1);
       //var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
       //      chart2.draw(data2, options2);
-      //chart.draw(data, options);
+      chart.draw(data, options);
     }
   </script>
 
