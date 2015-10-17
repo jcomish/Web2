@@ -48,22 +48,13 @@ while (array_push($rel = $statement->fetch(PDO::FETCH_ASSOC)))
 $statement = $db->query("SELECT * FROM milestone");
 while (array_push($milestones, $statement->fetch(PDO::FETCH_ASSOC)))
     { 
-       echo '<p2>' . $milestones['milestone_id'];
-       echo $milestones['name'];
-       echo $milestones['due_date'];
-       echo $milestones['rel'];
-       echo $milestones['visibile'] . '</br></br></p2>';
+//test
     }
 
   $statement = $db->query("SELECT * FROM task");
 while (array_push($task = $statement->fetch(PDO::FETCH_ASSOC)))
     { 
-       echo '<p2>' . $task['task_id'];
-       echo $task['name'];
-       echo $task['milestone'];
-       echo $task['date_completed'];
-       echo $task['time'];
-       echo $task['status'] . '</br></br></p2>';
+
     }
 ?>
 </body>
