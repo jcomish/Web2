@@ -43,7 +43,7 @@ $statement = $db->query("SELECT * FROM rel");
 while (array_push($rel = $statement->fetch(PDO::FETCH_ASSOC)))
     { 
     }
-foreach ($rel, as $value)
+foreach ($rel as $value)
 {
   echo $value['name'];
 }
