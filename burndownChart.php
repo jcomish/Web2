@@ -26,7 +26,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $rel[] = $row;
     }
 
-echo "<select name='release'>";
+echo "<select name=\"pcid\">"; 
+echo "<option size =30 ></option>";
 foreach ($rel as $value) {
     echo "<option value='" . $value['rel'] . "'>" . $value['rel'] . "</option>";
 }
