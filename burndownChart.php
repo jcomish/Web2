@@ -63,7 +63,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       data.addColumn('number', 'Progress');
 
       data.addRows([
-        [1,  56, 55,
+        [1,  56, 55],
         [2,  52, 53],
         [3,  48, 51],
         [4,  44, 49],
