@@ -115,6 +115,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         width: 900,
         height: 500
       };
+
       var options2 = {
         chart: {
           title: 'Power Generator',
@@ -128,8 +129,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       //var chart2 = new google.charts.Line(document.getElementById('linechart_material2'));
       var chart1 = new google.visualization.LineChart(document.getElementById('chart_div1'));
             chart1.draw(data1, options1);
-      var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
-            chart2.draw(data2, options2);
+      //var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
+      //      chart2.draw(data2, options2);
       //chart.draw(data, options);
     }
   </script>
@@ -155,7 +156,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 <!--this is the div that will hold the pie chart-->
 <div id="chart_div1"></div>
-  <div id="chart_div2"></div>
+
 </body>
 
 
