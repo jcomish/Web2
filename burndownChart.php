@@ -60,13 +60,13 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
           // Load the Visualization API and the piechart package.
     google.load('visualization', '1', {packages: ['line', 'corechart']});
             // Set a callback to run when the Google Visualization API is loaded.
-    google.setOnLoadCallback(drawChart2);
+    google.setOnLoadCallback(drawChart1);
     function init () {
       //drawChart1();
       //drawChart2();
     }
 
-    /*function drawChart1() {
+    function drawChart1() {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Time (In Hours)');
       data.addColumn('number', 'Due Date');
@@ -101,9 +101,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       var chart = new google.charts.Line(document.getElementById('linechart_material'));
       chart.draw(data, options);
 
-    }*/
+    }
 
-  function drawChart2() {
+  /*function drawChart2() {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Time (In Hours)');
       data.addColumn('number', 'Due Date');
@@ -138,7 +138,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       var chart = new google.charts.Line(document.getElementById('linechart_material'));
       chart.draw(data, options);
     //test
-
+*/
 
   </script>
 
