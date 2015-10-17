@@ -65,11 +65,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     function drawChart() {
 
       var data1 = new google.visualization.DataTable();
-      data.addColumn('date', 'Time (In Hours)');
-      data.addColumn('number', 'Due Date');
-      data.addColumn('number', 'Progress');
+      data1.addColumn('date', 'Time (In Hours)');
+      data1.addColumn('number', 'Due Date');
+      data1.addColumn('number', 'Progress');
 
-      data.addRows([
+      data1.addRows([
         [new Date(2015, 10, 16),  56, 55],
         [new Date(2015, 10, 17),  52, 53],
         [new Date(2015, 10, 18),  48, 51],
@@ -86,11 +86,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         [new Date(2015, 10, 29), 0,  0]
       ]);
       var data2 = new google.visualization.DataTable();
-      data.addColumn('date', 'Time (In Hours)');
-      data.addColumn('number', 'Due Date');
-      data.addColumn('number', 'Progress');
+      data2.addColumn('date', 'Time (In Hours)');
+      data2.addColumn('number', 'Due Date');
+      data2.addColumn('number', 'Progress');
 
-      data.addRows([
+      data2.addRows([
         [new Date(2015, 10, 16),  56, 55],
         [new Date(2015, 10, 17),  52, 53],
         [new Date(2015, 10, 18),  48, 51],
@@ -107,7 +107,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         [new Date(2015, 10, 29), 0,  0]
       ]);
 
-      var options = {
+      var options1 = {
         chart: {
           title: 'Rocket Boots',
           subtitle: 'Time remaining in hours'
