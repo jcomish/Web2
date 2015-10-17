@@ -40,9 +40,9 @@
 //Get the data
 $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM rel");
-while ($statement->fetch(PDO::FETCH_ASSOC))
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
-      $rel[] = $statement;
+      $rel[] = $row;
     }
 foreach ($rel as $value)
 {
