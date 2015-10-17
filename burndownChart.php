@@ -58,12 +58,12 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script type="text/javascript">
           // Load the Visualization API and the piechart package.
-    google.load('visualization', '1.1', {packages: ['corechart']});
+    google.load('visualization', '1.1', {packages: ['line', 'corechart']});
             // Set a callback to run when the Google Visualization API is loaded.
     google.setOnLoadCallback(init);
     function init () {
       drawChart1();
-      //drawChart2();
+      drawChart2();
     }
 
     function drawChart1() {
@@ -103,7 +103,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
     }
 
-  /*function drawChart2() {
+  function drawChart2() {
       var data2 = new google.visualization.DataTable();
       data2.addColumn('date', 'Time (In Hours)');
       data2.addColumn('number', 'Due Date');
@@ -137,7 +137,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
       var chart2 = new google.charts.Line(document.getElementById('linechart_material2'));
       chart2.draw(data2, options2);
-    //test*/
+    //test
 
 
   </script>
@@ -164,7 +164,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 <!--this is the div that will hold the pie chart-->
 <div id="linechart_material"></div>
 <p></p>
-
+<div id="linechart_material2"></div>
 </body>
 
 
