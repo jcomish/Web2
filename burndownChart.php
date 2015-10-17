@@ -13,26 +13,26 @@
     <h4><a href="assignments.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Assignments</a></h4>
     </br>
     </br>
-    </br>
-    </br>
   </header>
-
+<body>
+  </br>
+  </br>
 <?php
  define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-      define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
-      define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-      define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-      define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
-      try
-      {
-        $dsn = 'mysql:dbname=scriptures;host='.DB_HOST.';port='.DB_PORT;
-        $db = new PDO($dsn, DB_USER, DB_PASS);
-      }
-      catch (PDOException $ex)
-      {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
+ define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+ define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+ define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+ define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+ try
+ {
+  $dsn = 'mysql:dbname=scriptures;host='.DB_HOST.';port='.DB_PORT;
+  $db = new PDO($dsn, DB_USER, DB_PASS);
+ }
+ catch (PDOException $ex)
+ {
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+ }
 
 //Get the data
 $statement = $db->query("USE project");
@@ -65,7 +65,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
        echo $row['status'] . '</br></br></p2>';
     }
 ?>
-
+</body>
 
 
   
