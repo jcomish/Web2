@@ -130,7 +130,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
             chart3.draw(data1, options1);
       var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
             chart3.draw(data2, options2);
-      chart.draw(data, options);
+      //chart.draw(data, options);
     }
   </script>
 
