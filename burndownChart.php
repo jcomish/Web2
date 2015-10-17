@@ -60,7 +60,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
           // Load the Visualization API and the piechart package.
     google.load('visualization', '1.1', {packages: ['line']});
             // Set a callback to run when the Google Visualization API is loaded.
-    google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart1);
 
     function drawChart1() {
 
@@ -95,13 +95,10 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         height: 500
       };
 
-      var chart = new google.charts.Line(document.getElementById('linechart_material'));
+      var chart = new google.charts.Line(document.getElementById('linechart_material1'));
 
       chart.draw(data, options);
     }
-
-
-    
   </script>
 
 
@@ -124,8 +121,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   </br>
 
 <!--this is the div that will hold the pie chart-->
-  <div id="linechart_material"></div>
-
+  <div id="linechart_material1"></div>
 </body>
 
 
