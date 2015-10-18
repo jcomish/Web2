@@ -55,16 +55,16 @@ $i = 0;
 foreach($milestones as $value)
 {
   $ETC = 0;
-  echo "<h5>" . $value['name'] . "</h5></br><ol>";
+  echo "<h5>" . $value['name'] . "</h5><table>";
   foreach($task as $value1)
   {
     if ($value1['milestone'] == $value['milestone_id'])
     {
       $ETC += $value1['time'];
-      echo "<li>" . $value1['name'] . "     " . $value1['time'] . "</li>";
+      echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td></tr>";
     }
   }
-  echo "</ol></br><p2>Time Remaining: " . $ETC . "</p2></br>";
+  echo "</table></br><p2>Time Remaining: " . $ETC . "</p2><br/><br/></br>";
 }
 
 ?>
