@@ -47,161 +47,97 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 ?>
 
 
-<html lang = "en">
-  <head>
-    <title>Joshua Comish</title>
-    <link rel="stylesheet" type="text/css" href="Jomish.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"/>
+<html>
+      <head>
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
 
-    <!--Load the Ajax API-->
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript">
-    // Load the Visualization API and the piechart package.
-    google.load('visualization', '1.0', {packages: ['line', 'corechart']});
-    // Set a callback to run when the Google Visualization API is loaded.
-    google.setOnLoadCallback(drawChart);
+          // Load the Visualization API and the piechart package.
+          google.load('visualization', '1.0', {'packages':['corechart']});
 
+          // Set a callback to run when the Google Visualization API is loaded.
+          google.setOnLoadCallback(drawChart);
 
-    /*function init () {
-      drawChart1();
-      drawChart2();
-    }*/
+          // Callback that creates and populates a data table,
+          // instantiates the pie chart, passes in the data and
+          // draws it.
+          function drawChart() {
 
-    function drawChart() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('date', 'Time (In Hours)');
-      data.addColumn('number', 'Due Date');
-      data.addColumn('number', 'Progress');
+            // Create the data table.
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');    
+            data.addColumn('number', 'Slices');
+            data.addRows([
+              ['Mushrooms', 3],
+              ['Onions', 1],
+              ['Olives', 1],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);
+            // Create the data table.
+            var data2 = new google.visualization.DataTable();
+            data2.addColumn('string', 'Topping');
+            data2.addColumn('number', 'Slices');
+            data2.addRows([
+              ['Mushrooms', 3],
+              ['Onions', 1],
+              ['Olives', 15],
+              ['Zucchini', 1],
+              ['Pepperoni', 2]
+            ]);
 
-      data.addRows([
-        [new Date(2015, 10, 16),  56, 55],
-        [new Date(2015, 10, 17),  52, 53],
-        [new Date(2015, 10, 18),  48, 51],
-        [new Date(2015, 10, 19),  44, 49],
-        [new Date(2015, 10, 20),  40, 42],
-        [new Date(2015, 10, 21),  36, 36],
-        [new Date(2015, 10, 22),  32, 31],
-        [new Date(2015, 10, 23),  28, 25],
-        [new Date(2015, 10, 24),  24, 20],
-        [new Date(2015, 10, 25), 20, 15],
-        [new Date(2015, 10, 26), 16,  11],
-        [new Date(2015, 10, 27), 12,  6],
-        [new Date(2015, 10, 28), 8,  2],
-        [new Date(2015, 10, 29), 0,  0]
-      ]);
+            var data3 = new google.visualization.DataTable();
+            data3.addColumn('string', 'Year');
+            data3.addColumn('number', 'Sales');
+            data3.addColumn('number', 'Expenses');
+            data3.addRows([
+              ['2004', 1000, 400],
+              ['2005', 1170, 460],
+              ['2006',  860, 580],
+              ['2007', 1030, 540]
+            ]);
 
-      var data2 = new google.visualization.DataTable();
-      data2.addColumn('date', 'Time (In Hours)');
-      data2.addColumn('number', 'Due Date');
-      data2.addColumn('number', 'Progress');
+            // Set chart options
+            var options = {'title':'How Much Pizza I Ate Last Night',
+                           'width':400,
+                           'height':300};
+            // Set chart options
+            var options2 = {'title':'How Much Pizza You Ate Last Night',
+                           'width':400,
+                           'height':300};
+            // Set chart options
+            var options3 = {'title':'Line chart',
+                           'width':400,
+                           'height':300};
 
-      data2.addRows([
-        [new Date(2015, 10, 16),  56, 55],
-        [new Date(2015, 10, 17),  52, 53],
-        [new Date(2015, 10, 18),  48, 51],
-        [new Date(2015, 10, 19),  44, 49],
-        [new Date(2015, 10, 20),  40, 42],
-        [new Date(2015, 10, 21),  36, 36],
-        [new Date(2015, 10, 22),  32, 31],
-        [new Date(2015, 10, 23),  28, 25],
-        [new Date(2015, 10, 24),  24, 20],
-        [new Date(2015, 10, 25), 20, 15],
-        [new Date(2015, 10, 26), 16,  11],
-        [new Date(2015, 10, 27), 12,  6],
-        [new Date(2015, 10, 28), 8,  2],
-        [new Date(2015, 10, 29), 0,  0]
-      ]);
+            // Instantiate and draw our chart, passing in some options.
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+            var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
+            chart2.draw(data2, options2);
+            var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
+            chart3.draw(data3, options3);
 
-      var options = {
-        chart: {
-          title: 'Rocket Boots',
-          subtitle: 'Time remaining in hours'
-        },
-        width: 900,
-        height: 500
-      };
+          }
+        </script>
+      </head>
 
-      var options2 = {
-        chart: {
-          title: 'Rocket Boots',
-          subtitle: 'Time remaining in hours'
-        },
-        width: 900,
-        height: 500
-      };
+      <body>
+        <!--Divs that will hold the charts-->
+        <div id="chart_div"></div>
+        <div id="chart_div2"></div>
+        <div id="chart_div3"></div>
+      </body>
+    </html>
+shareimprove this answer
+edited Mar 27 '12 at 21:27
 
-      var chart = new google.charts.Line(document.getElementById('linechart_material'));
-      chart.draw(data, options);
+answered Mar 27 '12 at 20:57
 
-      var chart2 = new google.charts.Line(document.getElementById('linechart_material2'));
-      chart2.draw(data2, options2);
+Dominor Novus
+1,02041831
 
-    }
-
-  /*function drawChart2() 
-  {
-      var data = new google.visualization.DataTable();
-      data.addColumn('date', 'Time (In Hours)');
-      data.addColumn('number', 'Due Date');
-      data.addColumn('number', 'Progress');
-
-      data.addRows([
-        [new Date(2015, 10, 16),  100, 100],
-        [new Date(2015, 10, 17),  52, 53],
-        [new Date(2015, 10, 18),  48, 51],
-        [new Date(2015, 10, 19),  44, 49],
-        [new Date(2015, 10, 20),  40, 42],
-        [new Date(2015, 10, 21),  36, 36],
-        [new Date(2015, 10, 22),  32, 31],
-        [new Date(2015, 10, 23),  28, 25],
-        [new Date(2015, 10, 24),  24, 20],
-        [new Date(2015, 10, 25), 20, 15],
-        [new Date(2015, 10, 26), 16,  11],
-        [new Date(2015, 10, 27), 12,  6],
-        [new Date(2015, 10, 28), 8,  2],
-        [new Date(2015, 10, 29), 0,  0]
-      ]);
-
-      var options = {
-        chart: {
-          title: 'Power Generator',
-          subtitle: 'Time remaining in hours'
-        },
-        width: 900,
-        height: 500
-      };
-
-      var chart = new google.charts.PieChart(document.getElementById('linechart_material2'));
-      chart.draw(data, options);
- } */
-
-  </script>
-
-
-
-
-
-
-  </head>
-
-  <header>
-    </br>
-    <h4><a href="index.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Home</a> </h4>
-    <h4><a href="assign032.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Projects</a> </h4>
-    <h4><a href="assignments.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Assignments</a></h4>
-    </br>
-    </br>
-  </header>
-<body>
-  </br>
-  </br>
-
-<!--this is the div that will hold the pie chart-->
-<div id="linechart_material"></div>
-<div id="linechart_material2"></div>
-
-</body>
 
 
   
