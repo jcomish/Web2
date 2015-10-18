@@ -130,6 +130,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
       var chart2 = new google.charts.Line(document.getElementById('chart_div2'));
       chart2.draw(data2, options2);
+    }
           /*function drawChart() {
 
             // Create the data table.
