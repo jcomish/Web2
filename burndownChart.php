@@ -30,13 +30,26 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $rel[] = $row;
     }
 
+$selRelease = "NULL";
+if($_POST['submit'] && $_POST['submit'] != 0)
+{
+   $selRelease=$_POST['release'];
+}
 //Dropdown menu
 echo "<form action='burndownChart.php' method='post'>";
 echo "</br></br><p2>Select Release:</p2></br>";
 echo "<select name=\"rel\" id='release'>"; 
 echo "<option size =30 ></option>";
+$i = 0;
 foreach ($rel as $value) {
+  if ($selRelease == "NULL" && $i == 0)
+  {
     echo "<option selected='selected' value='" . $value['name'] . "'>" . $value['name'] . "</option>";
+  }
+  else 
+  {
+    echo "<option value='" . $value['name'] . "'>" . $value['name'] . "</option>";
+  }
 }
 echo "</select>";
 echo "<input type='submit' value='View'>";
