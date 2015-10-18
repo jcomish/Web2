@@ -56,7 +56,7 @@ $i = 0;
 foreach($milestones as $value)
 {
   $ETC = 0;
-  echo "<h5>" . $value['name'] . "</h5>";
+  echo "<h6>" . $value['name'] . "</h6>";
   echo "<table border='1'><tr><td>Task</td><td>Estimated Time</td></tr>";
   foreach($task as $value1)
   {
@@ -66,7 +66,7 @@ foreach($milestones as $value)
       echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td></tr>";
     }
   }
-  echo "</table></br><p2>Time Remaining: " . $ETC . "</p2><br/><br/></br></br>";
+  echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
 }
 
 ?>

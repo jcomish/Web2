@@ -64,6 +64,20 @@ h5
     color:Orange;
 }
 
+p3
+{
+    font-family: "Times New Roman", Times, serif;
+    word-wrap:break-word;
+    color:Green;
+}
+
+h6
+{
+    font-size:30px;
+    color:inherit;
+    color:Orange;
+}
+
 table
 {
     width:60%;
@@ -80,7 +94,7 @@ td
 {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 20%;
 }
 
 header
