@@ -62,12 +62,16 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   function init()
   {
     <?php
-    $js_array = json_encode($milestones);
-    echo "var js_milestones = ". $js_array . ";\n";
+    $js_milestones = json_encode($milestones);
+    echo "var js_milestones = ". $js_milestones . ";\n";
+    $js_task = json_encode($task);
+    echo "var js_task = ". $js_tasks . ";\n";
+
+
     ?>
-    for (int i = 0; i < js_milestones.length(); i++)
+    for (int i = 0; i < js_milestones.length; i++)
     {
-      for (int j = 0; j < js_milestones[i].length(); j++)
+      for (int j = 0; j < js_milestones[i].length; j++)
       {
         js_milestones[i][j];
       }
@@ -76,7 +80,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     drawChart1();
   }
 
-    function drawChart1() 
+    function drawChart1(/*milestone_name, tasks, i*?) 
     {
 
       // Create the data table.
