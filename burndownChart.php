@@ -32,7 +32,6 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 $selRelease = -1;
 
-echo "<br/><br/><br/>Release:" . $selRelease;
 //Dropdown menu
 echo "<form action='burndownChart.php' method='post'>";
 echo "</br></br><p2>Select Release:</p2></br>";
