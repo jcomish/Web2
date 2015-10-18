@@ -132,7 +132,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       var chart2 = new google.charts.Line(document.getElementById('chart_div2'));
       chart2.draw(data2, options2);
     }*/
-          function drawChart() {
+          function drawChart() 
+          {
 
             // Create the data table.
             var data = new google.visualization.DataTable();
@@ -178,7 +179,6 @@ var data3 = new google.visualization.DataTable();
         [new Date(2015, 10, 28), 8,  2],
         [new Date(2015, 10, 29), 0,  0]
       ]);
-            ]);
 
             // Set chart options
             var options = {'title':'How Much Pizza I Ate Last Night',
