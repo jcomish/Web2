@@ -157,15 +157,27 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
               ['Pepperoni', 2]
             ]);
 
-            var data3 = new google.visualization.DataTable();
-            data3.addColumn('string', 'Year');
-            data3.addColumn('number', 'Sales');
-            data3.addColumn('number', 'Expenses');
-            data3.addRows([
-              ['2004', 1000, 400],
-              ['2005', 1170, 460],
-              ['2006',  860, 580],
-              ['2007', 1030, 540]
+var data3 = new google.visualization.DataTable();
+      data3.addColumn('date', 'Time (In Hours)');
+      data3.addColumn('number', 'Due Date');
+      data3.addColumn('number', 'Progress');
+
+      data3.addRows([
+        [new Date(2015, 10, 16),  56, 55],
+        [new Date(2015, 10, 17),  52, 53],
+        [new Date(2015, 10, 18),  48, 51],
+        [new Date(2015, 10, 19),  44, 49],
+        [new Date(2015, 10, 20),  40, 42],
+        [new Date(2015, 10, 21),  36, 36],
+        [new Date(2015, 10, 22),  32, 31],
+        [new Date(2015, 10, 23),  28, 25],
+        [new Date(2015, 10, 24),  24, 20],
+        [new Date(2015, 10, 25), 20, 15],
+        [new Date(2015, 10, 26), 16,  11],
+        [new Date(2015, 10, 27), 12,  6],
+        [new Date(2015, 10, 28), 8,  2],
+        [new Date(2015, 10, 29), 0,  0]
+      ]);
             ]);
 
             // Set chart options
@@ -177,9 +189,14 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
                            'width':400,
                            'height':300};
             // Set chart options
-            var options3 = {'title':'Line chart',
-                           'width':400,
-                           'height':300};
+var options3 = {
+        chart: {
+          title: 'Rocket Boots',
+          subtitle: 'Time remaining in hours'
+        },
+        width: 400,
+        height: 300
+      };
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -198,6 +215,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         <!--Divs that will hold the charts-->
         <div id="chart_div"></div>
         <div id="chart_div2"></div>
+        <div id="chart_div3"></div>
       </body>
     </html>
 
