@@ -55,7 +55,7 @@ foreach ($rel as $value) {
   }
 }
 echo "</select>";
-echo "<input type='submit' value='View' method='post'>";
+echo "<input type='submit' value='View'>";
 echo "</form>";
 
 
