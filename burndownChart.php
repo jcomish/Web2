@@ -63,6 +63,74 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
           // instantiates the pie chart, passes in the data and
           // draws it.
           function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('date', 'Time (In Hours)');
+      data.addColumn('number', 'Due Date');
+      data.addColumn('number', 'Progress');
+
+      data.addRows([
+        [new Date(2015, 10, 16),  56, 55],
+        [new Date(2015, 10, 17),  52, 53],
+        [new Date(2015, 10, 18),  48, 51],
+        [new Date(2015, 10, 19),  44, 49],
+        [new Date(2015, 10, 20),  40, 42],
+        [new Date(2015, 10, 21),  36, 36],
+        [new Date(2015, 10, 22),  32, 31],
+        [new Date(2015, 10, 23),  28, 25],
+        [new Date(2015, 10, 24),  24, 20],
+        [new Date(2015, 10, 25), 20, 15],
+        [new Date(2015, 10, 26), 16,  11],
+        [new Date(2015, 10, 27), 12,  6],
+        [new Date(2015, 10, 28), 8,  2],
+        [new Date(2015, 10, 29), 0,  0]
+      ]);
+
+      var data2 = new google.visualization.DataTable();
+      data2.addColumn('date', 'Time (In Hours)');
+      data2.addColumn('number', 'Due Date');
+      data2.addColumn('number', 'Progress');
+
+      data2.addRows([
+        [new Date(2015, 10, 16),  56, 55],
+        [new Date(2015, 10, 17),  52, 53],
+        [new Date(2015, 10, 18),  48, 51],
+        [new Date(2015, 10, 19),  44, 49],
+        [new Date(2015, 10, 20),  40, 42],
+        [new Date(2015, 10, 21),  36, 36],
+        [new Date(2015, 10, 22),  32, 31],
+        [new Date(2015, 10, 23),  28, 25],
+        [new Date(2015, 10, 24),  24, 20],
+        [new Date(2015, 10, 25), 20, 15],
+        [new Date(2015, 10, 26), 16,  11],
+        [new Date(2015, 10, 27), 12,  6],
+        [new Date(2015, 10, 28), 8,  2],
+        [new Date(2015, 10, 29), 0,  0]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'Rocket Boots',
+          subtitle: 'Time remaining in hours'
+        },
+        width: 900,
+        height: 500
+      };
+
+      var options2 = {
+        chart: {
+          title: 'Rocket Boots',
+          subtitle: 'Time remaining in hours'
+        },
+        width: 900,
+        height: 500
+      };
+
+      var chart = new google.charts.Line(document.getElementById('chart_div'));
+      chart.draw(data, options);
+
+      var chart2 = new google.charts.Line(document.getElementById('chart_div2'));
+      chart2.draw(data2, options2);
+          /*function drawChart() {
 
             // Create the data table.
             var data = new google.visualization.DataTable();
@@ -117,7 +185,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
             var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
             chart2.draw(data2, options2);
             var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
-            chart3.draw(data3, options3);
+            chart3.draw(data3, options3);*/
 
           }
         </script>
@@ -127,16 +195,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
         <!--Divs that will hold the charts-->
         <div id="chart_div"></div>
         <div id="chart_div2"></div>
-        <div id="chart_div3"></div>
       </body>
     </html>
-shareimprove this answer
-edited Mar 27 '12 at 21:27
 
-answered Mar 27 '12 at 20:57
-
-Dominor Novus
-1,02041831
 
 
 
