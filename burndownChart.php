@@ -18,6 +18,10 @@
  $rel = array();
  $milestones = array();
  $task = array();
+
+ $relTime = array();
+ $milestoneTime = array();
+
 //Get the data
 $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM rel");
@@ -40,11 +44,28 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $milestones[] = $row;
     }
 
-  $statement = $db->query("SELECT * FROM task");
+
+$statement = $db->query("SELECT * FROM task");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       $task[] = $row;
     }
+
+$i = 0;
+foreach($milestones as $value)
+{
+  $ETC = 0;
+  echo "<h5>" . $value['name'] . "</h5><br/>";
+  foreach($task as $value1)
+  {
+    if ($value1['milestone'] == $value['milestone_id'])
+    {
+      $ETC += $value1['time'];
+    }
+  }
+  echo "<p2>Time Remaining: " . $ETC . "</p2></br>";
+}
+
 ?>
 
 
@@ -61,7 +82,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
   function init()
   {
-    <?php
+    /*<?php
     $js_milestones = json_encode($milestones);
     echo "var js_milestones = ". $js_milestones . ";\n";
     $js_task = json_encode($task);
@@ -77,7 +98,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       {
         js_milestones[i][j];
       }
-    }
+    }*/
 
     drawChart1();
   }
