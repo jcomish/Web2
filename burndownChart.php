@@ -74,7 +74,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 $i = 0;
 foreach($milestones as $value)
 {
-  if ($milestones['rel'] == $selRelease)
+  if ($value['rel'] == $selRelease)
   {
     $ETC = 0;
     echo "<h6>" . $value['name'] . "</h6>";
