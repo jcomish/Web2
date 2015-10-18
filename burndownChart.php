@@ -61,7 +61,7 @@ foreach($milestones as $value)
     if ($value1['milestone'] == $value['milestone_id'])
     {
       $ETC += $value1['time'];
-      echo "<li>" . $value1['name'] . "     " . $value1['time'] . "</li>"
+      echo "<li>" . $value1['name'] . "     " . $value1['time'] . "</li>";
     }
   }
   echo "</ol></br><p2>Time Remaining: " . $ETC . "</p2></br>";
