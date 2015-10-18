@@ -58,94 +58,15 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
           // Set a callback to run when the Google Visualization API is loaded.
           google.setOnLoadCallback(drawChart);
-
-          // Callback that creates and populates a data table,
-          // instantiates the pie chart, passes in the data and
-          // draws it.
-          /*function drawChart() 
+          function init()
           {
-      var data = new google.visualization.DataTable();
-      data.addColumn('date', 'Time (In Hours)');
-      data.addColumn('number', 'Due Date');
-      data.addColumn('number', 'Progress');
+            drawChart1();
+            drawChart2();
+          }
 
-      data.addRows([
-        [new Date(2015, 10, 16),  56, 55],
-        [new Date(2015, 10, 17),  52, 53],
-        [new Date(2015, 10, 18),  48, 51],
-        [new Date(2015, 10, 19),  44, 49],
-        [new Date(2015, 10, 20),  40, 42],
-        [new Date(2015, 10, 21),  36, 36],
-        [new Date(2015, 10, 22),  32, 31],
-        [new Date(2015, 10, 23),  28, 25],
-        [new Date(2015, 10, 24),  24, 20],
-        [new Date(2015, 10, 25), 20, 15],
-        [new Date(2015, 10, 26), 16,  11],
-        [new Date(2015, 10, 27), 12,  6],
-        [new Date(2015, 10, 28), 8,  2],
-        [new Date(2015, 10, 29), 0,  0]
-      ]);
-
-      var data2 = new google.visualization.DataTable();
-      data2.addColumn('date', 'Time (In Hours)');
-      data2.addColumn('number', 'Due Date');
-      data2.addColumn('number', 'Progress');
-
-      data2.addRows([
-        [new Date(2015, 10, 16),  56, 55],
-        [new Date(2015, 10, 17),  52, 53],
-        [new Date(2015, 10, 18),  48, 51],
-        [new Date(2015, 10, 19),  44, 49],
-        [new Date(2015, 10, 20),  40, 42],
-        [new Date(2015, 10, 21),  36, 36],
-        [new Date(2015, 10, 22),  32, 31],
-        [new Date(2015, 10, 23),  28, 25],
-        [new Date(2015, 10, 24),  24, 20],
-        [new Date(2015, 10, 25), 20, 15],
-        [new Date(2015, 10, 26), 16,  11],
-        [new Date(2015, 10, 27), 12,  6],
-        [new Date(2015, 10, 28), 8,  2],
-        [new Date(2015, 10, 29), 0,  0]
-      ]);
-
-      var options = {
-        chart: {
-          title: 'Rocket Boots',
-          subtitle: 'Time remaining in hours'
-        },
-        width: 400,
-        height: 300
-      };
-
-      var options2 = {
-        chart: {
-          title: 'Rocket Boots',
-          subtitle: 'Time remaining in hours'
-        },
-        width: 400,
-        height: 300
-      };
-
-      var chart = new google.charts.Line(document.getElementById('chart_div'));
-      chart.draw(data, options);
-
-      var chart2 = new google.charts.Line(document.getElementById('chart_div2'));
-      chart2.draw(data2, options2);
-    }*/
-          function drawChart() 
+          function drawChart1() 
           {
 
-            // Create the data table.
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Topping');    
-            data.addColumn('number', 'Slices');
-            data.addRows([
-              ['Mushrooms', 3],
-              ['Onions', 1],
-              ['Olives', 1],
-              ['Zucchini', 1],
-              ['Pepperoni', 2]
-            ]);
             // Create the data table.
 var data2 = new google.visualization.DataTable();
       data2.addColumn('date', 'Time (In Hours)');
@@ -169,7 +90,29 @@ var data2 = new google.visualization.DataTable();
         [new Date(2015, 10, 29), 0,  0]
       ]);
 
-var data3 = new google.visualization.DataTable();
+
+
+
+            // Set chart options
+var options2 = {
+        chart: {
+          title: 'Rocket Boots',
+          subtitle: 'Time remaining in hours'
+        },
+        width: 400,
+        height: 300
+      };
+            // Set chart options
+
+
+            // Instantiate and draw our chart, passing in some options.
+            var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
+            chart2.draw(data2, options2);
+
+          }
+          function drawChart2()
+          {
+            var data3 = new google.visualization.DataTable();
       data3.addColumn('date', 'Time (In Hours)');
       data3.addColumn('number', 'Due Date');
       data3.addColumn('number', 'Progress');
@@ -191,21 +134,7 @@ var data3 = new google.visualization.DataTable();
         [new Date(2015, 10, 29), 0,  0]
       ]);
 
-            // Set chart options
-            var options = {'title':'How Much Pizza I Ate Last Night',
-                           'width':400,
-                           'height':300};
-            // Set chart options
-var options2 = {
-        chart: {
-          title: 'Rocket Boots',
-          subtitle: 'Time remaining in hours'
-        },
-        width: 400,
-        height: 300
-      };
-            // Set chart options
-var options3 = {
+      var options3 = {
         chart: {
           title: 'Rocket Boots',
           subtitle: 'Time remaining in hours'
@@ -214,22 +143,15 @@ var options3 = {
         height: 300
       };
 
-            // Instantiate and draw our chart, passing in some options.
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-            var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
-            chart2.draw(data2, options2);
-            var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
+                  var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
             chart3.draw(data3, options3);
           }
-
           
         </script>
       </head>
 
       <body>
         <!--Divs that will hold the charts-->
-        <div id="chart_div"></div>
         <div id="chart_div2"></div>
         <div id="chart_div3"></div>
       </body>
