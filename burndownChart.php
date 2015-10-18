@@ -1,4 +1,9 @@
 <?php
+if($_POST['submit'] && $_POST['submit'] != 0)
+{
+  echo "TEST!";
+   $selRelease = $_POST['release'];
+}
  define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
  define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
  define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
@@ -31,11 +36,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     }
 
 $selRelease = -1;
-if($_POST['submit'] && $_POST['submit'] != 0)
-{
-  echo "TEST!";
-   $selRelease = $_POST['release'];
-}
+
 echo "<br/><br/><br/>Release:" . $selRelease;
 //Dropdown menu
 echo "<form action='burndownChart.php' method='post'>";
