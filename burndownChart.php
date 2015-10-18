@@ -162,8 +162,8 @@ foreach($milestones as $value)
           title: 'Rocket Boots',
           subtitle: 'Time remaining in hours'
         },
-        width: 400,
-        height: 300
+        width: 900,
+        height: 700
       };
             // Set chart options
 
