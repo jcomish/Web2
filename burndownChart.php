@@ -57,7 +57,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
           google.load('visualization', '1.0', {'packages':['corechart']});
 
           // Set a callback to run when the Google Visualization API is loaded.
-          google.setOnLoadCallback(drawChart);
+          google.setOnLoadCallback(init);
           function init()
           {
             drawChart1();
@@ -92,7 +92,6 @@ var data2 = new google.visualization.DataTable();
 
 
 
-
             // Set chart options
 var options2 = {
         chart: {
@@ -112,7 +111,8 @@ var options2 = {
           }
           function drawChart2()
           {
-            var data3 = new google.visualization.DataTable();
+
+var data3 = new google.visualization.DataTable();
       data3.addColumn('date', 'Time (In Hours)');
       data3.addColumn('number', 'Due Date');
       data3.addColumn('number', 'Progress');
@@ -142,7 +142,6 @@ var options2 = {
         width: 400,
         height: 300
       };
-
                   var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
             chart3.draw(data3, options3);
           }
