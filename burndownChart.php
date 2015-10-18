@@ -49,7 +49,7 @@ foreach ($rel as $value) {
   }
   else 
   {
-    echo "<option value='" . $value['name'] . "'>" . $value['rel_id'] . "</option>";
+    echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
   }
 }
 echo "</select>";
