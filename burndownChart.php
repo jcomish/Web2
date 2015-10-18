@@ -35,6 +35,7 @@ if($_POST['submit'] && $_POST['submit'] != 0)
 {
    $selRelease = $_POST['release'];
 }
+echo "<br/><br/><br/>Release:" . $selRelease;
 //Dropdown menu
 echo "<form action='burndownChart.php' method='post'>";
 echo "</br></br><p2>Select Release:</p2></br>";
