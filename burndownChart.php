@@ -31,7 +31,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     }
 
 //Dropdown menu
-echo "</br></br><p2>Select Release:</p2>"
+echo "</br></br><p2>Select Release:</p2>";
 echo "<select name=\"rel\">"; 
 echo "<option size =30 ></option>";
 foreach ($rel as $value) {
