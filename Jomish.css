@@ -64,6 +64,13 @@ h5
     color:Orange;
 }
 
+td
+{
+    font-family: "Times New Roman", Times, serif;
+    word-wrap:break-word;
+    color:White;
+}
+
 .center 
 {
     margin-left: auto;
