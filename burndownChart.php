@@ -122,7 +122,7 @@ foreach($milestones as $value)
     {
       for (int j = 0; j < js_milestones[i].length; j++)
       {
-        js_milestones[i][j];
+        js_milestones[i][j]
       }
     }*/
 
