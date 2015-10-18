@@ -33,6 +33,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 $selRelease = -1;
 if($_POST['submit'] && $_POST['submit'] != 0)
 {
+  echo "TEST!";
    $selRelease = $_POST['release'];
 }
 echo "<br/><br/><br/>Release:" . $selRelease;
