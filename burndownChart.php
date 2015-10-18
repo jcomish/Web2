@@ -62,7 +62,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
           // Callback that creates and populates a data table,
           // instantiates the pie chart, passes in the data and
           // draws it.
-          function drawChart() 
+          /*function drawChart() 
           {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Time (In Hours)');
@@ -131,8 +131,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
       var chart2 = new google.charts.Line(document.getElementById('chart_div2'));
       chart2.draw(data2, options2);
-    }
-          /*function drawChart() {
+    }*/
+          function drawChart() {
 
             // Create the data table.
             var data = new google.visualization.DataTable();
@@ -187,7 +187,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
             var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
             chart2.draw(data2, options2);
             var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
-            chart3.draw(data3, options3);*/
+            chart3.draw(data3, options3);
+          }
 
           
         </script>
