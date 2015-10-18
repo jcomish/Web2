@@ -30,10 +30,10 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $rel[] = $row;
     }
 
-$selRelease = "NULL";
+$selRelease = -1;
 if($_POST['submit'] && $_POST['submit'] != 0)
 {
-   $selRelease=$_POST['release'];
+   $selRelease = $_POST['release'];
 }
 //Dropdown menu
 echo "<form action='burndownChart.php' method='post'>";
@@ -42,13 +42,14 @@ echo "<select name=\"rel\" id='release'>";
 echo "<option size =30 ></option>";
 $i = 0;
 foreach ($rel as $value) {
-  if ($selRelease == "NULL" && $i == 0)
+  if ($selRelease == -1 && $i == 0)
   {
-    echo "<option selected='selected' value='" . $value['name'] . "'>" . $value['name'] . "</option>";
+    echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
+    $selRelease = $value['rel_id'];
   }
   else 
   {
-    echo "<option value='" . $value['name'] . "'>" . $value['name'] . "</option>";
+    echo "<option value='" . $value['name'] . "'>" . $value['rel_id'] . "</option>";
   }
 }
 echo "</select>";
@@ -73,18 +74,21 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 $i = 0;
 foreach($milestones as $value)
 {
-  $ETC = 0;
-  echo "<h6>" . $value['name'] . "</h6>";
-  echo "<table border='1'><tr><td>Task</td><td>Estimated Time</td></tr>";
-  foreach($task as $value1)
+  if ($milestones['rel'] == $selRelease)
   {
-    if ($value1['milestone'] == $value['milestone_id'])
+    $ETC = 0;
+    echo "<h6>" . $value['name'] . "</h6>";
+    echo "<table border='1'><tr><td>Task</td><td>Estimated Time</td></tr>";
+    foreach($task as $value1)
     {
-      $ETC += $value1['time'];
-      echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td></tr>";
+      if ($value1['milestone'] == $value['milestone_id'])
+      {
+        $ETC += $value1['time'];
+        echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td></tr>";
+      }
     }
+    echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
   }
-  echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
 }
 
 ?>
