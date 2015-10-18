@@ -61,7 +61,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
           function init()
           {
             drawChart1();
-            drawChart2();
+            //drawChart2();
           }
 
           function drawChart1() 
@@ -109,7 +109,7 @@ var options2 = {
             chart2.draw(data2, options2);
 
           }
-          function drawChart2()
+          /*function drawChart2()
           {
 
 var data3 = new google.visualization.DataTable();
@@ -144,7 +144,7 @@ var data3 = new google.visualization.DataTable();
       };
                   var chart3 = new google.visualization.LineChart(document.getElementById('chart_div3'));
             chart3.draw(data3, options3);
-          }
+          }*/
           
         </script>
       </head>
