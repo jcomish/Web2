@@ -31,7 +31,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     }
 
 //Dropdown menu
-echo "<form action='burndownChart.php' method="post">";
+echo "<form action='burndownChart.php' method='post'>";
 echo "</br></br><p2>Select Release:</p2></br>";
 echo "<select name=\"rel\" id='release'>"; 
 echo "<option size =30 ></option>";
@@ -42,10 +42,7 @@ echo "</select>";
 echo "<input type='submit' value='View'>";
 echo "</form>";
 
-if($_POST['submit'] && $_POST['submit'] != 0)
-{
-   $animal=$_POST['animal'];
-}
+
 
 $statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
