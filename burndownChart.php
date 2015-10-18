@@ -31,6 +31,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     }
 
 //Dropdown menu
+echo "</br></br><p2>Select Release:</p2>"
 echo "<select name=\"rel\">"; 
 echo "<option size =30 ></option>";
 foreach ($rel as $value) {
@@ -65,7 +66,7 @@ foreach($milestones as $value)
       echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td></tr>";
     }
   }
-  echo "</table></br><p2>Time Remaining: " . $ETC . "</p2><br/><br/></br>";
+  echo "</table></br><p2>Time Remaining: " . $ETC . "</p2><br/><br/></br></br>";
 }
 
 ?>
