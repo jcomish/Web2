@@ -66,7 +66,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     echo "var js_milestones = ". $js_milestones . ";\n";
     $js_task = json_encode($task);
     echo "var js_task = ". $js_tasks . ";\n";
-
+    foreach ($rel as $value) {
+      echo $value['name'];
+    }
 
     ?>
     for (int i = 0; i < js_milestones.length; i++)
@@ -80,7 +82,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     drawChart1();
   }
 
-    function drawChart1(/*milestone_name, tasks, i*?) 
+    function drawChart1() 
     {
 
       // Create the data table.
