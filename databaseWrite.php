@@ -31,10 +31,22 @@
     {
       $book = $_POST['book'];
       $chapter = $_POST['chapter'];
-      $verse = $_POST['verse']
-      $content = $_POST['content']
+      $verse = $_POST['verse'];
+      $content = $_POST['content'];
       $sql = $db->query('USE scriptures');
       $sql = $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES ('$book', '$chapter', '$verse', '$content')");
+    } 
+    catch(PDOException $e) 
+    {
+      echo $e->getMessage();
+    }
+
+    try 
+    {
+      $id = $db->lastInsertId();
+      $topic = $_POST['topic'];
+      $sql = $db->query('USE scriptures');
+      $sql = $db->query("INSERT INTO link (id, topic) VALUES ('$id', '$topic')");
     } 
     catch(PDOException $e) 
     {
