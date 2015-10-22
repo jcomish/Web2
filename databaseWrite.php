@@ -26,11 +26,16 @@
 
     if(isset($_POST["book"]))
     {
-      $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (" . $_POST['book'] . ", " . $_POST['chapter'] . ", " . $_POST['verse'] . ", " . $_POST['content'] . ")";
-      if ( $fetched = $db->query($sql))
-      {
-        $fetched->execute(PDO::FETCH_BOTH);
-      }
+     
+    try 
+    {
+    $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (" . $_POST['book'] . ", " . $_POST['chapter'] . ", " . $_POST['verse'] . ", " . $_POST['content'] . ")";
+    $sth = $db->query($sql);
+    } 
+    catch(PDOException $e) 
+    {
+    echo $e->getMessage();
+    }
 
       $sql = "INSERT INTO link (id, topic) VALUES (" . $db->lastInsertId() . ", " . $_POST['topic'] . ")";
       if ( $fetched = $db->query($sql))
