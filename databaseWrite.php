@@ -6,19 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"/>
   </head>
 
-  <header>
-    </br>
-    <h4><a href="index.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Home</a> </h4>
-    <h4><a href="assign032.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Projects</a> </h4>
-    <h4><a href="assignments.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Assignments</a></h4>
-    </br>
-    </br>
-  </header>
-
-  </br>
-  <body>
-    <h5>Scripture Resources</h5>
-    <?php
+  <?php
 
     define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
     define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
@@ -36,23 +24,43 @@
       die(); 
     }
 
-    ?>
+    if(isset($_POST["submit"]))
+    {
+      $statement = $db->exec("INSERT INTO scriptures (book, chapter, verse, content");
+      echo "SUCCESS";
+   }
+
+  ?>
+
+  <header>
+    </br>
+    <h4><a href="index.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Home</a> </h4>
+    <h4><a href="assign032.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Projects</a> </h4>
+    <h4><a href="assignments.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Assignments</a></h4>
+    </br>
+    </br>
+  </header>
+
+  </br>
+  <body>
+    <h5>Scripture Resources</h5>
+
 
   <form action="databaseWrite.php" method="POST">
-    <p2>Verse: <p2> <input type="text" name="verse"><br>
-    <p2>Scripture: <p2> <input type="textarea" name="scripture"><br>
-    <p2>Topic: <p2> <input type="text" name="topic"><br>
-    <input type="submit" value="Submit">
+    <p2>Verse: <p2> <input type="text" name="verse"><br/>
+    <p2>Scripture: <p2> <input type="textarea" rows ="5" cols="60" name="scripture"><br/>
+    <p2>Topic: <p2> <input type="text" name="topic"><br/>
+    <input type="submit" value="Submit"> <br/><br/>
     <?php
     $statement = $db->query('USE scriptures');
     $statement = $db->query('SELECT * FROM topic');
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      echo '<input type="checkbox" name="topic" value="' . $row['name'] . '">' . $row['name'] . '<br>';
+      echo '<input type="checkbox" name="topic" value="' . $row['name'] . '">' . $row['name'] . '<br/>';
     }
     ?>
   </form>
-
+  <br/><br/><br/><br/><br/>
 
 
   <?php
