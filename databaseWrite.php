@@ -24,6 +24,7 @@
       die(); 
     }
 
+    echo "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>" . $_post['book'];
     if(isset($_POST["Submit"]))
     {
       //$statement = $db->exec("INSERT INTO scriptures (book, chapter, verse, content)" . 
