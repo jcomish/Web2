@@ -31,7 +31,7 @@
     {
     //$sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (" . $_POST['book'] . ", " . $_POST['chapter'] . ", " . $_POST['verse'] . ", " . $_POST['content'] . ")";
     $sql = $db->query('USE scriptures');
-    $sql = $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES ('Test1', 'test2', 'test3', 'test4')");
+    $sql = $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES (" . $_POST['book'] . ", " . $_POST['chapter'] . ", " . $_POST['verse'] . ", " . $_POST['content'] . ")");
     } 
     catch(PDOException $e) 
     {
