@@ -52,7 +52,7 @@
     <h5>Scripture Resources</h5>
 
 
-  <form action="databaseWrite.php" method="POST">
+  <form action="databaseWrite.php" method="post">
     <p2>Book: <p2> <input type="text" name="book"><br/>
     <p2>Chapter: <p2> <input type="text" name="chapter"><br/>
     <p2>Verse: <p2> <input type="text" name="verse"><br/>
