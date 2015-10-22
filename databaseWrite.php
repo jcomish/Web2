@@ -84,8 +84,7 @@
     $statement = $db->query('SELECT * FROM topic');
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      $i = 0;
-      echo '<input type="checkbox" name="topic" value="' . $i . '">' . $row['name'] . '<br/>';
+      echo '<input type="checkbox" name="topic" value="' . $row['id'] . '">' . $row['name'] . '<br/>';
     }
     ?>
   </form>
