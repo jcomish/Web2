@@ -43,15 +43,21 @@
 
     try 
     {
-      $id = $db->lastInsertId();
+      $id = $db->lastInsertId()
       $topic = $_POST['topic'];
       $sql = $db->query('USE scriptures');
-      $sql = $db->query("INSERT INTO link (id, topic) VALUES ($id, $topic)");
+      $sql = $db->query("INSERT INTO link (id, topic) VALUES ($id, $topic)";
     } 
     catch(PDOException $e) 
     {
       echo $e->getMessage();
     }
+
+      $sql = "INSERT INTO link (id, topic) VALUES (" . $db->lastInsertId() . ", " . $_POST['topic'] . ")";
+      if ( $fetched = $db->query($sql))
+      {
+        $fetched->execute(PDO::FETCH_BOTH);
+      }
 
       //$statement = $db->exec("INSERT INTO scriptures (book, chapter, verse, content) VALUES (" . $_POST['book'] . ", " . $_POST['chapter'] . ", " . $_POST['verse'] . ", " . $_POST['content'] . ")");
       //$statement = $db->exec("INSERT INTO link (id, topic) VALUES (" . $db->lastInsertId() . ", " . $_POST['topic'] . ")");
@@ -84,7 +90,7 @@
     $statement = $db->query('SELECT * FROM topic');
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      echo '<input type="checkbox" name="topic" value="' . $row['id'] . '">' . $row['name'] . '<br/>';
+      echo '<input type="checkbox" name="topic" value="' . $row['name'] . '">' . $row['name'] . '<br/>';
     }
     ?>
   </form>
