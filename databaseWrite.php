@@ -26,7 +26,6 @@
 
     if(isset($_POST["book"]))
     {
-     
     try 
     {
       $book = $_POST['book'];
@@ -46,7 +45,7 @@
       $id = $db->lastInsertId();
       $topic = $_POST['topic'];
       $sql = $db->query('USE scriptures');
-      $sql = $db->query("INSERT INTO link (id, topic) VALUES ($id, $topic)";
+      $sql = $db->query("INSERT INTO link (id, topic) VALUES ($id, $topic)");
     } 
     catch(PDOException $e) 
     {
@@ -85,7 +84,7 @@
     $statement = $db->query('SELECT * FROM topic');
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-      echo '<input type="checkbox" name="topic" value="' . $row['name'] . '">' . $row['name'] . '<br/>';
+      echo '<input type="checkbox" name="topic" value="' . $row['id'] . '">' . $row['name'] . '<br/>';
     }
     ?>
   </form>
