@@ -24,16 +24,15 @@
       die(); 
     }
 
-    echo "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>" . $_POST['book'];
-    if(isset($_POST["Submit"]))
+    if(isset($_POST["book"]))
     {
-      //$statement = $db->exec("INSERT INTO scriptures (book, chapter, verse, content)" . 
-      //  "VALUES (" . $_POST['book'] . ", " 
-      //             . $_POST['chapter']) . ", " 
-      //             . $_POST['verse'] . ", " 
-      //             . $_POST['content'] . ")");
-      //$statement = $db->exec("INSERT INTO link (id, topic)" . 
-      //  "VALUES (" . $db->lastInsertId() . ", " . $_POST['topic'] . ")");
+      $statement = $db->exec("INSERT INTO scriptures (book, chapter, verse, content)
+        VALUES (" . $_POST['book'] . ", " 
+                   . $_POST['chapter']) . ", " 
+                   . $_POST['verse'] . ", " 
+                   . $_POST['content'] . ")");
+      $statement = $db->exec("INSERT INTO link (id, topic)
+        VALUES (" . $db->lastInsertId() . ", " . $_POST['topic'] . ")");
       echo "<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>SUCCESS";
    }
 
