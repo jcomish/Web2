@@ -43,7 +43,19 @@
     <p2>Scripture: <p2> <input type="textarea" name="scripture"><br>
     <p2>Topic: <p2> <input type="text" name="topic"><br>
     <input type="submit" value="Submit">
+    <?php
+    $statement = $db->query('USE scriptures');
+    $statement = $db->query('SELECT * FROM topic');
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+      echo '<input type="checkbox" name="topic" value="' . $row['name'] . '">' . $row['name'] . '<br>';
+    }
+    ?>
   </form>
+
+
+
+  <?php
     $statement = $db->query('USE scriptures');
     $statement = $db->query('SELECT * FROM scriptures');
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
