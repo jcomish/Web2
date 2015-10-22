@@ -29,7 +29,8 @@
      
     try 
     {
-    $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (" . $_POST['book'] . ", " . $_POST['chapter'] . ", " . $_POST['verse'] . ", " . $_POST['content'] . ")";
+    //$sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (" . $_POST['book'] . ", " . $_POST['chapter'] . ", " . $_POST['verse'] . ", " . $_POST['content'] . ")";
+    $sql = "INSERT INTO scriptures (book, chapter, verse, content) VALUES (Test1, test2, test3, test4)";
     $sth = $db->query($sql);
     } 
     catch(PDOException $e) 
@@ -67,8 +68,7 @@
     <p2>Book: <p2> <input type="text" name="book"><br/>
     <p2>Chapter: <p2> <input type="text" name="chapter"><br/>
     <p2>Verse: <p2> <input type="text" name="verse"><br/>
-    <p2>Scripture: <p2> <input type="textarea" style="width: 300px; height: 150px;" name="scripture"><br/>
-    <p2>Topic: <p2> <input type="text" name="topic"><br/>
+    <p2>Scripture: <p2> <input type="textarea" style="width: 300px; height: 150px;" name="content"><br/>
     <input type="submit" value="Submit"> <br/><br/>
     <?php
     $statement = $db->query('USE scriptures');
