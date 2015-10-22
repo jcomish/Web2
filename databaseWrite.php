@@ -24,7 +24,7 @@
       die(); 
     }
 
-    if(isset($_POST["submit"]))
+    if(isset($_POST["Submit"]))
     {
       //$statement = $db->exec("INSERT INTO scriptures (book, chapter, verse, content)" . 
       //  "VALUES (" . $_POST['book'] . ", " 
@@ -58,7 +58,7 @@
     <p2>Verse: <p2> <input type="text" name="verse"><br/>
     <p2>Scripture: <p2> <input type="textarea" style="width: 300px; height: 150px;" name="scripture"><br/>
     <p2>Topic: <p2> <input type="text" name="topic"><br/>
-    <input type="submit" value="submit"> <br/><br/>
+    <input type="submit" value="Submit"> <br/><br/>
     <?php
     $statement = $db->query('USE scriptures');
     $statement = $db->query('SELECT * FROM topic');
