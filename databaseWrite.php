@@ -47,8 +47,10 @@
 
 
   <form action="databaseWrite.php" method="POST">
+    <p2>Book: <p2> <input type="text" name="book"><br/>
+    <p2>Chapter: <p2> <input type="text" name="chapter"><br/>
     <p2>Verse: <p2> <input type="text" name="verse"><br/>
-    <p2>Scripture: <p2> <input type="textarea" rows ="5" cols="60" name="scripture"><br/>
+    <p2>Scripture: <p2> <input type="textarea" style="width: 300px; height: 150px;" name="scripture"><br/>
     <p2>Topic: <p2> <input type="text" name="topic"><br/>
     <input type="submit" value="Submit"> <br/><br/>
     <?php
