@@ -45,7 +45,7 @@
       $id = $db->lastInsertId();
       $topic = $_POST['topic'];
       $sql = $db->query('USE scriptures');
-      $sql = $db->query("INSERT INTO link (id, topic) VALUES ($id, $topic)");
+      $sql = $db->query("INSERT INTO link (id, topic) VALUES ('$id', '$topic')");
     } 
     catch(PDOException $e) 
     {
