@@ -53,12 +53,6 @@
       echo $e->getMessage();
     }
 
-      $sql = "INSERT INTO link (id, topic) VALUES (" . $db->lastInsertId() . ", " . $_POST['topic'] . ")";
-      if ( $fetched = $db->query($sql))
-      {
-        $fetched->execute(PDO::FETCH_BOTH);
-      }
-
       //$statement = $db->exec("INSERT INTO scriptures (book, chapter, verse, content) VALUES (" . $_POST['book'] . ", " . $_POST['chapter'] . ", " . $_POST['verse'] . ", " . $_POST['content'] . ")");
       //$statement = $db->exec("INSERT INTO link (id, topic) VALUES (" . $db->lastInsertId() . ", " . $_POST['topic'] . ")");
    }
@@ -91,7 +85,7 @@
     while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
       $i = 0;
-      echo '<input type="checkbox" name="topic" value=$i"' . $row['name'] . '">' . $row['name'] . '<br/>';
+      echo '<input type="checkbox" name="topic" value="' . $i . '">' . $row['name'] . '<br/>';
     }
     ?>
   </form>
