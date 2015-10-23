@@ -38,7 +38,8 @@ echo "</br></br><p2>Select Release:</p2></br>";
 echo "<select name='rel' id='release'>"; 
 echo "<option size =30 ></option>";
 $i = 0;
-foreach ($rel as $value) {
+foreach ($rel as $value) 
+{
   if ($selRelease == -1 && $i == 0)
   {
     echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
@@ -82,7 +83,7 @@ foreach($milestones as $value)
       if ($value1['milestone'] == $value['milestone_id'])
       {
         $ETC += $value1['time'];
-        echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td></tr>";
+        echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td><td>" . $value1['status'] .  "</td></tr>";
       }
     }
     echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
