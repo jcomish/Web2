@@ -29,11 +29,9 @@
       {
         $release = $_POST['release'];
         $release_due_date = $_POST['release_due_date'];
-        echo $release;
-        echo $release_due_date;
         $sql = $db->query('USE project');
         $sql = $db->query("INSERT INTO rel (name, due_date) VALUES ('$release', '$release_due_date')");
-        echo "<p2>" . $sql . "<p2/><br/>";
+        echo "<p2>Successfully added " . $release . "<p2/><br/>";
       } 
       catch(PDOException $e) 
       {
@@ -45,13 +43,12 @@
  {
    try 
       {
-        $release = $_POST['release'];
-        $release_due_date = $_POST['release_due_date'];
+        $milestone = $_POST['milestone'];
+        $milestone_due_date = $_POST['milestone_due_date'];
         $rel = $_POST['rel'];
-        echo $release;
-        echo $release_due_date;
         $sql = $db->query('USE project');
-        $sql = $db->query("INSERT INTO milestone (name, due_date, rel) VALUES ('$release', '$release_due_date', '$rel')");
+        $sql = $db->query("INSERT INTO milestone (name, due_date, rel) VALUES ('$milestone', '$milestone_due_date', '$rel')");
+        echo "<p2>Successfully added " . $milestone . "<p2/><br/>";
       } 
       catch(PDOException $e) 
       {
@@ -71,7 +68,6 @@
  $milestoneTime = array();
 
 //Create Release
-echo "<a href='write.php'>Modify Database</a>";
 echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Release</h5>";
 echo "<p2>Release Name: <p2> <input type='text' name='release'><br/>";
@@ -113,7 +109,7 @@ foreach ($rel as $value) {
 }
 echo "<br/><br/><input type='submit' value='Create'>";
 echo "</form>";
-echo "<p><a href='BurndownChart.php'>Return to Summary</a></p>";
+echo "<br/><br/><br/><p2><a href='BurndownChart.php'>Return to Summary</a></p2>";
 
 ?>
 
