@@ -72,7 +72,7 @@
 echo "<a href='write.php'>Modify Database</a>";
 echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Release</h5>";
-echo "<p2>Release Name: <p2> <input type='text' name='milestone'><br/>";
+echo "<p2>Release Name: <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
 /*echo "<p2>Milestones to include:<p2/><br/>";
 
