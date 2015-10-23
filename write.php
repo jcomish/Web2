@@ -30,9 +30,9 @@
  $relTime = array();
  $milestoneTime = array();
 
-
-echo "<form action='burndownChart.php' method='post'>";
-echo "<p2>Release: <p2> <input type='text' name='release'><br/>";
+echo "<br/><br/><form action='burndownChart.php' method='post'>";
+echo "<h5>New Release</h5>"
+echo "<p2>Release Name : <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
 
 
@@ -49,7 +49,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 echo "</br></br><p2>Milestone:</p2></br>";
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-  echo '<input type="checkbox" name="milestones" value="' . $row['milestone_id'] . '">' . $row['name'] . '<br/>';
+  echo '<input type="checkbox" name="milestones" value="' . $statement['milestone_id'] . '">' . $statement['name'] . '<br/>';
 }
 /*echo "<select name='milestone' id='milestone'>"; 
 echo "<option size =30 ></option>";
@@ -66,7 +66,8 @@ foreach ($milestone as $value) {
   }
 }*/
 
-echo "<p2>Milestone: <p2> <input type='text' name='release'><br/>";
+echo "<h5>New Milestone</h5>"
+echo "<p2>Milestone Name: <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
 
 //Get the data
