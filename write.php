@@ -42,7 +42,7 @@ $statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       //$milestone[] = $row;
-      echo '<input type="checkbox" name="milestones" value="' . $value['milestone_id'] . '">' . $value['name'] . '<br/>';
+      echo '<input type="checkbox" name="milestones" value="' . $row['milestone_id'] . '">' . $row['name'] . '<br/>';
     }
 
 //$milestoneRelease = -1;
