@@ -33,6 +33,7 @@
         echo $release_due_date;
         $sql = $db->query('USE project');
         $sql = $db->query("INSERT INTO rel (name, due_date) VALUES ('$release', '$release_due_date')");
+        echo "<p2>" . $sql . "<p2/><br/>"
       } 
       catch(PDOException $e) 
       {
@@ -44,12 +45,13 @@
  {
    try 
       {
-        $book = $_POST['book'];
-        $chapter = $_POST['chapter'];
-        $verse = $_POST['verse'];
-        $content = $_POST['content'];
-        $sql = $db->query('USE scriptures');
-        $sql = $db->query("INSERT INTO scriptures (name, due_date) VALUES ('$book', '$chapter', '$verse', '$content')");
+        $release = $_POST['release'];
+        $release_due_date = $_POST['release_due_date'];
+        $rel = $_POST['rel'];
+        echo $release;
+        echo $release_due_date;
+        $sql = $db->query('USE project');
+        $sql = $db->query("INSERT INTO milestone (name, due_date, rel) VALUES ('$release', '$release_due_date', '$rel')");
       } 
       catch(PDOException $e) 
       {
@@ -73,15 +75,7 @@ echo "<a href='write.php'>Modify Database</a>";
 echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Release</h5>";
 echo "<p2>Release Name: <p2> <input type='text' name='release'><br/>";
-echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
-/*echo "<p2>Milestones to include:<p2/><br/>";
-
-$statement = $db->query("USE project");
-$statement = $db->query("SELECT * FROM milestone");
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    { 
-      echo '<input type="checkbox" name="milestones" value="' . $row['milestone_id'] . '">' . $row['name'] . '<br/>';
-    }*/
+echo "<p2>Due Date: <p2> <input type='text' placeholder='YYYY-MM-DD' name='release_due_date'><br/><br/>";
 echo "<br/><input type='submit' value='Create'>";
 echo "</form><br/><br/><br/>";
 
@@ -91,7 +85,7 @@ echo "</form><br/><br/><br/>";
 echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Milestone</h5>";
 echo "<p2>Milestone Name: <p2> <input type='text' name='milestone'><br/>";
-echo "<p2>Due Date: <p2> <input type='text' name='milestone_due_date'><br/><br/>";
+echo "<p2>Due Date: <p2> <input type='text' placeholder='YYYY-MM-DD' name='milestone_due_date'><br/><br/>";
 echo "<p2>Release:<p2/>";
 
 //Create Release
