@@ -44,7 +44,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $milestone[] = $row;
     }
 
-$milestoneRelease = -1;
+//$milestoneRelease = -1;
 
 echo "</br></br><p2>Milestone:</p2></br>";
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -63,8 +63,8 @@ foreach ($milestone as $value) {
   else 
   {
     echo "<option value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
-  }*/
-}
+  }
+}*/
 
 echo "<p2>Milestone: <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
@@ -77,7 +77,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
       $rel[] = $row;
     }
 
-$selRelease = -1;
+//$selRelease = -1;
 
 //Dropdown menu
 
@@ -124,7 +124,23 @@ echo "<a href='write.php'>Modify Database</a>";
     <h5>Scripture Resources</h5>
 
 
+  <form action="write.php" method="post">
+    
+    <p2>Release: <p2> <input type="text" name="book"><br/>
+    <p2>Chapter: <p2> <input type="text" name="chapter"><br/>
+    <p2>Verse: <p2> <input type="text" name="verse"><br/>
+    <p2>Scripture: <p2> <input type="textarea" style="width: 300px; height: 150px;" name="content"><br/>
+    <input type="submit" value="Submit"> <br/><br/>
+    <?php
+    $statement = $db->query('USE scriptures');
+    $statement = $db->query('SELECT * FROM topic');
 
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+      echo '<input type="checkbox" name="topic" value="' . $row['id'] . '">' . $row['topic'] . '<br/>';
+    }
+    ?>
+  </form>
 
   </body>
 </html>
