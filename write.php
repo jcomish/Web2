@@ -47,9 +47,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 //$milestoneRelease = -1;
 
 echo "</br></br><p2>Milestone:</p2></br>";
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+while ($milestone = $value)
 {
-  echo '<input type="checkbox" name="milestones" value="' . $statement['milestone_id'] . '">' . $statement['name'] . '<br/>';
+  echo '<input type="checkbox" name="milestones" value="' . $value['milestone_id'] . '">' . $value['name'] . '<br/>';
 }
 /*echo "<select name='milestone' id='milestone'>"; 
 echo "<option size =30 ></option>";
