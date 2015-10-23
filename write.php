@@ -30,22 +30,47 @@
  $relTime = array();
  $milestoneTime = array();
 
-echo "<br/><br/><form action='burndownChart.php' method='post'>";
+//Create Release
+echo "<a href='write.php'>Modify Database</a>";
+echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Release</h5>";
 echo "<p2>Release Name : <p2> <input type='text' name='release'><br/>";
-echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
+echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
+echo "<p2>Milestones to include:<p2/><br/>"
 
-
-//Get the data
 $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
-      //$milestone[] = $row;
       echo '<input type="checkbox" name="milestones" value="' . $row['milestone_id'] . '">' . $row['name'] . '<br/>';
     }
+echo "<input type='submit' value='View'>";
+echo "</form>";
 
-//$milestoneRelease = -1;
+//Create Milestone
+echo "<br/><br/><form action='write.php' method='post'>";
+echo "<h5>New Milestone</h5>";
+echo "<p2>Milestone Name: <p2> <input type='text' name='milestone'><br/>";
+echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
+echo "<p2>Milestones to include:<p2/><br/>"
+
+//Create Release
+$statement = $db->query("USE project");
+$statement = $db->query("SELECT * FROM release");
+$selRelease = -1;
+$i = 0;
+foreach ($milestone as $value) {
+  if ($selRelease == -1 && $i == 0)
+  {
+    echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
+
+  }
+  else 
+  {
+    echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
+  }
+echo "<input type='submit' value='View'>";
+echo "</form>";
 
 
 
