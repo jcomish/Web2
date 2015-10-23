@@ -47,12 +47,13 @@ foreach ($rel as $value) {
   else 
   {
     echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
+    $selRelease = $value['rel_id'];
   }
 }
 echo "</select>";
 echo "<input type='submit' value='View'>";
 echo "</form>";
-
+echo "<br/>";
 
 
 $statement = $db->query("SELECT * FROM milestone");
