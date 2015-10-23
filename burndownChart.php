@@ -42,7 +42,7 @@ foreach ($rel as $value) {
   if ($selRelease == -1 && $i == 0)
   {
     echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
-    //$selRelease = $value['rel_id'];
+
   }
   else 
   {
@@ -52,6 +52,7 @@ foreach ($rel as $value) {
 echo "</select>";
 echo "<input type='submit' value='View'>";
 echo "</form>";
+echo "<a href='write.html'>Modify Database</a>";
 
 
 $statement = $db->query("SELECT * FROM milestone");
