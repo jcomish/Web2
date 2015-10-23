@@ -31,12 +31,12 @@
  $milestoneTime = array();
 
 //Get the data
-$statement = $db->query("USE project");
-$statement = $db->query("SELECT * FROM rel");
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    { 
-      $rel[] = $row;
-    }
+//$statement = $db->query("USE project");
+//$statement = $db->query("SELECT * FROM rel");
+//while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+ //   { 
+ //     $rel[] = $row;
+ //   }
 
 $selRelease = -1;
 
@@ -60,12 +60,12 @@ foreach ($rel as $value) {
 echo "</select>";
 
 //Get the data
-$statement = $db->query("USE project");
-$statement = $db->query("SELECT * FROM milestone");
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    { 
-      $milestone[] = $row;
-    }
+//$statement = $db->query("USE project");
+//$statement = $db->query("SELECT * FROM milestone");
+//while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+ //   { 
+ //     $milestone[] = $row;
+ //   }
 
 $milestoneRelease = -1;
 
