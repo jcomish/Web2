@@ -66,9 +66,6 @@ foreach ($milestone as $value) {
   }*/
 }
 
-
-
-
 echo "<p2>Milestone: <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
 
@@ -101,9 +98,6 @@ foreach ($rel as $value) {
 }
 echo "</select>";*/
 
-
-
-
 echo "<input type='submit' value='View'>";
 echo "</form>";
 echo "<a href='write.php'>Modify Database</a>";
@@ -130,23 +124,7 @@ echo "<a href='write.php'>Modify Database</a>";
     <h5>Scripture Resources</h5>
 
 
-  <form action="write.php" method="post">
-    
-    <p2>Release: <p2> <input type="text" name="book"><br/>
-    <p2>Chapter: <p2> <input type="text" name="chapter"><br/>
-    <p2>Verse: <p2> <input type="text" name="verse"><br/>
-    <p2>Scripture: <p2> <input type="textarea" style="width: 300px; height: 150px;" name="content"><br/>
-    <input type="submit" value="Submit"> <br/><br/>
-    <?php
-    $statement = $db->query('USE scriptures');
-    $statement = $db->query('SELECT * FROM topic');
 
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
-      echo '<input type="checkbox" name="topic" value="' . $row['id'] . '">' . $row['topic'] . '<br/>';
-    }
-    ?>
-  </form>
 
   </body>
 </html>
