@@ -82,7 +82,10 @@ foreach($milestones as $value)
     {
       if ($value1['milestone'] == $value['milestone_id'])
       {
-        $ETC += $value1['time'];
+        if (!isset($value1['status']))
+        {
+          $ETC += $value1['time'];
+        }
         echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td><td>";
         if (isset($value1['status']))
         {
