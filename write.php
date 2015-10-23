@@ -97,39 +97,6 @@ echo "<a href='write.php'>Modify Database</a>";
 
 
 
-  <?php
-
-    if(isset($_POST["book"]))
-    {
-    try 
-    {
-      $book = $_POST['book'];
-      $chapter = $_POST['chapter'];
-      $verse = $_POST['verse'];
-      $content = $_POST['content'];
-      $sql = $db->query('USE scriptures');
-      $sql = $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES ('$book', '$chapter', '$verse', '$content')");
-    } 
-    catch(PDOException $e) 
-    {
-      echo $e->getMessage();
-    }
-
-    try 
-    {
-      $id = $db->lastInsertId();
-      $topic = $_POST['topic'];
-      $sql = $db->query('USE scriptures');
-      $sql = $db->query("INSERT INTO link (id, topic) VALUES ('$id', '$topic')");
-    } 
-    catch(PDOException $e) 
-    {
-      echo $e->getMessage();
-    }
-
-   }
-
-  ?>
 
   <header>
     </br>
@@ -146,21 +113,7 @@ echo "<a href='write.php'>Modify Database</a>";
 
 
   <form action="write.php" method="post">
-    echo "<form action='burndownChart.php' method='post'>";
-echo "</br></br><p2>Select Release:</p2></br>";
-echo "<select name='rel' id='release'>"; 
-echo "<option size =30 ></option>";
-$i = 0;
-foreach ($rel as $value) {
-  if ($selRelease == -1 && $i == 0)
-  {
-    echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
-
-  }
-  else 
-  {
-    echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
-  }
+    
     <p2>Release: <p2> <input type="text" name="book"><br/>
     <p2>Chapter: <p2> <input type="text" name="chapter"><br/>
     <p2>Verse: <p2> <input type="text" name="verse"><br/>
