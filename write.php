@@ -84,7 +84,7 @@ $selRelease = -1;
 
 //Dropdown menu
 
-echo "</br></br><p2>Select Release:</p2></br>";
+/*echo "</br></br><p2>Select Release:</p2></br>";
 echo "<select name='rel' id='release'>"; 
 echo "<option size =30 ></option>";
 $i = 0;
@@ -99,7 +99,7 @@ foreach ($rel as $value) {
     echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
   }
 }
-echo "</select>";
+echo "</select>";*/
 
 
 
