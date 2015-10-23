@@ -84,6 +84,8 @@ foreach($milestones as $value)
       {
         $ETC += $value1['time'];
         echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td><td>";
+        if (isset($value1['status']))
+        {
          if ($value1['status'] == 1)
          {
             echo "<p3>Passed</p3>";
@@ -92,6 +94,7 @@ foreach($milestones as $value)
          {
             echo "<p4>Failed</p4>";
          }
+       }
         echo "</td></tr>";
       }
     }
