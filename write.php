@@ -36,7 +36,7 @@ echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Release</h5>";
 echo "<p2>Release Name : <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
-echo "<p2>Milestones to include:<p2/><br/>"
+echo "<p2>Milestones to include:<p2/><br/>";
 
 $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM milestone");
@@ -52,7 +52,7 @@ echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Milestone</h5>";
 echo "<p2>Milestone Name: <p2> <input type='text' name='milestone'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
-echo "<p2>Milestones to include:<p2/><br/>";
+echo "<p2>Release:<p2/><br/>";
 
 //Create Release
 $statement = $db->query("USE project");
