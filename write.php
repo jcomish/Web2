@@ -64,6 +64,27 @@
     echo "<br/><br/>";
   }
 
+  if(isset($_POST["task"]))
+ {
+   try 
+      {
+        $task = $_POST['task'];
+        $task_estimate = $_POST['task_estimate'];
+        $milestone = $_POST['milestone'];
+        $sql = $db->query('USE project');
+        $sql = $db->query("INSERT INTO task (name, time, milestone) VALUES ('$task', '$task_estimate', '$milestone')");
+        echo "</br><br><p2>Successfully added " . $task. "<p2/><br/>";
+      } 
+      catch(PDOException $e) 
+      {
+        echo $e->getMessage();
+      }
+  }
+  else
+  {
+    echo "<br/><br/>";
+  }
+
 
 
 
@@ -125,7 +146,7 @@ echo "<p2>Time Estimate: <p2> <input type='text' name='task_estimate'><br/><br/>
 echo "<p2>Release:<p2/>";
 
 $statement = $db->query("USE project");
-$statement = $db->query("SELECT * FROM task");
+$statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       $milestone[] = $row;
@@ -135,7 +156,7 @@ $selMilestone = -1;
 $i = 0;
 echo "<select name='milestone' id='milestone'>"; 
 echo "<option size =30 ></option>";
-foreach ($rel as $value) {
+foreach ($milestone as $value) {
   if ($selRelease == -1 && $i == 0)
   {
     echo "<option selected='selected' value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
