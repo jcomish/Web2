@@ -38,6 +38,10 @@
         echo $e->getMessage();
       }
   }
+  else
+  {
+    echo "<br/><br/>";
+  }
 
  if(isset($_POST["milestone"]))
  {
@@ -54,6 +58,10 @@
       {
         echo $e->getMessage();
       }
+  }
+  else
+  {
+    echo "<br/><br/>";
   }
 
 
@@ -109,7 +117,7 @@ foreach ($rel as $value) {
 }
 echo "<br/><br/><input type='submit' value='Create'>";
 echo "</form>";
-echo "<br/><br/><br/><h4><a href='burndownChart.php'>Return to Summary</a></h4>";
+echo "<br/><br/><br/><h5><a href='burndownChart.php'>Return to Summary</a></h5>";
 
 ?>
 
