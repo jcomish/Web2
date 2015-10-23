@@ -52,7 +52,7 @@ foreach ($rel as $value) {
 echo "</select>";
 echo "<input type='submit' value='View'>";
 echo "</form>";
-echo "<a href='write.php'>Modify Database</a>";
+echo "<h5><a href='write.php'>Modify Database</a></h5>";
 
 
 $statement = $db->query("SELECT * FROM milestone");
