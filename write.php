@@ -33,7 +33,7 @@
         echo $release_due_date;
         $sql = $db->query('USE project');
         $sql = $db->query("INSERT INTO rel (name, due_date) VALUES ('$release', '$release_due_date')");
-        echo "<p2>" . $sql . "<p2/><br/>"
+        echo "<p2>" . $sql . "<p2/><br/>";
       } 
       catch(PDOException $e) 
       {
