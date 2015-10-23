@@ -59,7 +59,8 @@ $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM release");
 $selRelease = -1;
 $i = 0;
-foreach ($milestone as $value) {
+foreach ($milestone as $value)
+ {
   if ($selRelease == -1 && $i == 0)
   {
     echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
@@ -69,6 +70,7 @@ foreach ($milestone as $value) {
   {
     echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
   }
+}
 echo "<input type='submit' value='View'>";
 echo "</form>";
 
