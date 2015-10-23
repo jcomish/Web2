@@ -34,7 +34,7 @@
 echo "<a href='write.php'>Modify Database</a>";
 echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Release</h5>";
-echo "<p2>Release Name : <p2> <input type='text' name='release'><br/>";
+echo "<p2>Release Name: <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
 echo "<p2>Milestones to include:<p2/><br/>";
 
@@ -44,8 +44,8 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       echo '<input type="checkbox" name="milestones" value="' . $row['milestone_id'] . '">' . $row['name'] . '<br/>';
     }
-echo "<input type='submit' value='View'>";
-echo "</form>";
+echo "<input type='submit' value='Create'>";
+echo "</form><br/><br/><br/>";
 
 //Create Milestone
 echo "<br/><br/><form action='write.php' method='post'>";
@@ -77,78 +77,10 @@ foreach ($rel as $value) {
     echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
   }
 }
-echo "<input type='submit' value='View'>";
+echo "<br/><input type='submit' value='Create'>";
 echo "</form>";
+echo "<p><a href='BurndownChart.php'>Return to Summary</a></p>";
 
-
-
-/*
-echo "</br></br><p2>Milestone:</p2></br>";
-foreach ($milestone = $value)
-{
-  echo '<input type="checkbox" name="milestones" value="' . $value['milestone_id'] . '">' . $value['name'] . '<br/>';
-}*/
-
-
-
-/*echo "<select name='milestone' id='milestone'>"; 
-echo "<option size =30 ></option>";
-$i = 0;
-foreach ($milestone as $value) {
-  if ($milestoneRelease == -1 && $i == 0)
-  {
-    echo "<option selected='selected' value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
-
-  }
-  else 
-  {
-    echo "<option value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
-  }
-}*/
-
-
-
-
-
-/*echo "<h5>New Milestone</h5>"
-echo "<p2>Milestone Name: <p2> <input type='text' name='release'><br/>";
-echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
-
-//Get the data
-$statement = $db->query("USE project");
-$statement = $db->query("SELECT * FROM rel");
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    { 
-      $rel[] = $row;
-    }*/
-
-
-
-
-
-//$selRelease = -1;
-
-//Dropdown menu
-
-/*echo "</br></br><p2>Select Release:</p2></br>";
-echo "<select name='rel' id='release'>"; 
-echo "<option size =30 ></option>";
-$i = 0;
-foreach ($rel as $value) {
-  if ($selRelease == -1 && $i == 0)
-  {
-    echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
-
-  }
-  else 
-  {
-    echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
-  }
-}
-echo "</select>";*/
-
-
-echo "<a href='write.php'>Modify Database</a>";
 ?>
 
 
@@ -169,26 +101,5 @@ echo "<a href='write.php'>Modify Database</a>";
 
   </br>
   <body>
-    <h5>Scripture Resources</h5>
-
-
-  <form action="write.php" method="post">
-    
-    <p2>Release: <p2> <input type="text" name="book"><br/>
-    <p2>Chapter: <p2> <input type="text" name="chapter"><br/>
-    <p2>Verse: <p2> <input type="text" name="verse"><br/>
-    <p2>Scripture: <p2> <input type="textarea" style="width: 300px; height: 150px;" name="content"><br/>
-    <input type="submit" value="Submit"> <br/><br/>
-    <?php
-    $statement = $db->query('USE scriptures');
-    $statement = $db->query('SELECT * FROM topic');
-
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
-      echo '<input type="checkbox" name="topic" value="' . $row['id'] . '">' . $row['topic'] . '<br/>';
-    }
-    ?>
-  </form>
-
   </body>
 </html>
