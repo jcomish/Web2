@@ -41,16 +41,23 @@ $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
-      $milestone[] = $row;
+      //$milestone[] = $row;
+      echo '<input type="checkbox" name="milestones" value="' . $value['milestone_id'] . '">' . $value['name'] . '<br/>';
     }
 
 //$milestoneRelease = -1;
 
+
+
+/*
 echo "</br></br><p2>Milestone:</p2></br>";
-while ($milestone = $value)
+foreach ($milestone = $value)
 {
   echo '<input type="checkbox" name="milestones" value="' . $value['milestone_id'] . '">' . $value['name'] . '<br/>';
-}
+}*/
+
+
+
 /*echo "<select name='milestone' id='milestone'>"; 
 echo "<option size =30 ></option>";
 $i = 0;
@@ -66,7 +73,11 @@ foreach ($milestone as $value) {
   }
 }*/
 
-echo "<h5>New Milestone</h5>"
+
+
+
+
+/*echo "<h5>New Milestone</h5>"
 echo "<p2>Milestone Name: <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
 
@@ -76,7 +87,11 @@ $statement = $db->query("SELECT * FROM rel");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       $rel[] = $row;
-    }
+    }*/
+
+
+
+
 
 //$selRelease = -1;
 
