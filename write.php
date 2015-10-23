@@ -31,7 +31,7 @@
         $release_due_date = $_POST['release_due_date'];
         $sql = $db->query('USE project');
         $sql = $db->query("INSERT INTO rel (name, due_date) VALUES ('$release', '$release_due_date')");
-        echo "<p2>Successfully added " . $release . "<p2/><br/>";
+        echo "</br><br><p2>Successfully added " . $release . "<p2/><br/>";
       } 
       catch(PDOException $e) 
       {
@@ -48,7 +48,7 @@
         $rel = $_POST['rel'];
         $sql = $db->query('USE project');
         $sql = $db->query("INSERT INTO milestone (name, due_date, rel) VALUES ('$milestone', '$milestone_due_date', '$rel')");
-        echo "<p2>Successfully added " . $milestone . "<p2/><br/>";
+        echo "</br><br><p2>Successfully added " . $milestone . "<p2/><br/>";
       } 
       catch(PDOException $e) 
       {
@@ -109,7 +109,7 @@ foreach ($rel as $value) {
 }
 echo "<br/><br/><input type='submit' value='Create'>";
 echo "</form>";
-echo "<br/><br/><br/><p2><a href='BurndownChart.php'>Return to Summary</a></p2>";
+echo "<br/><br/><br/><h4><a href='burndownChart.php'>Return to Summary</a></h4>";
 
 ?>
 
