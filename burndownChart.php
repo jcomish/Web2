@@ -83,7 +83,7 @@ foreach($milestones as $value)
       if ($value1['milestone'] == $value['milestone_id'])
       {
         $ETC += $value1['time'];
-        echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td><td>"
+        echo "<tr><td>" . $value1['name'] . "</td><td>" . $value1['time'] . "</td><td>";
          if ($value1['status'] == 1)
          {
             echo "<p3>Passed</p3>";
