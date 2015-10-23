@@ -71,6 +71,13 @@ p3
     color:Green;
 }
 
+p3
+{
+    font-family: "Times New Roman", Times, serif;
+    word-wrap:break-word;
+    color:Red;
+}
+
 h6
 {
     font-size:30px;
