@@ -35,7 +35,7 @@ $selRelease = -1;
 //Dropdown menu
 echo "<form action='burndownChart.php' method='post'>";
 echo "</br></br><p2>Select Release:</p2></br>";
-echo "<select name=\"rel\" id='release'>"; 
+echo "<select name='rel' id='release'>"; 
 echo "<option size =30 ></option>";
 $i = 0;
 foreach ($rel as $value) {
@@ -70,7 +70,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 $i = 0;
 foreach($milestones as $value)
 {
-  $selRelease = $_POST["release"];
+  $selRelease = $_POST["rel"];
   if ($value['rel'] == $selRelease)
   {
     $ETC = 0;
