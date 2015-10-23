@@ -56,7 +56,12 @@ echo "<p2>Release:<p2/><br/>";
 
 //Create Release
 $statement = $db->query("USE project");
-$statement = $db->query("SELECT * FROM release");
+$statement = $db->query("SELECT * FROM rel");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+      $rel[] = $row;
+    }
+
 $selRelease = -1;
 $i = 0;
 echo "<select name='rel' id='release'>"; 
