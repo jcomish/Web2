@@ -59,6 +59,32 @@ foreach ($rel as $value) {
 }
 echo "</select>";
 
+//Get the data
+$statement = $db->query("USE project");
+$statement = $db->query("SELECT * FROM milestone");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+      $milestone[] = $row;
+    }
+
+$milestoneRelease = -1;
+
+echo "</br></br><p2>Select Release:</p2></br>";
+echo "<select name='milestone' id='milestone'>"; 
+echo "<option size =30 ></option>";
+$i = 0;
+foreach ($milestone as $value) {
+  if ($milestoneRelease == -1 && $i == 0)
+  {
+    echo "<option selected='selected' value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
+
+  }
+  else 
+  {
+    echo "<option value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
+  }
+}
+
 
 echo "<input type='submit' value='View'>";
 echo "</form>";
