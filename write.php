@@ -23,6 +23,42 @@
   die();
  }
 
+ if(isset($_POST["release"]))
+ {
+   try 
+      {
+        $release = $_POST['release'];
+        $release_due_date = $_POST['release_due_date'];
+        $sql = $db->query('USE project');
+        $sql = $db->query("INSERT INTO rel (name, due_date) VALUES ('$release', '$release_due_date')");
+      } 
+      catch(PDOException $e) 
+      {
+        echo $e->getMessage();
+      }
+  }
+
+ if(isset($_POST["milestone"]))
+ {
+   try 
+      {
+        $book = $_POST['book'];
+        $chapter = $_POST['chapter'];
+        $verse = $_POST['verse'];
+        $content = $_POST['content'];
+        $sql = $db->query('USE scriptures');
+        $sql = $db->query("INSERT INTO scriptures (name, due_date) VALUES ('$book', '$chapter', '$verse', '$content')");
+      } 
+      catch(PDOException $e) 
+      {
+        echo $e->getMessage();
+      }
+  }
+
+
+
+
+ //DISPLAY FORMS
  $rel = array();
  $milestones = array();
  $task = array();
@@ -34,25 +70,27 @@
 echo "<a href='write.php'>Modify Database</a>";
 echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Release</h5>";
-echo "<p2>Release Name: <p2> <input type='text' name='release'><br/>";
+echo "<p2>Release Name: <p2> <input type='text' name='milestone'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
-echo "<p2>Milestones to include:<p2/><br/>";
+/*echo "<p2>Milestones to include:<p2/><br/>";
 
 $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       echo '<input type="checkbox" name="milestones" value="' . $row['milestone_id'] . '">' . $row['name'] . '<br/>';
-    }
-echo "<input type='submit' value='Create'>";
+    }*/
+echo "<br/><input type='submit' value='Create'>";
 echo "</form><br/><br/><br/>";
+
+
 
 //Create Milestone
 echo "<br/><br/><form action='write.php' method='post'>";
 echo "<h5>New Milestone</h5>";
 echo "<p2>Milestone Name: <p2> <input type='text' name='milestone'><br/>";
-echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/><br/>";
-echo "<p2>Release:<p2/><br/>";
+echo "<p2>Due Date: <p2> <input type='text' name='milestone_due_date'><br/><br/>";
+echo "<p2>Release:<p2/>";
 
 //Create Release
 $statement = $db->query("USE project");
@@ -77,7 +115,7 @@ foreach ($rel as $value) {
     echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
   }
 }
-echo "<br/><input type='submit' value='Create'>";
+echo "<br/><br/><input type='submit' value='Create'>";
 echo "</form>";
 echo "<p><a href='BurndownChart.php'>Return to Summary</a></p>";
 
