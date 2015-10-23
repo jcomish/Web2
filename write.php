@@ -70,9 +70,9 @@
       {
         $task = $_POST['task'];
         $task_estimate = $_POST['task_estimate'];
-        $milestone = $_POST['milestone'];
+        $task_milestone = $_POST['task_milestone'];
         $sql = $db->query('USE project');
-        $sql = $db->query("INSERT INTO task (name, time, milestone) VALUES ('$task', '$task_estimate', '$milestone')");
+        $sql = $db->query("INSERT INTO task (name, time, milestone) VALUES ('$task', '$task_estimate', '$task_milestone')");
         echo "</br><br><p2>Successfully added " . $task. "<p2/><br/>";
       } 
       catch(PDOException $e) 
@@ -154,7 +154,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 $selMilestone = -1;
 $i = 0;
-echo "<select name='milestone' id='milestone'>"; 
+echo "<select name='task_milestone' id='task_milestone'>"; 
 echo "<option size =30 ></option>";
 foreach ($milestone as $value) {
   if ($selRelease == -1 && $i == 0)
@@ -169,11 +169,6 @@ foreach ($milestone as $value) {
 }
 echo "<br/><br/><br/><br/><input type='submit' value='Create'>";
 echo "</form>";
-
-
-
-
-
 echo "<br/><br/><br/><h5><a href='burndownChart.php'>Return to Summary</a></h5>";
 
 ?>
