@@ -76,11 +76,11 @@
  $milestoneTime = array();
 
 //Create Release
-echo "<br/><br/><form action='write.php' method='post'>";
+echo "<br/><form action='write.php' method='post'>";
 echo "<h5>New Release</h5>";
 echo "<p2>Release Name: <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' placeholder='YYYY-MM-DD' name='release_due_date'><br/><br/>";
-echo "<br/><input type='submit' value='Create'>";
+echo "<input type='submit' value='Create'>";
 echo "</form><br/><br/><br/>";
 
 
@@ -92,7 +92,6 @@ echo "<p2>Milestone Name: <p2> <input type='text' name='milestone'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' placeholder='YYYY-MM-DD' name='milestone_due_date'><br/><br/>";
 echo "<p2>Release:<p2/>";
 
-//Create Release
 $statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM rel");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -115,8 +114,45 @@ foreach ($rel as $value) {
     echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
   }
 }
-echo "<br/><br/><input type='submit' value='Create'>";
+echo "<br/><br/><br/><br/><input type='submit' value='Create'>";
 echo "</form>";
+
+//Create Task
+echo "<br/><br/><form action='write.php' method='post'>";
+echo "<h5>New Task</h5>";
+echo "<p2>Milestone Name: <p2> <input type='text' name='task'><br/>";
+echo "<p2>Time Estimate: <p2> <input type='text' name='task_estimate'><br/><br/>";
+echo "<p2>Release:<p2/>";
+
+$statement = $db->query("USE project");
+$statement = $db->query("SELECT * FROM task");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+      $milestone[] = $row;
+    }
+
+$selMilestone = -1;
+$i = 0;
+echo "<select name='milestone' id='milestone'>"; 
+echo "<option size =30 ></option>";
+foreach ($rel as $value) {
+  if ($selRelease == -1 && $i == 0)
+  {
+    echo "<option selected='selected' value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
+
+  }
+  else 
+  {
+    echo "<option value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
+  }
+}
+echo "<br/><br/><br/><br/><input type='submit' value='Create'>";
+echo "</form>";
+
+
+
+
+
 echo "<br/><br/><br/><h5><a href='burndownChart.php'>Return to Summary</a></h5>";
 
 ?>
