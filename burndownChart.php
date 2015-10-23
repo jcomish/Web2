@@ -42,18 +42,16 @@ foreach ($rel as $value) {
   if ($selRelease == -1 && $i == 0)
   {
     echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
-    $selRelease = $value['rel_id'];
+    //$selRelease = $value['rel_id'];
   }
   else 
   {
     echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
-    $selRelease = $value['rel_id'];
   }
 }
 echo "</select>";
 echo "<input type='submit' value='View'>";
 echo "</form>";
-echo "<br/>";
 
 
 $statement = $db->query("SELECT * FROM milestone");
@@ -72,6 +70,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 $i = 0;
 foreach($milestones as $value)
 {
+  $selRelease = $_POST["release"];
   if ($value['rel'] == $selRelease)
   {
     $ETC = 0;
