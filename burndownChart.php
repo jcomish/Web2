@@ -77,7 +77,7 @@ foreach($milestones as $value)
   {
     $ETC = 0;
     echo "<h6>" . $value['name'] . "</h6>";
-    echo "<table border='1'><tr><td>Task</td><td>Estimated Time</td></tr>";
+    echo "<table border='1'><tr><td>Task</td><td>Estimated Time</td><td>Status</td></tr>";
     foreach($task as $value1)
     {
       if ($value1['milestone'] == $value['milestone_id'])
