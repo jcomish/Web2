@@ -30,18 +30,60 @@
  $relTime = array();
  $milestoneTime = array();
 
+
+echo "<form action='burndownChart.php' method='post'>";
+echo "<p2>Release: <p2> <input type='text' name='release'><br/>";
+echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
+
+
 //Get the data
-//$statement = $db->query("USE project");
-//$statement = $db->query("SELECT * FROM rel");
-//while ($row = $statement->fetch(PDO::FETCH_ASSOC))
- //   { 
- //     $rel[] = $row;
- //   }
+$statement = $db->query("USE project");
+$statement = $db->query("SELECT * FROM milestone");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+      $milestone[] = $row;
+    }
+
+$milestoneRelease = -1;
+
+echo "</br></br><p2>Milestone:</p2></br>";
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+  echo '<input type="checkbox" name="milestones" value="' . $row['milestone_id'] . '">' . $row['name'] . '<br/>';
+}
+/*echo "<select name='milestone' id='milestone'>"; 
+echo "<option size =30 ></option>";
+$i = 0;
+foreach ($milestone as $value) {
+  if ($milestoneRelease == -1 && $i == 0)
+  {
+    echo "<option selected='selected' value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
+
+  }
+  else 
+  {
+    echo "<option value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
+  }*/
+}
+
+
+
+
+echo "<p2>Milestone: <p2> <input type='text' name='release'><br/>";
+echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
+
+//Get the data
+$statement = $db->query("USE project");
+$statement = $db->query("SELECT * FROM rel");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+      $rel[] = $row;
+    }
 
 $selRelease = -1;
 
 //Dropdown menu
-echo "<form action='burndownChart.php' method='post'>";
+
 echo "</br></br><p2>Select Release:</p2></br>";
 echo "<select name='rel' id='release'>"; 
 echo "<option size =30 ></option>";
@@ -59,31 +101,7 @@ foreach ($rel as $value) {
 }
 echo "</select>";
 
-//Get the data
-//$statement = $db->query("USE project");
-//$statement = $db->query("SELECT * FROM milestone");
-//while ($row = $statement->fetch(PDO::FETCH_ASSOC))
- //   { 
- //     $milestone[] = $row;
- //   }
 
-$milestoneRelease = -1;
-
-echo "</br></br><p2>Select Release:</p2></br>";
-echo "<select name='milestone' id='milestone'>"; 
-echo "<option size =30 ></option>";
-$i = 0;
-foreach ($milestone as $value) {
-  if ($milestoneRelease == -1 && $i == 0)
-  {
-    echo "<option selected='selected' value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
-
-  }
-  else 
-  {
-    echo "<option value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
-  }
-}
 
 
 echo "<input type='submit' value='View'>";
