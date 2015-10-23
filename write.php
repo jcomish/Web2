@@ -6,23 +6,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"/>
   </head>
 
-  <?php
+<?php
+ define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+ define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+ define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+ define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+ define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+ try
+ {
+  $dsn = 'mysql:dbname=scriptures;host='.DB_HOST.';port='.DB_PORT;
+  $db = new PDO($dsn, DB_USER, DB_PASS);
+ }
+ catch (PDOException $ex)
+ {
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+ }
 
-    define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-    define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT')); 
-    define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-    define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-    define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
-    try
-    {
-      $dsn = 'mysql:dbname=scriptures;host='.DB_HOST.';port='.DB_PORT;
-      $db = new PDO($dsn, DB_USER, DB_PASS);
+ $rel = array();
+ $milestones = array();
+ $task = array();
+
+ $relTime = array();
+ $milestoneTime = array();
+
+//Get the data
+$statement = $db->query("USE project");
+$statement = $db->query("SELECT * FROM rel");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+      $rel[] = $row;
     }
-    catch (PDOException $ex) 
-    {
-      echo 'Error!: ' . $ex->getMessage();
-      die(); 
+
+$selRelease = -1;
+
+//Dropdown menu
+echo "<form action='burndownChart.php' method='post'>";
+echo "</br></br><p2>Select Release:</p2></br>";
+echo "<select name='rel' id='release'>"; 
+echo "<option size =30 ></option>";
+$i = 0;
+foreach ($rel as $value) {
+  if ($selRelease == -1 && $i == 0)
+  {
+    echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
+
+  }
+  else 
+  {
+    echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
+  }
+}
+echo "</select>";
+
+//Get the data
+$statement = $db->query("USE project");
+$statement = $db->query("SELECT * FROM milestone");
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+    { 
+      $milestone[] = $row;
     }
+
+$milestoneRelease = -1;
+
+echo "</br></br><p2>Select Release:</p2></br>";
+echo "<select name='milestone' id='milestone'>"; 
+echo "<option size =30 ></option>";
+i = 0;
+foreach ($milestone as $value) {
+  if ($milestoneRelease == -1 && $i == 0)
+  {
+    echo "<option selected='selected' value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
+
+  }
+  else 
+  {
+    echo "<option value='" . $value['milestone_id'] . "'>" . $value['name'] . "</option>";
+  }
+}
+
+
+echo "<input type='submit' value='View'>";
+echo "</form>";
+echo "<a href='write.php'>Modify Database</a>";
+?>
+
+
+
+
+
+
+
+  <?php
 
     if(isset($_POST["book"]))
     {
@@ -70,8 +145,23 @@
     <h5>Scripture Resources</h5>
 
 
-  <form action="databaseWrite.php" method="post">
-    <p2>Book: <p2> <input type="text" name="book"><br/>
+  <form action="write.php" method="post">
+    echo "<form action='burndownChart.php' method='post'>";
+echo "</br></br><p2>Select Release:</p2></br>";
+echo "<select name='rel' id='release'>"; 
+echo "<option size =30 ></option>";
+$i = 0;
+foreach ($rel as $value) {
+  if ($selRelease == -1 && $i == 0)
+  {
+    echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
+
+  }
+  else 
+  {
+    echo "<option value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
+  }
+    <p2>Release: <p2> <input type="text" name="book"><br/>
     <p2>Chapter: <p2> <input type="text" name="chapter"><br/>
     <p2>Verse: <p2> <input type="text" name="verse"><br/>
     <p2>Scripture: <p2> <input type="textarea" style="width: 300px; height: 150px;" name="content"><br/>
@@ -86,21 +176,6 @@
     }
     ?>
   </form>
-  <br/><br/><br/><br/><br/>
 
-
-  <?php
-    $statement = $db->query('USE scriptures');
-    $statement = $db->query('SELECT * FROM scriptures');
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    { 
-       echo '<p2><b>' . $row['book'] . '</b> <b>';
-       echo $row['chapter'] . '</b>:<b>';
-       echo $row['verse'] . '</b> - "';
-       echo $row['content'] . '"</br></br></p2>';
-    }
-
-
-    ?>
   </body>
 </html>
