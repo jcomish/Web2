@@ -31,19 +31,19 @@
  $milestoneTime = array();
 
 echo "<br/><br/><form action='burndownChart.php' method='post'>";
-echo "<h5>New Release</h5>"
+echo "<h5>New Release</h5>";
 echo "<p2>Release Name : <p2> <input type='text' name='release'><br/>";
 echo "<p2>Due Date: <p2> <input type='text' name='release_due_date'><br/>";
 
 
 //Get the data
-/*$statement = $db->query("USE project");
+$statement = $db->query("USE project");
 $statement = $db->query("SELECT * FROM milestone");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     { 
       //$milestone[] = $row;
       echo '<input type="checkbox" name="milestones" value="' . $value['milestone_id'] . '">' . $value['name'] . '<br/>';
-    }*/
+    }
 
 //$milestoneRelease = -1;
 
