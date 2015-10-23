@@ -29,6 +29,8 @@
       {
         $release = $_POST['release'];
         $release_due_date = $_POST['release_due_date'];
+        echo $release;
+        echo $release_due_date;
         $sql = $db->query('USE project');
         $sql = $db->query("INSERT INTO rel (name, due_date) VALUES ('$release', '$release_due_date')");
       } 
