@@ -110,8 +110,7 @@ foreach($milestones as $value)
   }
 }
       $data = json_encode($JSON);
-  //echo "<script>drawChart(" . $toJS . ");</script>";
-
+      echo $data;
 ?>
 
 
