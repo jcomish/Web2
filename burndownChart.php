@@ -109,7 +109,7 @@ foreach($milestones as $value)
 
   }
 }
-      $data = json_encode($JSON);
+      //$data = json_encode($JSON);
 
 ?>
 
