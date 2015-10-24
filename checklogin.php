@@ -15,7 +15,7 @@ define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
   echo 'Error!: ' . $ex->getMessage();
   die();
  }
-
+//test
 $test = 0;
 
 // username and password sent from form
