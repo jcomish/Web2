@@ -1,25 +1,39 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title>Joshua Comish</title>
+    <link rel="stylesheet" type="text/css" href="Jomish.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"/>
+      <?php
+        define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+      try
+      {
+        $dsn = 'mysql:dbname=project;host='.DB_HOST.';port='.DB_PORT;
+        $db = new PDO($dsn, DB_USER, DB_PASS);
+      }
+      catch (PDOException $ex)
+      {
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+      }
+      ?>
+  </head>
+    <header>
+    </br>
+    <h4><a href="index.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Home</a> </h4>
+    <h4><a href="assign032.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Projects</a> </h4>
+    <h4><a href="assignments.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Assignments</a></h4>
+    </br>
+    </br>
+  </header>
 <?php
-
-
-
-require '../inc/connect.php';
-
-$db = dbConnect();
-
-
-
 // username and password sent from form
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
-
-// COME BACK TO CODE LATER
-// To protect MySQL injection (more detail about MySQL injection)
-// $myusername = stripslashes($myusername);
-// $mypassword = stripslashes($mypassword);
-// $userpass_compare = compare_user_pass(['myusername, mypassword']);
-// if ($myusername = 
-// $myusername = ('SELECT * FROM members WHERE username=:username');
-// $mypassword = ('SELECT * FROM members WHERE password=:password');
 
 $statement = $db->query("SELECT * FROM members");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -35,26 +49,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	}
 	else {
 		echo "Wrong Username or Password";
+    header(‘Location: main_login.php');
 	}
   }
   echo '<br />';
   echo $myusername;
   echo '<br />';
   echo password_hash('$mypassword', PASSWORD_DEFAULT);
-  
-
-
-
-// $sql="SELECT * FROM members WHERE username='$myusername' and password='$mypassword'";
-// $result=($sql);
-// 
-// // Mysql_num_row is counting table row
-// $count=($result);
-// 
-// // If result matched $myusername and $mypassword, table row must be 1 row
-// 
-// if($count==1){
-
-// Register $myusername, $mypassword and redirect to file "login_success.php"
-
 ?>
