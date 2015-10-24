@@ -109,7 +109,8 @@ foreach($milestones as $value)
 
   }
 }
-      //$data = json_encode($JSON);
+      $data = json_encode($JSON);
+  //echo "<script>drawChart(" . $toJS . ");</script>";
 
 ?>
 
@@ -130,7 +131,7 @@ foreach($milestones as $value)
 
     function drawChart() 
     {
-      //window.alert(JSON.stringify(<?php$data?>));
+      //window.alert(JSON.stringify(data));
 
       // Create the data table.
       var data2 = new google.visualization.DataTable();
