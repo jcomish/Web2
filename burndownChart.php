@@ -43,7 +43,6 @@ foreach ($rel as $value)
   if ($selRelease == -1 && $i == 0)
   {
     echo "<option selected='selected' value='" . $value['rel_id'] . "'>" . $value['name'] . "</option>";
-
   }
   else 
   {
@@ -130,8 +129,8 @@ foreach($milestones as $value)
     function drawChart() 
     {
       //var json = JSON.parse(<?php $data ?>);
-      var json = JSON.stringify(<?php echo $data; ?>);
-      window.alert(json);
+      //var json = JSON.stringify(<?php echo $data; ?>);
+      var json = <?php echo $data; ?>
       //window.alert(JSON.stringify(<?php $data ?>);
 
       // Create the data table.
@@ -139,6 +138,11 @@ foreach($milestones as $value)
       data2.addColumn('date', 'Time (In Hours)');
       data2.addColumn('number', 'Due Date');
       data2.addColumn('number', 'Progress');
+
+      while (JSON.parse(json))
+      {
+        alert(json["name"]);
+      }
 
       data2.addRows([
         [new Date(2015, 10, 16),  56, 55],
