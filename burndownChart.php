@@ -108,7 +108,7 @@ foreach($milestones as $value)
     }
     echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
     $toJS json_encode($JSON, $ETC);
-    echo "<script>init(" . $JSON . ", " . $ETC . ");</script>"
+    echo "<script>init(" . $JSON . ", " . $ETC . ");</script>";
   }
 }
 
