@@ -130,7 +130,7 @@ foreach($milestones as $value)
     function drawChart() 
     {
       //var json = JSON.parse(<?php $data ?>);
-      var json = JSON.stringify(<?php $data ?>);
+      var json = JSON.stringify(json);
       window.alert(json);
       //window.alert(JSON.stringify(<?php $data ?>);
 
