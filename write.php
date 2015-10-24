@@ -65,8 +65,8 @@
   }
 
   if(isset($_POST["task"]) 
+  {
     if(isset($_POST["task_estimate"]))
-    {
       {
        try 
           {
