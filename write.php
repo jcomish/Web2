@@ -64,9 +64,7 @@
     echo "<br/><br/>Failed to Add";
   }
 
-  if(isset($_POST["task"]))
-  {
-    if(isset($_POST["task_estimate"]))
+  if(!empty($_POST["task"]) && !empty($_POST["task_estimate"]))
       {
        try 
           {
@@ -83,7 +81,6 @@
             echo $e->getMessage();
           }
       }
-    }
   else
   {
     echo "<br/><br/>Failed to Add";
