@@ -1,10 +1,3 @@
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-
-  // Load the Visualization API and the piechart package.
-  google.load('visualization', '1.0', {'packages':['corechart']});
-  google.setOnLoadCallback(drawChart);
-  </script>
 <?php
  define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
  define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
@@ -129,12 +122,13 @@ foreach($milestones as $value)
     <link rel="stylesheet" type="text/css" href="Jomish.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"/>
   <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript">
 
   // Load the Visualization API and the piechart package.
-  //google.load('visualization', '1.0', {'packages':['corechart']});
+  google.load('visualization', '1.0', {'packages':['corechart']});
   // Set a callback to run when the Google Visualization API is loaded.
-  //google.setOnLoadCallback(drawChart);
+  google.setOnLoadCallback(drawChart);
 
     function drawChart(data, ETC) 
     {
