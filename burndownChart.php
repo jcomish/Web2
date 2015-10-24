@@ -130,7 +130,7 @@ foreach($milestones as $value)
 
     function drawChart() 
     {
-
+      window.alert(JSON.stringify(<?php$data?>));
 
       // Create the data table.
       var data2 = new google.visualization.DataTable();
@@ -185,7 +185,7 @@ foreach($milestones as $value)
     </br>
   </header>
       <body>
-
+        <div id='chart_div2'></div>
         <!--Divs that will hold the charts-->
       </body>
     </html>
