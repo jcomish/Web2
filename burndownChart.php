@@ -131,7 +131,7 @@ foreach($milestones as $value)
 
     function drawChart(data) 
     {
-      document.write(JSON.stringify(data));
+      window.alert(JSON.stringify(data));
 
       // Create the data table.
       var data2 = new google.visualization.DataTable();
