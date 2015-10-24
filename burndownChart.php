@@ -73,7 +73,7 @@ $i = 0;
 $test[] = array();
 foreach($milestones as $value)
 {
-  $test[] = array('name' => $value['milestone'], 'id' => $value['milestone_id']);
+  $test[] = array('name' => $value['name'], 'id' => $value['milestone_id']);
   
   $selRelease = $_POST["rel"];
   if ($value['rel'] == $selRelease)
