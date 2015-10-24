@@ -30,7 +30,7 @@
     </br>
     </br>
   </header>
-  
+
 <?php
 
 include 'model.php';
@@ -88,19 +88,6 @@ switch ($action) {
         }
 
         break;
-        
-        // case 'Delete Member Profile' :
-//         $id = $_POST['id'];
-//         $result = delete_($id);
-//         if ($result) {
-//             $message = 'Delete YM Successful';
-//             include 'admin_ym_view.php';
-//         } else {
-//             $message = 'There was an error deleting the ym.';
-//             include 'admin_ym_view.php';
-//         }
-// 
-//         break;
 
   default:
         $members = get_all_members();
