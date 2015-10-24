@@ -155,9 +155,6 @@ foreach($milestones as $value)
         [new Date(2015, 10, 29), 0,  0]
       ]);
 
-      if (j == 0)
-
-
             // Set chart options
       var options2 = {
         chart: {
