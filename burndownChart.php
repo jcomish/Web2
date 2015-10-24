@@ -70,10 +70,10 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     }
 
 $i = 0;
-$test[] = array();
+
 foreach($milestones as $value)
 {
-  $test[] = array('name' => $value['name'], 'id' => $value['milestone_id']);
+  
   
   $selRelease = $_POST["rel"];
   if ($value['rel'] == $selRelease)
@@ -81,8 +81,10 @@ foreach($milestones as $value)
     $ETC = 0;
     echo "<h6>" . $value['name'] . "</h6>";
     echo "<table border='1'><tr><td>Task</td><td>Estimated Time</td><td>Status</td></tr>";
+    $JSON[] = array();
     foreach($task as $value1)
     {
+      $JSON[] = array('date' => $value1['date_completed'], $value1['task_id'], );
       if ($value1['milestone'] == $value['milestone_id'])
       {
         if (!isset($value1['status']))
@@ -105,9 +107,11 @@ foreach($milestones as $value)
       }
     }
     echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
+    $toJS json_encode($JSON, $ETC);
+    echo "<script>init(" . $JSON . ", " . $ETC . ");</script>"
   }
 }
-echo json_encode($test);
+
 
 
 ?>
@@ -125,7 +129,7 @@ echo json_encode($test);
   // Load the Visualization API and the piechart package.
   google.load('visualization', '1.0', {'packages':['corechart']});
   // Set a callback to run when the Google Visualization API is loaded.
-  google.setOnLoadCallback(init);
+  google.setOnLoadCallback(drawChart1);
 
   function init()
   {
