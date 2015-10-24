@@ -45,7 +45,7 @@
        echo $row['verse'] . '</b> - "';
        echo $row['content'] . '"</br></br></p2>';
     }
-
+//test
 
     ?>
   </body>
