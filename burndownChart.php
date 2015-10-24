@@ -128,11 +128,20 @@ foreach($milestones as $value)
 
     function drawChart() 
     {
-      //var json = JSON.parse(<?php $data ?>);
+      var json_parsed = JSON.parse(<?php $data ?>);
+      var items = json_parsed.Items;
       //var json = JSON.stringify(<?php echo $data; ?>);
-      var json = <?php echo $data; ?>
+      //var json = <?php echo $data; ?>
       //window.alert(JSON.stringify(<?php $data ?>);
 
+    for (var i = 0; i < items.length; ++i) {
+    console.log("Item #" + i);
+    for (var name in items[i]) {
+        console.log(name + "=" + items[i][name]);
+    }
+}
+
+}
       // Create the data table.
       var data2 = new google.visualization.DataTable();
       data2.addColumn('date', 'Time (In Hours)');
