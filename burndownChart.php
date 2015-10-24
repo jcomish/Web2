@@ -70,9 +70,11 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
     }
 
 $i = 0;
+$test[] = array();
 foreach($milestones as $value)
 {
-  echo json_encode($value);
+  $test += $value;
+  
   $selRelease = $_POST["rel"];
   if ($value['rel'] == $selRelease)
   {
@@ -105,7 +107,7 @@ foreach($milestones as $value)
     echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
   }
 }
-
+echo json_encode($test);
 
 
 ?>
