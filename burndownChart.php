@@ -107,12 +107,11 @@ foreach($milestones as $value)
       }
     }
     echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
-    //$toJS json_encode($JSON, $ETC);
-    //echo "<script>init(" . $JSON . ", " . $ETC . ");</script>";
+    $toJS json_encode($JSON, $ETC);
+    echo "<script>drawChart(" . $JSON . ", " . $ETC . ");</script>";
+    echo "<div id='chart_div2'></div>";
   }
 }
-
-
 
 ?>
 
@@ -129,32 +128,9 @@ foreach($milestones as $value)
   // Load the Visualization API and the piechart package.
   google.load('visualization', '1.0', {'packages':['corechart']});
   // Set a callback to run when the Google Visualization API is loaded.
-  google.setOnLoadCallback(init);
+  google.setOnLoadCallback(drawChart);
 
-  function init()
-  {
-    /*<?php
-    $js_milestones = json_encode($milestones);
-    echo "var js_milestones = ". $js_milestones . ";\n";
-    $js_task = json_encode($task);
-    echo "var js_task = ". $js_tasks . ";\n";
-    foreach ($rel as $value) {
-      echo $value['name'];
-    }
-
-    ?>
-    for (int i = 0; i < js_milestones.length; i++)
-    {
-      for (int j = 0; j < js_milestones[i].length; j++)
-      {
-        js_milestones[i][j]
-      }
-    }*/
-
-    drawChart1();
-  }
-
-    function drawChart1() 
+    function drawChart(data, etc) 
     {
 
       // Create the data table.
@@ -214,8 +190,7 @@ foreach($milestones as $value)
       <body>
 
         <!--Divs that will hold the charts-->
-        <div id="chart_div2"></div>
-        <div id="chart_div3"></div>
+
       </body>
     </html>
 
