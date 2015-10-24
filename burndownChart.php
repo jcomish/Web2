@@ -132,16 +132,16 @@ foreach($milestones as $value)
   <script type="text/javascript">
 
   // Load the Visualization API and the piechart package.
-  //google.load('visualization', '1.0', {'packages':['corechart']});
+  google.load('visualization', '1.0', {'packages':['corechart']});
   // Set a callback to run when the Google Visualization API is loaded.
-  //google.setOnLoadCallback(drawChart);
+  google.setOnLoadCallback(drawChart);
 
     function drawChart() 
     {
       //window.alert(JSON.stringify(<?php$data?>));
 
       // Create the data table.
-      var data2 = new google.visualization.DataTable();
+      /*var data2 = new google.visualization.DataTable();
       data2.addColumn('date', 'Time (In Hours)');
       data2.addColumn('number', 'Due Date');
       data2.addColumn('number', 'Progress');
@@ -177,7 +177,7 @@ foreach($milestones as $value)
 
             // Instantiate and draw our chart, passing in some options.
       var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
-      chart2.draw(data2, options2);
+      chart2.draw(data2, options2);*/
 
     }
     </script>
