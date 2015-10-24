@@ -54,7 +54,7 @@
 <td><input type="submit" name="Submit" value="Login"></td>
 </tr>
 <tr>
-<td><h5><a href="userpass_admin_view.php" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'"></a>Create User</h5></td>
+<td><h5><a href="userpass_admin_view.php" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Create User</a></h5></td>
 </tr>
 </table>
 </td>
