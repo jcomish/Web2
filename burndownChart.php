@@ -124,7 +124,7 @@ foreach($milestones as $value)
 
   function init()
   {
-    /*<?php
+    <?php
     $js_milestones = json_encode($milestones);
     echo "var js_milestones = ". $js_milestones . ";\n";
     $js_task = json_encode($task);
@@ -140,7 +140,7 @@ foreach($milestones as $value)
       {
         js_milestones[i][j]
       }
-    }*/
+    }
 
     drawChart1();
   }
@@ -203,6 +203,9 @@ foreach($milestones as $value)
     </br>
   </header>
       <body>
+        <script>
+        init();
+        </script>
         <!--Divs that will hold the charts-->
         <div id="chart_div2"></div>
         <div id="chart_div3"></div>
