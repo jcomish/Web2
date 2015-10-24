@@ -36,17 +36,15 @@
       die(); 
     }
 
-    $statement = $db->query('USE scriptures');
-    $statement = $db->query('SELECT * FROM scriptures');
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-    { 
-       echo '<p2><b>' . $row['book'] . '</b> <b>';
-       echo $row['chapter'] . '</b>:<b>';
-       echo $row['verse'] . '</b> - "';
-       echo $row['content'] . '"</br></br></p2>';
-    }
-//test
 
     ?>
+
+    <br/><br/><form action='loginForm.php' method='post'>
+    <h5>Login</h5>
+    <p2>Username: <p2> <input type='text' name='username'><br/>
+    <p2>Password: <p2> <input type='text' name='password'><br/>
+    <input type='submit' value='Login'>
+    </form>
+
   </body>
 </html>
