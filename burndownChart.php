@@ -3,6 +3,7 @@
 
   // Load the Visualization API and the piechart package.
   google.load('visualization', '1.0', {'packages':['corechart']});
+  google.setOnLoadCallback(drawChart);
   </script>
 <?php
  define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
