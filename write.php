@@ -40,7 +40,7 @@
   }
   else
   {
-    echo "<br/><br/>Failed to Add";
+    echo "<br/><br/>";
   }
 
  if(isset($_POST["milestone"]))
@@ -61,7 +61,7 @@
   }
   else
   {
-    echo "<br/><br/>Failed to Add";
+    echo "<br/><br/>";
   }
 
   if(!empty($_POST["task"]) && !empty($_POST["task_estimate"]))
@@ -71,7 +71,6 @@
             $task = $_POST['task'];
             $task_estimate = $_POST['task_estimate'];
             $task_milestone = $_POST['task_milestone'];
-            echo $_POST["task_estimate"];
             $sql = $db->query('USE project');
             $sql = $db->query("INSERT INTO task (name, time, milestone) VALUES ('$task', '$task_estimate', '$task_milestone')");
             echo "</br><br><p2>Successfully added " . $task. "<p2/><br/>";
@@ -83,7 +82,7 @@
       }
   else
   {
-    echo "<br/><br/>Failed to Add";
+    echo "<br/><br/>";
   }
 
 
