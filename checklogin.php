@@ -42,7 +42,7 @@ $mypassword=$_POST['mypassword'];
   echo '<br />';
   echo $myusername;
   echo '<br />';
-  echo password_hash('$mypassword', PASSWORD_DEFAULT);
+  echo $mypassword;//password_hash('$mypassword', PASSWORD_DEFAULT);
   echo '</p2>';
 
 $statement = $db->query("SELECT * FROM members");
