@@ -113,3 +113,26 @@ foreach($milestones as $value)
 
 ?>
 
+
+<html>
+ <head>
+  <title>Joshua Comish</title>
+    <link rel="stylesheet" type="text/css" href="Jomish.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"/>
+  <!--Load the AJAX API-->
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+      </head>
+<header>
+    </br>
+    <h4><a href="index.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Home</a> </h4>
+    <h4><a href="assign032.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Projects</a> </h4>
+    <h4><a href="assignments.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Assignments</a></h4>
+    </br>
+    </br>
+  </header>
+      <body>
+        <div id='chart_div2'></div>
+        <!--Divs that will hold the charts-->
+      </body>
+    </html>
