@@ -45,6 +45,7 @@ $mypassword=$_POST['mypassword'];
   echo $mypassword;//password_hash('$mypassword', PASSWORD_DEFAULT);
   echo '</p2>';
 
+$statement = $db->query("USE members");
 $statement = $db->query("SELECT * FROM members");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   { 
