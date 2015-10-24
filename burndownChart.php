@@ -106,11 +106,11 @@ foreach($milestones as $value)
       }
     }
     echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
-    //  $toJS = json_encode($JSON);
-  //echo "<script>drawChart(" . $toJS . ");</script>";
+
   }
 }
-
+      $toJS = json_encode($JSON);
+  echo "<script>drawChart(" . $toJS . ");</script>";
 
 ?>
 
@@ -129,9 +129,9 @@ foreach($milestones as $value)
   // Set a callback to run when the Google Visualization API is loaded.
   google.setOnLoadCallback(drawChart);
 
-    function drawChart() 
+    function drawChart(data) 
     {
-      //JSON.stringify(data);
+      JSON.stringify(data);
       // Create the data table.
       var data2 = new google.visualization.DataTable();
       data2.addColumn('date', 'Time (In Hours)');
