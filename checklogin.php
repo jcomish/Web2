@@ -16,7 +16,7 @@ define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
   die();
  }
 
-
+$test = 0;
 
 // username and password sent from form
 $myusername=$_POST['myusername'];
