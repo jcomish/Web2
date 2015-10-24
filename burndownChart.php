@@ -132,7 +132,7 @@ foreach($milestones as $value)
 
     function drawChart(data) 
     {
-      JSON.stringify(obj)
+      JSON.stringify(obj);
       // Create the data table.
       var data2 = new google.visualization.DataTable();
       data2.addColumn('date', 'Time (In Hours)');
