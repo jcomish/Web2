@@ -64,7 +64,7 @@
     echo "<br/><br/>Failed to Add";
   }
 
-  if(isset($_POST["task"]) 
+  if(isset($_POST["task"]))
   {
     if(isset($_POST["task_estimate"]))
       {
