@@ -30,7 +30,12 @@
     </br>
     </br>
   </header>
+  <br/><br/>
 <?php
+  echo '<br />';
+  echo $myusername;
+  echo '<br />';
+  echo password_hash('$mypassword', PASSWORD_DEFAULT);
 // username and password sent from form
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
@@ -45,15 +50,13 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   
 	if($row ['username'] == $myusername && password_verify($mypassword, $row['password'])){
 // 	session_start();
-	include 'login_success.php';
+	echo '<p2> Login Succesful!<br/>
+        Welcome, ' . $row['username']; . '<br/>';
 	}
 	else {
 		echo "Wrong Username or Password";
     header('Location: main_login.php');
 	}
   }
-  echo '<br />';
-  echo $myusername;
-  echo '<br />';
-  echo password_hash('$mypassword', PASSWORD_DEFAULT);
+
 ?>
