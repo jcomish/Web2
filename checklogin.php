@@ -33,15 +33,17 @@
   </header>
   <br/><br/>
 <?php
-  echo '<p2>TESTTEST';
+
+// username and password sent from form
+$myusername=$_POST['myusername'];
+$mypassword=$_POST['mypassword'];
+
+  echo '<p2>';
   echo '<br />';
   echo $myusername;
   echo '<br />';
   echo password_hash('$mypassword', PASSWORD_DEFAULT);
   echo '</p2>';
-// username and password sent from form
-$myusername=$_POST['myusername'];
-$mypassword=$_POST['mypassword'];
 
 $statement = $db->query("SELECT * FROM members");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
