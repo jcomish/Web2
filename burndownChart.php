@@ -131,6 +131,7 @@ foreach($milestones as $value)
     {
       //json = JSON.parse(<?php $data ?>);
       var json = JSON.stringify(json);
+      window.alert(json);
       //window.alert(JSON.stringify(<?php $data ?>);
 
       // Create the data table.
