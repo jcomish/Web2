@@ -64,23 +64,26 @@
     echo "<br/><br/>Failed to Add";
   }
 
-  if(isset($_POST["task"]) && isset($_POST["task_estimate"]))
- {
-   try 
+  if(isset($_POST["task"]) 
+    if(isset($_POST["task_estimate"]))
+    {
       {
-        $task = $_POST['task'];
-        $task_estimate = $_POST['task_estimate'];
-        $task_milestone = $_POST['task_milestone'];
-        echo $_POST["task_estimate"];
-        $sql = $db->query('USE project');
-        $sql = $db->query("INSERT INTO task (name, time, milestone) VALUES ('$task', '$task_estimate', '$task_milestone')");
-        echo "</br><br><p2>Successfully added " . $task. "<p2/><br/>";
-      } 
-      catch(PDOException $e) 
-      {
-        echo $e->getMessage();
+       try 
+          {
+            $task = $_POST['task'];
+            $task_estimate = $_POST['task_estimate'];
+            $task_milestone = $_POST['task_milestone'];
+            echo $_POST["task_estimate"];
+            $sql = $db->query('USE project');
+            $sql = $db->query("INSERT INTO task (name, time, milestone) VALUES ('$task', '$task_estimate', '$task_milestone')");
+            echo "</br><br><p2>Successfully added " . $task. "<p2/><br/>";
+          } 
+          catch(PDOException $e) 
+          {
+            echo $e->getMessage();
+          }
       }
-  }
+    }
   else
   {
     echo "<br/><br/>Failed to Add";
