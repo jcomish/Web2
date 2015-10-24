@@ -130,7 +130,7 @@ foreach($milestones as $value)
   // Set a callback to run when the Google Visualization API is loaded.
   google.setOnLoadCallback(drawChart);
 
-    function drawChart() 
+    function drawChart(data, ETC) 
     {
 
       // Create the data table.
@@ -190,7 +190,6 @@ foreach($milestones as $value)
       <body>
 
         <!--Divs that will hold the charts-->
-<div id='chart_div2'></div>
       </body>
     </html>
 
