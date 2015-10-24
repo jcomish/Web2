@@ -40,7 +40,7 @@
   }
   else
   {
-    echo "<br/><br/>";
+    echo "<br/><br/>Failed to Add";
   }
 
  if(isset($_POST["milestone"]))
@@ -61,7 +61,7 @@
   }
   else
   {
-    echo "<br/><br/>";
+    echo "<br/><br/>Failed to Add";
   }
 
   if(isset($_POST["task"]) && isset($_POST["task_estimate"]))
@@ -82,7 +82,7 @@
   }
   else
   {
-    echo "<br/><br/>";
+    echo "<br/><br/>Failed to Add";
   }
 
 
