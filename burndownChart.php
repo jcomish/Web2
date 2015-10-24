@@ -107,7 +107,7 @@ foreach($milestones as $value)
       }
     }
     echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
-    $toJS json_encode($JSON, $ETC);
+    //$toJS json_encode($JSON, $ETC);
     //echo "<script>init(" . $JSON . ", " . $ETC . ");</script>";
   }
 }
@@ -133,7 +133,7 @@ foreach($milestones as $value)
 
   function init()
   {
-    <?php
+    /*<?php
     $js_milestones = json_encode($milestones);
     echo "var js_milestones = ". $js_milestones . ";\n";
     $js_task = json_encode($task);
@@ -149,7 +149,7 @@ foreach($milestones as $value)
       {
         js_milestones[i][j]
       }
-    }
+    }*/
 
     drawChart1();
   }
