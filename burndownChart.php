@@ -134,12 +134,14 @@ foreach($milestones as $value)
       //var json = <?php echo $data; ?>
       //window.alert(JSON.stringify(<?php $data ?>);
 
-    for (var i = 0; i < items.length; ++i) {
+    /*for (var i = 0; i < items.length; ++i) 
+    {
     console.log("Item #" + i);
-    for (var name in items[i]) {
+    for (var name in items[i]) 
+    {
         console.log(name + "=" + items[i][name]);
     }
-}
+}*/
 
 }
       // Create the data table.
