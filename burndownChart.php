@@ -134,7 +134,7 @@ foreach($milestones as $value)
       //var json = <?php echo $data; ?>
       //window.alert(JSON.stringify(<?php $data ?>);
 
-    for (var i = 0; i < items.length; ++i) 
+   /* for (var i = 0; i < items.length; ++i) 
     {
     console.log("Item #" + i);
     for (var name in items[i]) 
@@ -143,7 +143,7 @@ foreach($milestones as $value)
     }
 
 
-}
+}*/
       // Create the data table.
       var data2 = new google.visualization.DataTable();
       data2.addColumn('date', 'Time (In Hours)');
