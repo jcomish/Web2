@@ -72,6 +72,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 $i = 0;
 foreach($milestones as $value)
 {
+  echo json_encode($value);
   $selRelease = $_POST["rel"];
   if ($value['rel'] == $selRelease)
   {
@@ -104,6 +105,8 @@ foreach($milestones as $value)
     echo "</table></br><p3>Time Remaining: " . $ETC . "</p3><br/><br/></br></br>";
   }
 }
+
+
 
 ?>
 
@@ -203,9 +206,7 @@ foreach($milestones as $value)
     </br>
   </header>
       <body>
-        <script>
-        init();
-        </script>
+
         <!--Divs that will hold the charts-->
         <div id="chart_div2"></div>
         <div id="chart_div3"></div>
