@@ -4,7 +4,9 @@
     <title>Joshua Comish</title>
     <link rel="stylesheet" type="text/css" href="Jomish.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"/>
-      <?php
+
+  </head>
+        <?php
         define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
         define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
         define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
@@ -21,7 +23,6 @@
         die();
       }
       ?>
-  </head>
     <header>
     </br>
     <h4><a href="index.html" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Home</a> </h4>
@@ -32,10 +33,12 @@
   </header>
   <br/><br/>
 <?php
+  echo '<p2>';
   echo '<br />';
   echo $myusername;
   echo '<br />';
   echo password_hash('$mypassword', PASSWORD_DEFAULT);
+  echo '</p2>';
 // username and password sent from form
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
@@ -43,18 +46,20 @@ $mypassword=$_POST['mypassword'];
 $statement = $db->query("SELECT * FROM members");
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   { 
+  echo '<p2>';
   echo '<br />';
   echo $row['username'];
   echo '<br />';
   echo $row['password'];
+  echo '</p2>';
   
   //password_verify($mypassword, $row['password'])
 	if($row ['username'] == $myusername && $row ['password'] == $mypassword ){
 // 	session_start();
-	echo "<p2> Login Successful!<br/> Welcome, " . $row['username'] . "<br/>";
+	echo "<p2> Login Successful!<br/> Welcome, " . $row['username'] . "<br/></p2>";
 	}
 	else {
-		echo "Wrong Username or Password";
+		echo "<p2>Wrong Username or Password</p2>";
     header('Location: main_login.php');
 	}
   }
