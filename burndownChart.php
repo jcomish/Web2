@@ -139,10 +139,10 @@ foreach($milestones as $value)
       data2.addColumn('number', 'Due Date');
       data2.addColumn('number', 'Progress');
 
-      while (JSON.parse(json))
+      /*while (JSON.parse(json))
       {
         alert(json["name"]);
-      }
+      }*/
 
       data2.addRows([
         [new Date(2015, 10, 16),  56, 55],
