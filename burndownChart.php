@@ -84,7 +84,7 @@ foreach($milestones as $value)
     $JSON[] = array();
     foreach($task as $value1)
     {
-      $JSON[] = array('date' => $value1['date_completed'], $value1['task_id'], );
+      $JSON[] = array('date' => $value1['date_completed'], $value1['task_id'], $value1['status']);
       if ($value1['milestone'] == $value['milestone_id'])
       {
         if (!isset($value1['status']))
