@@ -47,32 +47,4 @@
 </form>
 </div>
 
-
-<div id="admin_table">
-<h1>Username and Passwords</h1>
-        <table>
-            <tr>
-           		<td>ID</td>
-                <td>Username</td> 
-                <td>Password</td>
-                <!-- <td>Active</td> -->
-            </tr>
-            <tr>
-            <?php
-            $statement = $db->query("USE members");
-            $statement = $db->query("SELECT * FROM members");
-              while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-              { 
-              echo '<p2><td>';
-              echo $row['id'];
-              echo '</td><br /><td>';
-              echo $row['username'];
-              echo '</td><br /><td>';
-              echo $row['password'];
-              echo '</td></p2>';
-              }
-              ?>
-                </tr>
-        </table>
-    </div> 
 </body>

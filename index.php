@@ -79,10 +79,10 @@ switch ($action) {
         $password = $_POST['password'];
         $result = add_member($username, $password);
         if ($result) {
-            $message = 'Add Member Successful';
+            $message = '<br/><br/>Add Member Successful';
             include 'userpass_admin_view.php';
         } else {
-            $message = 'There was an error adding the member.';
+            $message = '<br/><br/>There was an error adding the member.';
             include 'userpass_admin_view.php';
         }
 

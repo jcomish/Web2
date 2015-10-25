@@ -50,18 +50,13 @@ $statement = $db->query("SELECT * FROM members");
 $success = 0;
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   { 
-  echo '<p2>';
-  echo '<br />';
-  echo $row['username'];
-  echo '<br />';
-  echo $row['password'];
-  echo '</p2>';
-  
-  //echo password_verify($mypassword, $row['password']);
+
 	if($row ['username'] == $myusername && password_verify($mypassword, $row['password']) )
   {
-// 	session_start();
-	echo "<p2> Login Successful!<br/> Welcome, " . $row['username'] . "<br/></p2>";
+  session_start();
+  $_SESSION['user'] = $row['username'];
+
+	echo "<p2> Login Successful!<br/> Welcome, " . $_SESSION['user'] . "<br/></p2>";
   $success = 1;
 	}
 
