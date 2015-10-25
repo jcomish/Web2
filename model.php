@@ -87,12 +87,12 @@ function add_member($username, $password) {
       }
     	$password =password_hash('$password', PASSWORD_DEFAULT);
         $query = $db->query("USE members");
-        $query = "INSERT INTO members(username, password) VALUES ('$username','$password')";
-        $stmt = $db->prepare($query);
-        $stmt->bindValue(':username', $username);
-        $stmt->bindValue(':password', $password);
-        $stmt->execute();
-        $stmt->closeCursor();
+        $query = $db->query("INSERT INTO members(username, password) VALUES ('$username','$password')");
+        //$stmt = $db->prepare($query);
+        //$stmt->bindValue(':username', $username);
+        //$stmt->bindValue(':password', $password);
+        //$stmt->execute();
+        //$stmt->closeCursor();
         return TRUE;
     } catch (Exception $ex) {
         return FALSE;
