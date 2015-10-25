@@ -76,7 +76,7 @@ function add_member($username, $password) {
         define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
       try
       {
-        $dsn = 'mysql:dbname=project;host='.DB_HOST.';port='.DB_PORT;
+        $dsn = 'mysql:dbname=members;host='.DB_HOST.';port='.DB_PORT;
         $db = new PDO($dsn, DB_USER, DB_PASS);
       }
       catch (PDOException $ex)
@@ -84,7 +84,7 @@ function add_member($username, $password) {
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-    	$password =password_hash('$password', PASSWORD_DEFAULT);
+    	//$password =password_hash('$password', PASSWORD_DEFAULT);
         $query = $db->query("USE members");
         $query = $db->query("INSERT INTO members (username, password) VALUES ('$username', '$password')");
         //$stmt = $db->prepare($query);
