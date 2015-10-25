@@ -57,7 +57,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   echo $row['password'];
   echo '</p2>';
   
-  echo password_verify($mypassword, $row['password']);
+  //echo password_verify($mypassword, $row['password']);
 	if($row ['username'] == $myusername && password_verify($mypassword, $row['password']) )
   {
 // 	session_start();
