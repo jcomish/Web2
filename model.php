@@ -84,7 +84,9 @@ function update_userpass($id, $username, $password) {
 function add_member($username, $password) {
     global $db;
     try {
+        echo $username . '<br/>' . $password;
     	$password =password_hash('$password', PASSWORD_DEFAULT);
+        $query = $db->query("USE members");
         $query = 'INSERT INTO members(username, password) VALUES (:username,:password)';
         $stmt = $db->prepare($query);
         $stmt->bindValue(':username', $username);
