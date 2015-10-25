@@ -47,6 +47,7 @@ $mypassword=$_POST['mypassword'];
 
 $statement = $db->query("USE members");
 $statement = $db->query("SELECT * FROM members");
+$success = 0
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   { 
   echo '<p2>';
@@ -57,14 +58,18 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   echo '</p2>';
   
   //password_verify($mypassword, $row['password'])
-	if($row ['username'] == $myusername && $row ['password'] == $mypassword ){
+	if($row ['username'] == $myusername && $row ['password'] == $mypassword )
+  {
 // 	session_start();
 	echo "<p2> Login Successful!<br/> Welcome, " . $row['username'] . "<br/></p2>";
+  $success = 1;
 	}
-	else {
-		echo "<p2>Wrong Username or Password</p2>";
-    //header('Location: main_login.php');
-	}
+
+  }
+    if ($success != 1)
+    {
+    echo "<p2>Wrong Username or Password</p2>";
+    header('Location: main_login.php');
   }
 
 ?>
