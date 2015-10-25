@@ -31,7 +31,7 @@
     </br>
   </header>
 
-
+<br/><br/>
 <body class="body">
   <div id="clear_both"></div>
   
@@ -59,6 +59,8 @@
             </tr>
             <tr>
             <?php
+            $statement = $db->query("USE members");
+            $statement = $db->query("SELECT * FROM members");
               while ($row = $statement->fetch(PDO::FETCH_ASSOC))
               { 
               echo '<p2><td>';

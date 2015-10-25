@@ -77,7 +77,7 @@ switch ($action) {
     case 'Add Member' :
         $username = $_POST['username'];
         $password = $_POST['password'];
-//         $active = $_POST['active'];
+        echo 'TEST';
         $result = add_member($username, $password);
         if ($result) {
             $message = 'Add Member Successful';
