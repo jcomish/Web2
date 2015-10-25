@@ -47,7 +47,7 @@ $mypassword=$_POST['mypassword'];
 
 $statement = $db->query("USE members");
 $statement = $db->query("SELECT * FROM members");
-$success = 0
+$success = 0;
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   { 
   echo '<p2>';
