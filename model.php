@@ -95,6 +95,6 @@ function add_member($username, $password) {
         //$stmt->closeCursor();
         return TRUE;
     } catch (Exception $ex) {
-        return FALSE;
+        echo 'Error!: ' . $ex->getMessage();
     }
 }
