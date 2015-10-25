@@ -30,34 +30,13 @@
     </br>
     </br>
   </header>
-<table width="300" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
-<tr>
+
 <form name="form1" method="post" action="checklogin.php">
-<td>
-<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
-<tr>
-<td colspan="3"><strong>Member Login </strong></td>
-</tr>
-<tr>
-<td width="78">Username</td>
-<td width="6">:</td>
-<td width="294"><input name="myusername" type="text" id="myusername"></td>
-</tr>
-<tr>
-<td>Password</td>
-<td>:</td>
-<td><input name="mypassword" type="password" id="mypassword"></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td><input type="submit" name="Submit" value="Login"></td>
-</tr>
-<tr>
-<td><h5><a href="userpass_admin_view.php" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Create User</a></h5></td>
-</tr>
-</table>
-</td>
+<h5>Member Login</h5>
+<p2>Username</p2>
+<input name="myusername" type="text" id="myusername">
+<p2>Password</p2>
+<input name="mypassword" type="password" id="mypassword">
+<input type="submit" name="Submit" value="Login">
+<h5><a href="userpass_admin_view.php" onMouseOver="this.style.color='White'" onMouseOut="this.style.color='Orange'">Create User</a></h5>
 </form>
-</tr>
-</table>
