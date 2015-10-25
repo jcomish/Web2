@@ -37,19 +37,8 @@
   
 <div id="assignments1">
 
-<h1>Add Username and Password</h1>
-
-<form action='.' method='POST'>
-	<input type='hidden' name='action' value='get_userpass'>
-	Member ID<br />
-	<input type='text' name='id'><br />
-	<input type='submit' value='Get Member Info'><br />
-	
-	</form>
-
-<hr>
-
-<form action='.' method='POST'>
+<h5>Add Username and Password</h5>
+<form action='index.php' method='POST'>
   <p2>Enter Username </p2><br/>
   <input type='text' name='username' value='<?php echo $username ?>'><br/>
   <p2>Enter Password</p2><br/>
