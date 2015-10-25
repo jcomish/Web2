@@ -85,6 +85,7 @@ function add_member($username, $password) {
         die();
       }
     	$password =password_hash($password, PASSWORD_DEFAULT);
+        echo $password;
         $query = $db->query("USE members");
         $query = $db->query("INSERT INTO members (username, password) VALUES ('$username', '$password')");
         //$stmt = $db->prepare($query);
