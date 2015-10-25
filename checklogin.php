@@ -63,7 +63,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 	}
 	else {
 		echo "<p2>Wrong Username or Password</p2>";
-    header('Location: main_login.php');
+    //header('Location: main_login.php');
 	}
   }
 
