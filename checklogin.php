@@ -38,24 +38,16 @@
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
 
-  echo '<p2>';
-  echo '<br />';
-  echo $myusername;
-  echo '<br />';
-  echo $mypassword;//password_hash('$mypassword', PASSWORD_DEFAULT);
-  echo '</p2>';
-
 $statement = $db->query("USE members");
 $statement = $db->query("SELECT * FROM members");
 $success = 0;
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   { 
-
+  $password = password_hash('$password', PASSWORD_DEFAULT);
 	if($row ['username'] == $myusername && password_verify($mypassword, $row['password']) )
   {
   session_start();
   $_SESSION['user'] = $row['username'];
-
 	echo "<p2> Login Successful!<br/> Welcome, " . $_SESSION['user'] . "<br/></p2>";
   $success = 1;
 	}

@@ -88,7 +88,7 @@ function add_member($username, $password) {
     	$password = password_hash('$password', PASSWORD_DEFAULT);
         $query = $db->query("USE members");
         $query = $db->query("INSERT INTO members (username, password) VALUES ('$username', '$password')");
-
+        header('Location: main_login.php');
         return TRUE;
     } catch (Exception $ex) {
         return FALSE;
