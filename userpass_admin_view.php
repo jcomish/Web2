@@ -33,14 +33,11 @@
 
 
 <body class="body">
-  <?php require($INC_DIR. "menu.php");?>
   <div id="clear_both"></div>
   
 <div id="assignments1">
 
 <h1>Add Username and Password</h1>
-
-<? echo $message; ?>
 
 <form action='.' method='POST'>
 	<input type='hidden' name='action' value='get_userpass'>
@@ -53,22 +50,17 @@
 <hr>
 
 <form action='.' method='POST'>
-
-<input type='hidden' name='id' value='<?php echo $id ?>'>
+<input name='id' value='<?php echo $id ?>'>
             Enter Username <br/>
             <input type='text' name='username' value='<?php echo $username ?>'><br/>
             Enter Password<br/>
-            <input type='text' name='password' value='<?php echo $password ?>'><br/>
-            <!-- 
-Active (enter 0 if you want the YM to be inactive in the database)<br/>
-            <input type='text' name='active' value='<?php echo $active ?>'><br/>
- -->
+            <input type='password' name='password' value='<?php echo $password ?>'><br/>
            
             <input type='submit' name='action' value=''>
            <!--  <input type='submit' name='action' value='Update Member'> -->
 	        <input type='submit' name='action' value='Add Member'>
 
-        </form>
+</form>
 </div>
 
 
@@ -96,12 +88,5 @@ Active (enter 0 if you want the YM to be inactive in the database)<br/>
                 </tr>
             <?php endforeach; ?>
         </table>
-    </div>
-
-
-
-
-      <?php include '../inc/footer.php' ?>
-   
- 
+    </div> 
 </body>
