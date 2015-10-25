@@ -37,7 +37,7 @@
 // username and password sent from form
 $myusername=$_POST['myusername'];
 $mypassword=$_POST['mypassword'];
-
+require('password.php');
 $statement = $db->query("USE members");
 $statement = $db->query("SELECT * FROM members");
 $success = 0;
