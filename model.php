@@ -84,7 +84,7 @@ function add_member($username, $password) {
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-    	echo password_hash("'" . $password . "'", PASSWORD_DEFAULT);
+    	echo password_hash($password, PASSWORD_DEFAULT);
         //echo $password;
         $query = $db->query("USE members");
 //echo password_hash("rasmuslerdorf", PASSWORD_BCRYPT);
