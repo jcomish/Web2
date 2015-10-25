@@ -87,11 +87,7 @@ function add_member($username, $password) {
     	//$password =password_hash($password, PASSWORD_DEFAULT);
         //echo $password;
         $query = $db->query("USE members");
-        $options = [
-    'cost' => 11,
-    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)
-];
-echo password_hash("rasmuslerdorf", PASSWORD_BCRYPT, $options);
+echo password_hash("rasmuslerdorf", PASSWORD_BCRYPT)
         $query = $db->query("INSERT INTO members (username, password) VALUES ('$username', '$password')");
         //$stmt = $db->prepare($query);
         //$stmt->bindValue(':username', $username);
