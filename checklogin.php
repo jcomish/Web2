@@ -43,7 +43,8 @@ $statement = $db->query("SELECT * FROM members");
 $success = 0;
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   { 
-  $password = password_hash('$password', PASSWORD_DEFAULT);
+  $mypassword = password_hash('$mypassword', PASSWORD_DEFAULT);
+  echo $mypassword;
 	if($row ['username'] == $myusername && password_verify($mypassword, $row['password']) )
   {
   session_start();
