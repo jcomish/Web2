@@ -5,7 +5,22 @@
     <link rel="stylesheet" type="text/css" href="Jomish.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8"/>
       <?php
-        
+        try {
+        define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
+        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
+      try
+      {
+        $dsn = 'mysql:dbname=members;host='.DB_HOST.';port='.DB_PORT;
+        $db = new PDO($dsn, DB_USER, DB_PASS);
+      }
+      catch (PDOException $ex)
+      {
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+      }
       ?>
   </head>
     <header>
@@ -68,22 +83,7 @@ function update_userpass($id, $username, $password) {
 }
 
 function add_member($username, $password) {
-    try {
-        define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
-        define('DB_PORT',getenv('OPENSHIFT_MYSQL_DB_PORT'));
-        define('DB_USER',getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
-        define('DB_PASS',getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
-        define('DB_NAME',getenv('OPENSHIFT_GEAR_NAME'));
-      try
-      {
-        $dsn = 'mysql:dbname=members;host='.DB_HOST.';port='.DB_PORT;
-        $db = new PDO($dsn, DB_USER, DB_PASS);
-      }
-      catch (PDOException $ex)
-      {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
+
     	//$password =password_hash('$password', PASSWORD_DEFAULT);
         $query = $db->query("USE members");
         $query = $db->query("INSERT INTO members (username, password) VALUES ('$username', '$password')");
