@@ -32,9 +32,9 @@
   </header>
 
 <form name="form1" method="post" action="checklogin.php">
-<h5>Member Login</h5>
+<br/><br/><h5>Member Login</h5>
 <p2>Username</p2>
-<input name="myusername" type="text" id="myusername">
+<input name="myusername" type="text" id="myusername"><br/>
 <p2>Password</p2>
 <input name="mypassword" type="password" id="mypassword">
 <input type="submit" name="Submit" value="Login">

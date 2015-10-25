@@ -43,21 +43,20 @@ $statement = $db->query("SELECT * FROM members");
 $success = 0;
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   { 
-  //$mypassword = password_hash('$mypassword', PASSWORD_DEFAULT);
-  echo $mypassword;
 	if($row ['username'] == $myusername && password_verify($mypassword, $row['password']) )
   {
   session_start();
   $_SESSION['user'] = $row['username'];
 	echo "<p2> Login Successful!<br/> Welcome, " . $_SESSION['user'] . "<br/></p2>";
   $success = 1;
+  break;
 	}
 
   }
     if ($success != 1)
     {
     echo "<p2>Wrong Username or Password</p2>";
-    //header('Location: main_login.php');
+    header('Location: main_login.php');
   }
 
 ?>
