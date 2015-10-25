@@ -50,16 +50,11 @@
 <hr>
 
 <form action='.' method='POST'>
-<input name='id' value='<?php echo $id ?>'>
-            Enter Username <br/>
-            <input type='text' name='username' value='<?php echo $username ?>'><br/>
-            Enter Password<br/>
-            <input type='password' name='password' value='<?php echo $password ?>'><br/>
-           
-            <input type='submit' name='action' value=''>
-           <!--  <input type='submit' name='action' value='Update Member'> -->
-	        <input type='submit' name='action' value='Add Member'>
-
+  <p2>Enter Username </p2><br/>
+  <input type='text' name='username' value='<?php echo $username ?>'><br/>
+  <p2>Enter Password</p2><br/>
+  <input type='password' name='password' value='<?php echo $password ?>'><br/>
+	<input type='submit' name='action' value='Add Member'>
 </form>
 </div>
 
@@ -73,20 +68,20 @@
                 <td>Password</td>
                 <!-- <td>Active</td> -->
             </tr>
-
+            <tr>
             <?php
-            include_once 'model.php';
-            $members = get_all_members();
-            foreach ($members as $index):
-                ?>
-
-                <tr>
-                    <td><?php echo $index['id'] ?></td>
-                    <td><?php echo $index['username'] ?></td>
-                    <td><?php echo $index['password'] ?></td>
-                  <!--   <td><?php echo $index['active'] ?></td> -->
+              while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+              { 
+              echo '<p2><td>';
+              echo $row['id'];
+              echo '</td><br /><td>';
+              echo $row['username'];
+              echo '</td><br /><td>';
+              echo $row['password'];
+              echo '</td></p2>';
+              }
+              ?>
                 </tr>
-            <?php endforeach; ?>
         </table>
     </div> 
 </body>
